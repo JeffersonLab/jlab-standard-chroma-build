@@ -1,5 +1,5 @@
 #!/bin/bash
-# $Id: build.sh,v 1.1 2006-02-24 02:59:08 bjoo Exp $
+# $Id: build.sh,v 1.2 2006-02-24 16:24:59 bjoo Exp $
 #
 #  Original author: Zbigniew Sroczynski
 #  See README_buildtest.sh for more information.
@@ -36,7 +36,7 @@ then
   gigE)
 	modules="qmp-mvia-mesh qdp++ chroma"
 	;;
-  ib-mpi|single)
+  gm|ib-mpi|single)
 	modules="qmp qdp++ chroma"
 	;;
   scalar)
