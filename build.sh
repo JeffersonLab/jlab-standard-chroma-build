@@ -1,5 +1,5 @@
 #!/bin/bash
-# $Id: build.sh,v 1.1 2006-02-24 02:59:08 bjoo Exp $
+# $Id: build.sh,v 1.1.1.1 2006-02-24 02:59:08 bjoo Exp $
 #
 #  Original author: Zbigniew Sroczynski
 #  See README_buildtest.sh for more information.

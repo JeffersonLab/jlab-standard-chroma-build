@@ -1,5 +1,5 @@
 # -*- perl -*-
-# $Id: link,v 1.1 2006-02-24 02:59:08 bjoo Exp $
+# $Id: link,v 1.1.1.1 2006-02-24 02:59:08 bjoo Exp $
 
 # This is supposed to do the same as a 'make check' in the build directory
 # except the code is compiled with the installed header files and linked  

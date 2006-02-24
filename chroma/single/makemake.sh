@@ -1,4 +1,4 @@
-# $Id: makemake.sh,v 1.1 2006-02-24 02:59:08 bjoo Exp $
+# $Id: makemake.sh,v 1.1.1.1 2006-02-24 02:59:08 bjoo Exp $
 
 # Write a simple makefile using the module's config script.
 
