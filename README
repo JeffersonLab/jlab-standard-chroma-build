@@ -1,0 +1,239 @@
+
+Introduction
+============
+
+This is a skeleton build system that was hacked together from the nightly
+build structure. 
+
+It will make installations of QMP, QDP++ and Chroma for the Jlab machines.
+The current targets that will be built and installed are:
+
+How Does it work
+================
+
+In this directory are subdirectories for the modules to build:
+	qmp, qdp++ and chroma
+
+In each subdirectory is a set of directories corresponding to various
+targets eg:
+
+	qmp/
+	   ib-mpi/
+	   single/
+
+Each target further contains a subdirectory called 'build'  which contains
+at least a script called 'configure.sh'. Eg:
+
+	qmp/
+	    ib-mpi/
+	           configure.sh
+
+
+The purpose of this script is to create a structure such that
+after configure.sh completes one can run the following make invocations:
+
+	make -k
+	make -k install
+	make -k check
+	make -k uninstall
+	make -k distcean
+
+The configure script can assume that there is a source directory 
+two directories above containing the name of the module eg:
+
+qmp/ib-mpi/build/configure.sh 
+
+can assume the existence of qmp/qmp or equivalently ../../qmp
+
+This directory is not there in the source checked out of the 
+repository but is created by a CVS checkout prior to  the invocation
+of configure.sh. The creation is done by the checkout task in build.sh
+
+(Here we differ from the nightly build, which contained this directory
+and used CVS update to update the source in it - since we are checking 
+this system into the CVS, I wanted to cut out this source and so 
+it is now checked out using a checkout)
+	
+
+Running:
+========
+
+Once this module is checked out, build and installation of the modules
+should be possible by invoking build.sh
+
+Will it run regression tests?
+=============================
+
+Yes, regression tests will be run for some targets. Currently
+regression tests will only run for targets that are easy (nonparallel)
+where invocations of QMP_run.sh or mpirun are not required
+
+What if something goes wrong:
+============================
+
+Logs are placed in the logs/ subdirectory using the scheme
+
+	logs/module/target/action_date.gz
+
+where module is the module name (qmp,qdp++,chroma)
+target is one of the build target names
+action is one of the actions (checkout, configure, build, install, link, check, xcheck)
+date is the date string created at the time of the build
+
+
+That's too easy, there must  be more to install
+===============================================
+
+Yes there is:
+
+-  Infiniband OSU/MPI be installed into /usr/local/ibgd
+   as per the Mellanox IBGD 1.18.0 distribution.
+
+-  The base GigE Mesh drivers need to be installed
+
+-  xmldiff needs to be installed for the regression tests to work.
+   (http://forge.nesc.ac.uk/xmldiff)
+
+-  Perl is needed to run the regression tests in chroma.
+
+I knew it! What esle is missing?
+================================
+
+  - Myrinet builds are not being done. Chiefly because we haven't got
+  myrinet onto the 2.6 kernel machines.
+
+
+Wow! This is nifty! Can it possibly get better?
+===============================================
+
+Yes. It would be cool for example ro be able to run regressions for
+the parallel targets. It would be cool to support gcc-4 based targets
+etc. It may even be most cool, to somehow transmogrify this process into
+building RPMS including possibly a top level virtual one, so that you'd 
+only have to build this stuff once, turn it into RPMs and then just
+load those onto the new machines.
+
+OK, give me the boring details
+==============================
+
+Software Targets installed:
+
+QMP:
+===
+
+Module: qmp-mvia-mesh/
+
+Target: gigE
+Description: QMP over a Mesh of MVIA enabled gigE connected linuxes
+Install location: /usr/local/qmp/mvia
+
+Module: qmp/
+
+Target: single
+Description: QMP single node variant 
+Install location: /usr/local/qmp/single
+
+Target: ib-mpi
+Description: QMP MPI over Infiniband variant
+Install location: /usr/local/qmp/ib-mpi
+
+
+QDP++ Targets:
+==============
+
+Module: qdp++/
+
+Target: scalar
+Description: 		Scalar Single Precision SSE version
+Install Location:	/usr/local/qdp++/scalar
+
+Target: scalar-double
+Description: 		Scalar Double Precision SSE version
+Install Location:	/usr/local/qdp++/scalar-double
+
+Target: parscalar-single
+Description: 		Parscalar, Single Node QMP, 
+			Single Precision SSE version
+Install Location:	/usr/local/qdp++/parscalar-single
+
+Target: parscalar-single-double
+Description: 		Parscalar, Single Node QMP,
+			Double Precision SSE version
+Install Location:	/usr/local/qdp++/parscalar-single-double
+
+Target: parscalar-gigE
+Description: 		Parscalar, MVIA - Mesh QMP 
+			Single Precision SSE version
+Install Location:	/usr/local/qdp++/parscalar-gigE
+
+Target: parscalar-gigE-double
+Description: 		Parscalar, MVIA - Mesh QMP,
+			Double Precision SSE version
+Install Location:	/usr/local/qdp++/parscalar-gigE-double
+
+Target: parscalar-ib-mpi
+Description: 		Parscalar, MPI QMP over Infiniband, 
+			Single Precision SSE version
+Install Location:	/usr/local/qdp++/parscalar-ib-mpi
+
+Target: parscalar-ib-mpi-double
+Description: 		Parscalar, MPI QMP over Infiniband,
+			Double Precision SSE version
+Install Location:	/usr/local/qdp++/parscalar-ib-mpi-double
+
+Chroma Targets:
+==============
+
+Module: chroma/
+
+Target: scalar
+Description: 		Scalar Single Precision SSE version
+Install Location:	/usr/local/chroma/scalar
+Perform regressions:   yes
+
+Target: scalar-double
+Description: 		Scalar Double Precision SSE version
+Install Location:	/usr/local/chroma/scalar-double
+Perform regressions:   yes
+
+Target: parscalar-single
+Description: 		Parscalar, Single Node QMP, 
+			Single Precision SSE version
+Install Location:	/usr/local/chroma/parscalar-single
+Perform regressions:    yes
+
+Target: parscalar-single-double
+Description: 		Parscalar, Single Node QMP,
+			Double Precision SSE version
+Install Location:	/usr/local/chroma/parscalar-single-double
+Perform regressions:    yes
+
+Target: parscalar-gigE
+Description: 		Parscalar, MVIA - Mesh QMP 
+			Single Precision SSE version
+Install Location:	/usr/local/chroma/parscalar-gigE
+Perform Regressions:    no *
+
+Target: parscalar-gigE-double
+Description: 		Parscalar, MVIA - Mesh QMP,
+			Double Precision SSE version
+Install Location:	/usr/local/chroma/parscalar-gigE-double
+Perform Regressions:    no *
+
+Target: parscalar-ib-mpi
+Description: 		Parscalar, MPI QMP over Infiniband, 
+			Single Precision SSE version
+Install Location:	/usr/local/chroma/parscalar-ib-mpi
+Perform Regressions:    no *
+
+Target: parscalar-ib-mpi-double
+Description: 		Parscalar, MPI QMP over Infiniband,
+			Double Precision SSE version
+Install Location:	/usr/local/chroma/parscalar-ib-mpi-double
+Perform Regressions:    no *
+
+(*) We have not made the regression tests portable amongst our parallel
+systems. For example, the command to executre a program is different
+under gig-E and mpi. Also the regressions we do have tend to work
+on small lattices which may not be suitable for a given parallel decomposition.
+We have asked for SciDAC funds to research into this in SciDAC 2.

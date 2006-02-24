@@ -1,0 +1,235 @@
+gigE
+Building Modules: qmp-mvia-mesh qdp++ chroma
+Performing action: gigE qmp-mvia-mesh gigE/gigE configure
+... succeeded
+Performing action: gigE qmp-mvia-mesh gigE/gigE build
+... succeeded
+Performing action: gigE qmp-mvia-mesh gigE/gigE check
+... succeeded
+Performing action: gigE qmp-mvia-mesh gigE/gigE install
+... succeeded
+Performing action: gigE qmp-mvia-mesh gigE/gigE link
+... succeeded
+Performing action: gigE qdp++ gigE/parscalar-gigE configure
+... succeeded
+Performing action: gigE qdp++ gigE/parscalar-gigE build
+... succeeded
+Performing action: gigE qdp++ gigE/parscalar-gigE check
+... succeeded
+Performing action: gigE qdp++ gigE/parscalar-gigE install
+... succeeded
+Performing action: gigE qdp++ gigE/parscalar-gigE link
+... succeeded
+Performing action: gigE qdp++ gigE/parscalar-gigE-double configure
+... succeeded
+Performing action: gigE qdp++ gigE/parscalar-gigE-double build
+... succeeded
+Performing action: gigE qdp++ gigE/parscalar-gigE-double check
+... succeeded
+Performing action: gigE qdp++ gigE/parscalar-gigE-double install
+... succeeded
+Performing action: gigE qdp++ gigE/parscalar-gigE-double link
+... succeeded
+Checking Out Version: chroma2-11-0
+Performing action: gigE chroma checkout
+... succeeded
+Performing action: gigE chroma gigE/parscalar-gigE configure
+... succeeded
+Performing action: gigE chroma gigE/parscalar-gigE build
+... succeeded
+Performing action: gigE chroma gigE/parscalar-gigE check
+... succeeded
+Performing action: gigE chroma gigE/parscalar-gigE install
+... succeeded
+Performing action: gigE chroma gigE/parscalar-gigE link
+... succeeded
+Performing action: gigE chroma gigE/parscalar-gigE-double configure
+... succeeded
+Performing action: gigE chroma gigE/parscalar-gigE-double build
+... succeeded
+Performing action: gigE chroma gigE/parscalar-gigE-double check
+... succeeded
+Performing action: gigE chroma gigE/parscalar-gigE-double install
+... succeeded
+Performing action: gigE chroma gigE/parscalar-gigE-double link
+... succeeded
+ib-mpi
+Building Modules: qmp qdp++ chroma
+Checking Out Version: qmp2-1-3
+Performing action: ib-mpi qmp checkout
+... succeeded
+Performing action: ib-mpi qmp ib-mpi/ib-mpi configure
+... succeeded
+Performing action: ib-mpi qmp ib-mpi/ib-mpi build
+... succeeded
+Performing action: ib-mpi qmp ib-mpi/ib-mpi check
+... succeeded
+Performing action: ib-mpi qmp ib-mpi/ib-mpi install
+... succeeded
+Performing action: ib-mpi qmp ib-mpi/ib-mpi link
+... succeeded
+Checking Out Version: qdp1-19-0
+Performing action: ib-mpi qdp++ checkout
+... succeeded
+Performing action: ib-mpi qdp++ ib-mpi/parscalar-ib-mpi configure
+... succeeded
+Performing action: ib-mpi qdp++ ib-mpi/parscalar-ib-mpi build
+... succeeded
+Performing action: ib-mpi qdp++ ib-mpi/parscalar-ib-mpi check
+... succeeded
+Performing action: ib-mpi qdp++ ib-mpi/parscalar-ib-mpi install
+... succeeded
+Performing action: ib-mpi qdp++ ib-mpi/parscalar-ib-mpi link
+... succeeded
+Performing action: ib-mpi qdp++ ib-mpi/parscalar-ib-mpi-double configure
+... succeeded
+Performing action: ib-mpi qdp++ ib-mpi/parscalar-ib-mpi-double build
+... succeeded
+Performing action: ib-mpi qdp++ ib-mpi/parscalar-ib-mpi-double check
+... succeeded
+Performing action: ib-mpi qdp++ ib-mpi/parscalar-ib-mpi-double install
+... succeeded
+Performing action: ib-mpi qdp++ ib-mpi/parscalar-ib-mpi-double link
+... succeeded
+Checking Out Version: chroma2-11-0
+Performing action: ib-mpi chroma checkout
+... succeeded
+Performing action: ib-mpi chroma ib-mpi/parscalar-ib-mpi configure
+... succeeded
+Performing action: ib-mpi chroma ib-mpi/parscalar-ib-mpi build
+... succeeded
+Performing action: ib-mpi chroma ib-mpi/parscalar-ib-mpi check
+... succeeded
+Performing action: ib-mpi chroma ib-mpi/parscalar-ib-mpi install
+... succeeded
+Performing action: ib-mpi chroma ib-mpi/parscalar-ib-mpi link
+... succeeded
+Performing action: ib-mpi chroma ib-mpi/parscalar-ib-mpi-double configure
+... succeeded
+Performing action: ib-mpi chroma ib-mpi/parscalar-ib-mpi-double build
+... succeeded
+Performing action: ib-mpi chroma ib-mpi/parscalar-ib-mpi-double check
+... succeeded
+Performing action: ib-mpi chroma ib-mpi/parscalar-ib-mpi-double install
+... succeeded
+Performing action: ib-mpi chroma ib-mpi/parscalar-ib-mpi-double link
+... succeeded
+Performing action: ib-mpi chroma ib-mpi/parscalar-ib-mpi-noavp configure
+... succeeded
+Performing action: ib-mpi chroma ib-mpi/parscalar-ib-mpi-noavp build
+... succeeded
+Performing action: ib-mpi chroma ib-mpi/parscalar-ib-mpi-noavp check
+... succeeded
+Performing action: ib-mpi chroma ib-mpi/parscalar-ib-mpi-noavp install
+... succeeded
+Performing action: ib-mpi chroma ib-mpi/parscalar-ib-mpi-noavp link
+... succeeded
+scalar
+Building Modules: qdp++ chroma
+Checking Out Version: qdp1-19-0
+Performing action: scalar qdp++ checkout
+... succeeded
+Performing action: scalar qdp++ scalar/scalar configure
+... succeeded
+Performing action: scalar qdp++ scalar/scalar build
+... succeeded
+Performing action: scalar qdp++ scalar/scalar check
+... succeeded
+Performing action: scalar qdp++ scalar/scalar install
+... succeeded
+Performing action: scalar qdp++ scalar/scalar link
+... succeeded
+Performing action: scalar qdp++ scalar/scalar-double configure
+... succeeded
+Performing action: scalar qdp++ scalar/scalar-double build
+... succeeded
+Performing action: scalar qdp++ scalar/scalar-double check
+... succeeded
+Performing action: scalar qdp++ scalar/scalar-double install
+... succeeded
+Performing action: scalar qdp++ scalar/scalar-double link
+... succeeded
+Checking Out Version: chroma2-11-0
+Performing action: scalar chroma checkout
+... succeeded
+Performing action: scalar chroma scalar/scalar configure
+... succeeded
+Performing action: scalar chroma scalar/scalar build
+... succeeded
+Performing action: scalar chroma scalar/scalar check
+... succeeded
+Performing action: scalar chroma scalar/scalar install
+... succeeded
+Performing action: scalar chroma scalar/scalar link
+... succeeded
+Performing action: scalar chroma scalar/scalar-double configure
+... succeeded
+Performing action: scalar chroma scalar/scalar-double build
+... succeeded
+Performing action: scalar chroma scalar/scalar-double check
+... succeeded
+Performing action: scalar chroma scalar/scalar-double install
+... succeeded
+Performing action: scalar chroma scalar/scalar-double link
+... succeeded
+single
+Building Modules: qmp qdp++ chroma
+Checking Out Version: qmp2-1-3
+Performing action: single qmp checkout
+... succeeded
+Performing action: single qmp single/single configure
+... succeeded
+Performing action: single qmp single/single build
+... succeeded
+Performing action: single qmp single/single check
+... succeeded
+Performing action: single qmp single/single install
+... succeeded
+Performing action: single qmp single/single link
+... succeeded
+Checking Out Version: qdp1-19-0
+Performing action: single qdp++ checkout
+... succeeded
+Performing action: single qdp++ single/parscalar-single configure
+... succeeded
+Performing action: single qdp++ single/parscalar-single build
+... succeeded
+Performing action: single qdp++ single/parscalar-single check
+... succeeded
+Performing action: single qdp++ single/parscalar-single install
+... succeeded
+Performing action: single qdp++ single/parscalar-single link
+... succeeded
+Performing action: single qdp++ single/parscalar-single-double configure
+... succeeded
+Performing action: single qdp++ single/parscalar-single-double build
+... succeeded
+Performing action: single qdp++ single/parscalar-single-double check
+... succeeded
+Performing action: single qdp++ single/parscalar-single-double install
+... succeeded
+Performing action: single qdp++ single/parscalar-single-double link
+... succeeded
+Checking Out Version: chroma2-11-0
+Performing action: single chroma checkout
+... succeeded
+Performing action: single chroma single/parscalar-single configure
+... succeeded
+Performing action: single chroma single/parscalar-single build
+... succeeded
+Performing action: single chroma single/parscalar-single check
+... succeeded
+Performing action: single chroma single/parscalar-single install
+... succeeded
+Performing action: single chroma single/parscalar-single link
+... succeeded
+Performing action: single chroma single/parscalar-single-double configure
+... succeeded
+Performing action: single chroma single/parscalar-single-double build
+... succeeded
+Performing action: single chroma single/parscalar-single-double check
+... succeeded
+Performing action: single chroma single/parscalar-single-double install
+... succeeded
+Performing action: single chroma single/parscalar-single-double link
+... succeeded
