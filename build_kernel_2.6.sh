@@ -1,5 +1,5 @@
 #!/bin/bash
-./build.sh gigE
-./build.sh ib-mpi
-./build.sh scalar
-./build.sh single
+./build.sh gigE chroma
+./build.sh ib-mpi chroma
+./build.sh scalar chroma
+./build.sh single chroma
