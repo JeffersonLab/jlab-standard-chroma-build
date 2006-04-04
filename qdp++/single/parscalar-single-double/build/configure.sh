@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 ARCH=single
 QDPDIR=../../..
 ROOTDIR=../../../..
