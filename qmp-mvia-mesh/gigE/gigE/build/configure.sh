@@ -1,4 +1,7 @@
-#! /bin/sh
+#! /bin/bash
+
+echo "Cleaning fixed directory: /usr/local/qmp/mvia"
+rm -rf /usr/local/qmp/mvia
 
 cat > Makefile << EOF
 all: src_copy
