@@ -1,3 +1,7 @@
-#!/bin/tcsh
+#!/bin/bash
 
-../../../qmp/configure --prefix=/usr/local/qmp/single --with-qmp-comms-type=SINGLE 
+. ../../../../functions.sh
+PREFIX=`make_prefix ../../../PREFIX ../../../VERSION single`
+clean_dir ${PREFIX}
+
+../../../qmp/configure --prefix=${PREFIX} --with-qmp-comms-type=SINGLE 
