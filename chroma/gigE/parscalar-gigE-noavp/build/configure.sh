@@ -1,3 +1,14 @@
-#!/bin/tcsh
+#!/bin/bash
 
-../../../chroma/configure --prefix=/usr/local/chroma/parscalar-gigE-noavp --with-qdp=/usr/local/qdp++/parscalar-gigE CFLAGS="-O2 -msse -msse2 -march=pentium4" CXXFLAGS="" LIBS="-lgmp" --enable-sse-wilson-dslash --with-gmp=/usr 
+ARCH=parscalar-gigE
+CHROMADIR=../../..
+ROOTDIR=../../../..
+QDPDIR=${ROOTDIR}/qdp++
+
+. ${ROOTDIR}/functions.sh
+PREFIX=`make_prefix ${CHROMADIR}/PREFIX ${CHROMADIR}/VERSION ${ARCH}-noavp`
+clean_dir ${PREFIX}
+
+QDP_PREFIX=`make_prefix ${QDPDIR}/PREFIX ${QDPDIR}/VERSION ${ARCH}`
+
+${CHROMADIR}/chroma/configure --prefix=${PREFIX} --with-qdp=${QDP_PREFIX} CFLAGS="-O2 -msse -msse2 -march=pentium4" CXXFLAGS="" LIBS="-lgmp" --enable-sse-wilson-dslash --with-gmp=/usr 
