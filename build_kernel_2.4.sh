@@ -1,4 +1,4 @@
 #!/bin/bash
-./build.sh gm
-./build.sh scalar
-./build.sh single
+./build.sh -a gm
+./build.sh -a scalar
+./build.sh -a single
