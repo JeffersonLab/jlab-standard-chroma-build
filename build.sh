@@ -1,5 +1,5 @@
 #!/bin/bash
-# $Id: build.sh,v 1.3 2006-03-27 15:04:06 bjoo Exp $
+# $Id: build.sh,v 1.4 2006-04-18 20:08:00 bjoo Exp $
 #
 #  Original author: Zbigniew Sroczynski
 #  See README_buildtest.sh for more information.
@@ -14,39 +14,89 @@ logdir=$checkdir/logs
 #
 if [ $# -lt 1 ];
 then 
-   echo "Usage: $0 <arch>"
+   echo "Usage: $0 -a <arch>"
+   echo "or"
+   echo "$0 <module list>"
    exit 1;
 fi
 
-arch=$1
-modules=""
-shift
-while [ $# != 0 ];
-do
-  modules=$modules" "$1
-  shift
-done
 
-echo $arch
-if [ "X${modules}X" == "XX" ];
+if [ "X${1}X" == "X-aX" ];
 then
-#
-#  No list of modules given select defaults
-  case $arch in
-  gigE)
-	modules="qmp-mvia-mesh qdp++ chroma"
+    if [ $# -ne 2 ];
+    then 
+      echo "Usage: $0 -a <arch>"
+      echo "or"
+      echo "$0 <module list>"
+      exit 1;
+    fi
+    arch=$2
+    
+    case $arch in
+	gigE)
+	  modules="\
+	      qmp-mvia-mesh/qmp-mvia-mesh \
+	      qdp++/${arch}/parscalar-gigE \
+	      qdp++/${arch}/parscalar-gigE-double \
+	      chroma/${arch}/parscalar-gigE \
+	      chroma/${arch}/parscalar-gigE-double \
+	      chroma/${arch}/parscalar-gigE-noavp"
 	;;
-  gm|ib-mpi|ibg2-mpi|single)
-	modules="qmp qdp++ chroma"
-	;;
-  scalar)
-	modules="qdp++ chroma"
- 	;;
-  *)
-	echo Unsupported architecture ${arch}
-	exit 1;
- 	;;
-  esac
+	ibg2-mpi)
+          modules="\
+	      qmp/ibg2-mpi/ibg2-mpi \
+	      qdp++/${arch}/parscalar-ibg2-mpi \
+	      qdp++/${arch}/parscalar-ibg2-mpi-double \
+	      chroma/${arch}/parscalar-ibg2-mpi \
+	      chroma/${arch}/parscalar-ibg2-mpi-double \
+	      chroma/${arch}/parscalar-ibg2-mpi-noavp"
+	  ;;
+	ib-mpi)
+	  modules="\
+	      qmp/ib-mpi/ib-mpi \
+	      qdp++/${arch}/parscalar-ib-mpi \
+	      qdp++/${arch}/parscalar-ib-mpi-double \
+	      chroma/${arch}/parscalar-ib-mpi \
+	      chroma/${arch}/parscalar-ib-mpi-double \
+	      chroma/${arch}/parscalar-ib-mpi-noavp"
+	  ;;
+        gm)
+  	  modules="\
+	      qmp/gm/gm \
+	      qdp++/${arch}/parscalar-gm \
+	      qdp++/${arch}/parscalar-gm-double \
+	      chroma/${arch}/parscalar-gm \
+	      chroma/${arch}/parscalar-gm-double \
+	      chroma/${arch}/parscalar-gm-noavp"
+	  ;;
+	single)
+	  modules="\
+	      qmp/single/single \
+	      qdp++/${arch}/parscalar-single \
+	      qdp++/${arch}/parscalar-single-double \
+	      chroma/${arch}/parscalar-single \
+	      chroma/${arch}/parscalar-single-double \
+	      chroma/${arch}/parscalar-single-noavp"
+	  ;;
+	scalar)
+	  modules="\
+	      qdp++/${arch}/scalar \
+	      qdp++/${arch}/scalar-double \
+	      chroma/${arch}/scalar \
+	      chroma/${arch}/scalar-double"
+	  ;;
+	*)
+	  echo Unsupported architecture ${arch}
+	  exit 1;
+	  ;;
+	esac
+else 
+    modules=""
+    while [ $# != 0 ];
+    do
+      modules=$modules" "$1
+      shift
+    done
 fi
 
 echo Building Modules:  $modules
@@ -89,9 +139,9 @@ builddirs(){
 
 perform_action(){
 
-    logfile=$logdir/$module/$build/${action_name}_$now
+    logfile=$logdir/$package/${arch}/${build}/${action_name}_$now
 
-    echo Performing action: $arch $module $build ${action_name}
+    echo Performing action: $arch $package $build ${action_name}
 
     uname -a > $logfile
     echo '------------------------' >> $logfile
@@ -115,22 +165,28 @@ perform_action(){
 
 for module in $modules
 do
+    package=`echo $module | cut -f1 -d/`
+    arch=`echo $module | cut -f2 -d/`
+    build=`echo $module | cut -f3 -d/`
+    echo Package is: $package
+    echo Aarch is $arch
+    echo Build is: ${build}
 
-    moduledir=$checkdir/$module
+    moduledir=$checkdir/$package
 
     # Check out new code
 
-    srcdir=$moduledir/$module
+    srcdir=$moduledir/$package
     
     cd $moduledir
     now=`date +"%F_%H.%M_%Z"`
-    if ! [ -d $logdir/${module} ]
+    if ! [ -d $logdir/${package}/${arch}/${build} ]
     then
-        mkdir -p $logdir/${module}
+        mkdir -p $logdir/${package}/${arch}/${build}
     fi
 
     # Deal with the checkout 
-    if ! [ -d ${module} ]
+    if ! [ -d ${package} ]
     then 
 	if [ -f ./VERSION ]
         then 
@@ -142,99 +198,84 @@ do
 	   echo Checking Out Head Revision
         fi 
         action_name="checkout"
-        action="cvs -d :pserver:anonymous@cvs.jlab.org:/group/lattice/cvsroot checkout -P ${version_flag} ${module} "
-        build=""
-        perform_action
+        action="cvs -d :pserver:anonymous@cvs.jlab.org:/group/lattice/cvsroot checkout -P ${version_flag} ${package} "
+	perform_action
         [ $? -eq 0 ] || continue
     fi
     
     # Build the code
-    for build in `builddirs`
-    do
+    # Configure
 
-        # Configure
+    builddir=$moduledir/$arch/$build/build
+    cd $builddir
 
-        builddir=$moduledir/$build/build
-        cd $builddir
+    action_name="configure"
+    action="sh configure.sh"
+    perform_action
+    [ $? -eq 0 ] || continue
 
-        if ! [ -d $logdir/$module/$build ] 
-	then	
-	    mkdir -p $logdir/$module/$build
-        fi
+    # Build 
 
-	action_name="configure"
-	action="sh configure.sh"
-	perform_action
-	[ $? -eq 0 ] || continue
+    action_name="build"
+    action="gmake -k"
+    perform_action
+    [ $? -eq 0 ] || continue
 
-	# Build 
-
-	action_name="build"
-	action="gmake -k"
-	perform_action
-	[ $? -eq 0 ] || continue
-
-	# Check
-
-	action_name="check"
-	action="gmake -k check"
-	perform_action
-	[ $? -eq 0 ] || continue
+    # Check
+    action_name="check"
+    action="gmake -k check"
+    perform_action
+    [ $? -eq 0 ] || continue
 	
-	# XCheck
+    # XCheck
 
-        if [ $module == "chroma" ]
-        then
-	    # Skip regressions on IB - dont know how to do the running
-	    # Need to generalise system to be able to launch mpi jobs
-	    # As regressions
-	    case $build in
-		scalar|scalar-double|parscalar-single|parscalar-double)
-	           action_name="xcheck"
-                   action="gmake -k xcheck"
-        	   perform_action
-                   ;;
-                *)
-		   ;;
-            esac
-        fi 
+    if [ $package == "chroma" ]
+    then
+      # Skip regressions on IB - dont know how to do the running
+      # Need to generalise system to be able to launch mpi jobs
+      # As regressions
+	case $build in
+	    scalar|scalar-double|parscalar-single|parscalar-single-double)
+	    action_name="xcheck"
+	    action="gmake -k xcheck"
+	    perform_action
+	    ;;
+	    *)
+	    ;;
+	esac
+    fi 
 	
-	# Install
+    # Install
+    action_name="install"
+    action="gmake install"
+    perform_action
+    [ $? -eq 0 ] || continue
 
-	action_name="install"
-	action="gmake install"
-	perform_action
-	[ $? -eq 0 ] || continue
-
-	# Link
+    # Link
 	
-	[ ! -d ../link ] && mkdir ../link
-        cd ../link
+    [ ! -d ../link ] && mkdir ../link
+    cd ../link
 
-	action_name="link"
-	action="perl $checkdir/link $module"
-	perform_action
-	[ $? -eq 0 ] || continue
+    action_name="link"
+    action="perl $checkdir/link $package"
+    perform_action
+    [ $? -eq 0 ] || continue
+    
+    cd ..
+    rm -r link
 
-	cd ..
-	rm -r link
-
-    done	# loop over builds
-		
-done   # loop over modules
-
-
-# Tidy up - but do not uninstall.
-
-for module in $modules
-do
-    moduledir=$checkdir/$module
-    for build in `builddirs`
-    do
-       cd $moduledir/$build/build
-       gmake -k distclean &> /dev/null	
-       rm -rf $moduledir/$module
-    done
+    cd $moduledir
+    version=`cat VERSION`
+    prefix=`cat PREFIX`
+    install_srcdir=${prefix}/${version}/src
+    if [ ! -d ${install_srcdir} ]
+    then
+	echo Installing source for $package in ${install_srcdir}
+	mkdir -p ${install_srcdir}
+	cp -r ${package} ${install_srcdir}
+    else 
+	echo Sources already installed
+    fi
 done
 
 # Remove old logfiles
