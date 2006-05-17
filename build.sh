@@ -1,5 +1,5 @@
 #!/bin/bash
-# $Id: build.sh,v 1.6 2006-05-17 21:16:05 bjoo Exp $
+# $Id: build.sh,v 1.7 2006-05-17 23:09:30 bjoo Exp $
 #
 #  Original author: Zbigniew Sroczynski
 #  See README_buildtest.sh for more information.
@@ -44,12 +44,17 @@ then
 	;;
 	ibg2-mpi)
           modules="\
+	      bagel/native/bagel \
+	      bagel_qdp/noarch/noarch-double \
 	      qmp/ibg2-mpi/ibg2-mpi \
+	      bagel_wilson_dslash/ibg2-mpi/parscalar-ibg2-mpi \
 	      qdp++/${arch}/parscalar-ibg2-mpi \
 	      qdp++/${arch}/parscalar-ibg2-mpi-double \
+	      qdp++/${arch}/parscalar-ibg2-mpi-double-bagelqdp \
 	      chroma/${arch}/parscalar-ibg2-mpi \
 	      chroma/${arch}/parscalar-ibg2-mpi-double \
-	      chroma/${arch}/parscalar-ibg2-mpi-noavp"
+	      chroma/${arch}/parscalar-ibg2-mpi-noavp \
+	      chroma/$[arch}/parscalar-ibg2-mpi-double-bagel"
 	  ;;
 	ib-mpi)
 	  modules="\
@@ -253,8 +258,8 @@ EOF
       # Skip regressions on IB - dont know how to do the running
       # Need to generalise system to be able to launch mpi jobs
       # As regressions
-	case $build in
-	    scalar|scalar-double|parscalar-single|parscalar-single-double|parscalar-ibg2-mpi|parscalar-ibg2-mpi-double|parscalar-ibg2-mpi-noavp)
+	case $arch in
+	    scalar|single|ibg2-mpi)
 	    action_name="xcheck"
 	    action="gmake -k xcheck"
 	    perform_action
