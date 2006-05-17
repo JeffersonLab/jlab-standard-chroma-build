@@ -1,3 +1,4 @@
 #!/bin/bash
-./build.sh -a single
-
+./build.sh qmp/single/single \
+	   qdp++/single/parscalar-single \
+	   chroma/single/parscalar-single
