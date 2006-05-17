@@ -16,5 +16,18 @@ pushd chroma
 rm -rf chroma
 popd
 
+pushd bagel
+rm -rf bagel
+popd
+
+pushd bagel_wilson_dslash
+rm -rf bagel_wilson_dslash
+popd
+
+pushd bagel_qdp
+rm -rf bagel_qdp
+popd
+
+./configure
 rm -rf logs/*
 

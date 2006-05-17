@@ -1,5 +1,5 @@
 #!/bin/bash
-# $Id: build.sh,v 1.7 2006-05-17 23:09:30 bjoo Exp $
+# $Id: build.sh,v 1.8 2006-05-17 23:15:58 bjoo Exp $
 #
 #  Original author: Zbigniew Sroczynski
 #  See README_buildtest.sh for more information.
@@ -54,7 +54,7 @@ then
 	      chroma/${arch}/parscalar-ibg2-mpi \
 	      chroma/${arch}/parscalar-ibg2-mpi-double \
 	      chroma/${arch}/parscalar-ibg2-mpi-noavp \
-	      chroma/$[arch}/parscalar-ibg2-mpi-double-bagel"
+	      chroma/${arch}/parscalar-ibg2-mpi-double-bagel"
 	  ;;
 	ib-mpi)
 	  modules="\
