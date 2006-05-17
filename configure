@@ -272,7 +272,7 @@ PACKAGE_STRING=
 PACKAGE_BUGREPORT=
 
 ac_unique_file="build.sh"
-ac_subst_vars='SHELL PATH_SEPARATOR PACKAGE_NAME PACKAGE_TARNAME PACKAGE_VERSION PACKAGE_STRING PACKAGE_BUGREPORT exec_prefix prefix program_transform_name bindir sbindir libexecdir datadir sysconfdir sharedstatedir localstatedir libdir includedir oldincludedir infodir mandir build_alias host_alias target_alias DEFS ECHO_C ECHO_N ECHO_T LIBS QMP_MVIA_VERSION QMP_VERSION QDP_VERSION CHROMA_VERSION BAGEL_VERSION BAGEL_WILSON_DSLASH_VERSION SFW_INSTALL_ROOT LIBOBJS LTLIBOBJS'
+ac_subst_vars='SHELL PATH_SEPARATOR PACKAGE_NAME PACKAGE_TARNAME PACKAGE_VERSION PACKAGE_STRING PACKAGE_BUGREPORT exec_prefix prefix program_transform_name bindir sbindir libexecdir datadir sysconfdir sharedstatedir localstatedir libdir includedir oldincludedir infodir mandir build_alias host_alias target_alias DEFS ECHO_C ECHO_N ECHO_T LIBS QMP_MVIA_VERSION QMP_VERSION QDP_VERSION CHROMA_VERSION BAGEL_VERSION BAGEL_WILSON_DSLASH_VERSION BAGEL_QDP_VERSION SFW_INSTALL_ROOT LIBOBJS LTLIBOBJS'
 ac_subst_files=''
 
 # Initialize some variables set by options.
@@ -794,6 +794,9 @@ Optional Features:
   --enable-bagel-version  Select version of bagel to use, default is 1.3.2
   --enable-bagel-wilson-dslash-version
                           Select version of bagel to use, default is 1.3.3
+  --enable-bagel-qdp-version
+                          Select version of bagel to use, default is
+                          bagel_qdp1-1-5
   --enable-install-root   Select a root directory to install all the packages
                           to. Default is /usr/local
 
@@ -1299,6 +1302,17 @@ fi;
 BAGEL_WILSON_DSLASH_VERSION=${ac_bagel_wilson_dslash_vers}
 
 
+# Check whether --enable-bagel-qdp-version or --disable-bagel-qdp-version was given.
+if test "${enable_bagel_qdp_version+set}" = set; then
+  enableval="$enable_bagel_qdp_version"
+  ac_bagel_qdp_vers=${enableval}
+else
+  ac_bagel_qdp_vers="bagel_qdp1-1-5"
+
+fi;
+BAGEL_QDP_VERSION=${ac_bagel_qdp_vers}
+
+
 
 # Check whether --enable-install-root or --disable-install-root was given.
 if test "${enable_install_root+set}" = set; then
@@ -1321,6 +1335,11 @@ SFW_INSTALL_ROOT=${ac_install_root}
           ac_config_files="$ac_config_files bagel_wilson_dslash/PREFIX"
 
           ac_config_files="$ac_config_files bagel_wilson_dslash/VERSION"
+
+
+          ac_config_files="$ac_config_files bagel_qdp/PREFIX"
+
+          ac_config_files="$ac_config_files bagel_qdp/VERSION"
 
 
           ac_config_files="$ac_config_files qmp-mvia-mesh/PREFIX"
@@ -1898,6 +1917,8 @@ do
   "bagel/VERSION" ) CONFIG_FILES="$CONFIG_FILES bagel/VERSION" ;;
   "bagel_wilson_dslash/PREFIX" ) CONFIG_FILES="$CONFIG_FILES bagel_wilson_dslash/PREFIX" ;;
   "bagel_wilson_dslash/VERSION" ) CONFIG_FILES="$CONFIG_FILES bagel_wilson_dslash/VERSION" ;;
+  "bagel_qdp/PREFIX" ) CONFIG_FILES="$CONFIG_FILES bagel_qdp/PREFIX" ;;
+  "bagel_qdp/VERSION" ) CONFIG_FILES="$CONFIG_FILES bagel_qdp/VERSION" ;;
   "qmp-mvia-mesh/PREFIX" ) CONFIG_FILES="$CONFIG_FILES qmp-mvia-mesh/PREFIX" ;;
   "qmp-mvia-mesh/VERSION" ) CONFIG_FILES="$CONFIG_FILES qmp-mvia-mesh/VERSION" ;;
   "qmp/PREFIX" ) CONFIG_FILES="$CONFIG_FILES qmp/PREFIX" ;;
@@ -1995,6 +2016,7 @@ s,@QDP_VERSION@,$QDP_VERSION,;t t
 s,@CHROMA_VERSION@,$CHROMA_VERSION,;t t
 s,@BAGEL_VERSION@,$BAGEL_VERSION,;t t
 s,@BAGEL_WILSON_DSLASH_VERSION@,$BAGEL_WILSON_DSLASH_VERSION,;t t
+s,@BAGEL_QDP_VERSION@,$BAGEL_QDP_VERSION,;t t
 s,@SFW_INSTALL_ROOT@,$SFW_INSTALL_ROOT,;t t
 s,@LIBOBJS@,$LIBOBJS,;t t
 s,@LTLIBOBJS@,$LTLIBOBJS,;t t

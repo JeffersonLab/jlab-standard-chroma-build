@@ -48,6 +48,14 @@ AC_ARG_ENABLE(bagel-wilson-dslash-version,
 )
 AC_SUBST(BAGEL_WILSON_DSLASH_VERSION, [${ac_bagel_wilson_dslash_vers}])
 
+AC_ARG_ENABLE(bagel-qdp-version,
+	AC_HELP_STRING([--enable-bagel-qdp-version],
+	[Select version of bagel to use, default is bagel_qdp1-1-5 ]),
+	[ac_bagel_qdp_vers=${enableval}],
+	[ac_bagel_qdp_vers="bagel_qdp1-1-5"]
+)
+AC_SUBST(BAGEL_QDP_VERSION, [${ac_bagel_qdp_vers}])
+
 
 AC_ARG_ENABLE(install-root,
 	AC_HELP_STRING([--enable-install-root],
@@ -64,6 +72,9 @@ AC_CONFIG_FILES(bagel/VERSION)
 
 AC_CONFIG_FILES(bagel_wilson_dslash/PREFIX)
 AC_CONFIG_FILES(bagel_wilson_dslash/VERSION)
+
+AC_CONFIG_FILES(bagel_qdp/PREFIX)
+AC_CONFIG_FILES(bagel_qdp/VERSION)
 
 AC_CONFIG_FILES(qmp-mvia-mesh/PREFIX)
 AC_CONFIG_FILES(qmp-mvia-mesh/VERSION)
