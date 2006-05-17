@@ -1,5 +1,5 @@
 #!/bin/bash
-# $Id: build.sh,v 1.4 2006-04-18 20:08:00 bjoo Exp $
+# $Id: build.sh,v 1.5 2006-05-17 20:13:42 bjoo Exp $
 #
 #  Original author: Zbigniew Sroczynski
 #  See README_buildtest.sh for more information.
@@ -104,7 +104,7 @@ echo Building Modules:  $modules
 
 # Send mail to these addresses
 # In case of failure mail everyone on this list  
-failmailto="bjoo@jlab.org"
+failmailto="bjoo@jlab.org edwards@jlab.org"
 
 # In case of success send to archive list only
 successmailto="bjoo@jlab.org"
@@ -235,7 +235,7 @@ do
       # Need to generalise system to be able to launch mpi jobs
       # As regressions
 	case $build in
-	    scalar|scalar-double|parscalar-single|parscalar-single-double)
+	    scalar|scalar-double|parscalar-single|parscalar-single-double|parscalar-ibg2-mpi|parscalar-ibg2-mpi-double|parscalar-ibg2-mpi-noavp)
 	    action_name="xcheck"
 	    action="gmake -k xcheck"
 	    perform_action
