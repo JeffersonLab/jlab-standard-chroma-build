@@ -1,26 +1,27 @@
 . ../../../../functions.sh
-PREFIX=`make_prefix ../../../PREFIX ../../../VERSION scalar-double`
+PREFIX=`make_prefix ../../../PREFIX ../../../VERSION parscalar-single`
 clean_dir ${PREFIX}
 
 BAGEL=`make_prefix ../../../../bagel/PREFIX ../../../../bagel/VERSION bagel`
-QMP=`make_prefix .../../../../qmp/PREFIX ../../../../qmp/VERSION single`
+QMP=`make_prefix ../../../../qmp/PREFIX ../../../../qmp/VERSION single`
 
 #
 # Hack until we have with-qmp as standard
 #
 #
-QMPSCRIPT=${QMP}/bin
+QMPSCRIPT=${QMP}/bin/qmp-config
 DSLASH_CXXFLAGS=`${QMPSCRIPT} --cflags`
 DSLASH_LDFLAGS=`${QMPSCRIPT} --ldflags`
 DSLASH_LIBS=`${QMPSCRIPT} --libs`
 
  ../../../bagel_wilson_dslash/configure --prefix=${PREFIX} \
     --enable-target-cpu=noarch \
-    --enable-comms=none \
+    --enable-comms=qmp \
     --enable-allocator=malloc \
     --enable-precision=single \
     --with-bagel=${BAGEL} \
      CXXFLAGS="${DSLASH_CXXFLAGS}" \
-     CFLAGS="${DSLASH_LDFLAGS}" \
+     CFLAGS="${DSLASH_CXXFLAGS}" \
      ASFLAGS="" \
-     LDFLAGS="${DSLASH_LIBS}"
+     LDFLAGS="${DSLASH_LDFLAGS}" \
+     LIBS="${DSLASH_LIBS}"
