@@ -1,5 +1,5 @@
 #!/bin/bash
-# $Id: build.sh,v 1.5 2006-05-17 20:13:42 bjoo Exp $
+# $Id: build.sh,v 1.6 2006-05-17 21:16:05 bjoo Exp $
 #
 #  Original author: Zbigniew Sroczynski
 #  See README_buildtest.sh for more information.
@@ -197,8 +197,27 @@ do
 	   version_flag=""
 	   echo Checking Out Head Revision
         fi 
-        action_name="checkout"
-        action="cvs -d :pserver:anonymous@cvs.jlab.org:/group/lattice/cvsroot checkout -P ${version_flag} ${package} "
+	case "${package}" in
+	   bagel|bagel_wilson_dslash)
+		unzipped_name=${package}-${version_tag}
+		gzfile_name=${unzipped_name}.tar.gz
+		tarfile_name=${unzipped_name}.tar
+
+		cat > ./download_script.sh <<EOF
+rm -rf ${gzfile_name} ${tarfile_name} ${unzipped_name} ${package}
+wget http://www.ph.ed.ac.uk/~paboyle/bagel/${gzfile_name}
+zcat ${gzfile_name} | tar xvf -
+mv ${unzipped_name} ${package}
+EOF
+		chmod u+x ./download_script.sh
+		action="./download_script.sh"
+		action_name="download"
+		;;
+	    *)
+		action="cvs -d :pserver:anonymous@cvs.jlab.org:/group/lattice/cvsroot checkout -P ${version_flag} ${package} "
+		action_name="checkout"
+		;;
+	esac
 	perform_action
         [ $? -eq 0 ] || continue
     fi

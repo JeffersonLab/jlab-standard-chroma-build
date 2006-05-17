@@ -272,7 +272,7 @@ PACKAGE_STRING=
 PACKAGE_BUGREPORT=
 
 ac_unique_file="build.sh"
-ac_subst_vars='SHELL PATH_SEPARATOR PACKAGE_NAME PACKAGE_TARNAME PACKAGE_VERSION PACKAGE_STRING PACKAGE_BUGREPORT exec_prefix prefix program_transform_name bindir sbindir libexecdir datadir sysconfdir sharedstatedir localstatedir libdir includedir oldincludedir infodir mandir build_alias host_alias target_alias DEFS ECHO_C ECHO_N ECHO_T LIBS QMP_MVIA_VERSION QMP_VERSION QDP_VERSION CHROMA_VERSION SFW_INSTALL_ROOT LIBOBJS LTLIBOBJS'
+ac_subst_vars='SHELL PATH_SEPARATOR PACKAGE_NAME PACKAGE_TARNAME PACKAGE_VERSION PACKAGE_STRING PACKAGE_BUGREPORT exec_prefix prefix program_transform_name bindir sbindir libexecdir datadir sysconfdir sharedstatedir localstatedir libdir includedir oldincludedir infodir mandir build_alias host_alias target_alias DEFS ECHO_C ECHO_N ECHO_T LIBS QMP_MVIA_VERSION QMP_VERSION QDP_VERSION CHROMA_VERSION BAGEL_VERSION SFW_INSTALL_ROOT LIBOBJS LTLIBOBJS'
 ac_subst_files=''
 
 # Initialize some variables set by options.
@@ -791,6 +791,7 @@ Optional Features:
   --enable-qdp-version    Select version of qdp++ to use, default is qdp1-20-2
   --enable-chroma-version Select version of chroma to use, default is
                           chroma3-2-1
+  --enable-bagel-version  Select version of bagel to use, default is 1.3.2
   --enable-install-root   Select a root directory to install all the packages
                           to. Default is /usr/local
 
@@ -1274,6 +1275,18 @@ fi;
 CHROMA_VERSION=${ac_chroma_vers}
 
 
+# Check whether --enable-bagel-version or --disable-bagel-version was given.
+if test "${enable_bagel_version+set}" = set; then
+  enableval="$enable_bagel_version"
+  ac_bagel_vers=${enableval}
+else
+  ac_bagel_vers="1.3.2"
+
+fi;
+BAGEL_VERSION=${ac_bagel_vers}
+
+
+
 # Check whether --enable-install-root or --disable-install-root was given.
 if test "${enable_install_root+set}" = set; then
   enableval="$enable_install_root"
@@ -1282,7 +1295,14 @@ else
   ac_install_root="/usr/local"
 
 fi;
+
+
 SFW_INSTALL_ROOT=${ac_install_root}
+
+
+          ac_config_files="$ac_config_files bagel/PREFIX"
+
+          ac_config_files="$ac_config_files bagel/VERSION"
 
 
           ac_config_files="$ac_config_files qmp-mvia-mesh/PREFIX"
@@ -1856,6 +1876,8 @@ for ac_config_target in $ac_config_targets
 do
   case "$ac_config_target" in
   # Handling of arguments.
+  "bagel/PREFIX" ) CONFIG_FILES="$CONFIG_FILES bagel/PREFIX" ;;
+  "bagel/VERSION" ) CONFIG_FILES="$CONFIG_FILES bagel/VERSION" ;;
   "qmp-mvia-mesh/PREFIX" ) CONFIG_FILES="$CONFIG_FILES qmp-mvia-mesh/PREFIX" ;;
   "qmp-mvia-mesh/VERSION" ) CONFIG_FILES="$CONFIG_FILES qmp-mvia-mesh/VERSION" ;;
   "qmp/PREFIX" ) CONFIG_FILES="$CONFIG_FILES qmp/PREFIX" ;;
@@ -1951,6 +1973,7 @@ s,@QMP_MVIA_VERSION@,$QMP_MVIA_VERSION,;t t
 s,@QMP_VERSION@,$QMP_VERSION,;t t
 s,@QDP_VERSION@,$QDP_VERSION,;t t
 s,@CHROMA_VERSION@,$CHROMA_VERSION,;t t
+s,@BAGEL_VERSION@,$BAGEL_VERSION,;t t
 s,@SFW_INSTALL_ROOT@,$SFW_INSTALL_ROOT,;t t
 s,@LIBOBJS@,$LIBOBJS,;t t
 s,@LTLIBOBJS@,$LTLIBOBJS,;t t

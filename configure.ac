@@ -32,13 +32,27 @@ AC_ARG_ENABLE(chroma-version,
 )
 AC_SUBST(CHROMA_VERSION, [${ac_chroma_vers}])
 
+AC_ARG_ENABLE(bagel-version,
+	AC_HELP_STRING([--enable-bagel-version],
+	[Select version of bagel to use, default is 1.3.2 ]),
+	[ac_bagel_vers=${enableval}],
+	[ac_bagel_vers="1.3.2"]
+)
+AC_SUBST(BAGEL_VERSION, [${ac_bagel_vers}])
+
+
 AC_ARG_ENABLE(install-root,
 	AC_HELP_STRING([--enable-install-root],
 	[ Select a root directory to install all the packages to. Default is /usr/local ]),
 	[ac_install_root=${enableval}],
 	[ac_install_root="/usr/local"]
 )
+
+
 AC_SUBST(SFW_INSTALL_ROOT,[${ac_install_root}])
+
+AC_CONFIG_FILES(bagel/PREFIX)
+AC_CONFIG_FILES(bagel/VERSION)
 
 AC_CONFIG_FILES(qmp-mvia-mesh/PREFIX)
 AC_CONFIG_FILES(qmp-mvia-mesh/VERSION)
