@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set install_root="$HOME/arch/nightly"
+set install_root="$HOME/nightly_build/arch"
 
 /bin/rm -rf $install_root
 
