@@ -16,18 +16,15 @@ install_root="$HOME/arch/nightly"
 #  --enable-bagel-wilson-dslash-version=1.3.3
 
 ./build.sh  bagel/native/bagel \
-            bagel_qdp/noarch/noarch-double
-
-./build.sh  qmp/single/single \
-            qmp/ibg2-mpi/ibg2-mpi 
-
-./build.sh  bagel_wilson_dslash/ibg2-mpi/parscalar-ibg2-mpi-double
-
-./build.sh  qdp++/scalar/scalar \
+            bagel_qdp/noarch/noarch-double \
+            qmp/single/single \
+            qmp/ibg2-mpi/ibg2-mpi \
+            bagel_wilson_dslash/ibg2-mpi/parscalar-ibg2-mpi-double \
+            qdp++/scalar/scalar \
             qdp++/single/parscalar-single \
-            qdp++/ibg2-mpi/parscalar-ibg2-mpi
-
-./build.sh  chroma/scalar/scalar \
+            qdp++/ibg2-mpi/parscalar-ibg2-mpi \
+            qdp++/ibg2-mpi/parscalar-ibg2-mpi-double-bagelqdp \
+            chroma/scalar/scalar \
             chroma/single/parscalar-single \
             chroma/ibg2-mpi/parscalar-ibg2-mpi-noavp \
             chroma/ibg2-mpi/parscalar-ibg2-mpi-double-bagel
