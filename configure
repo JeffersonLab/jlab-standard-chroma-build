@@ -791,9 +791,9 @@ Optional Features:
   --enable-qdp-version    Select version of qdp++ to use, default is qdp1-20-2
   --enable-chroma-version Select version of chroma to use, default is
                           chroma3-2-1
-  --enable-bagel-version  Select version of bagel to use, default is 1.3.2
+  --enable-bagel-version  Select version of bagel to use, default is 1.4.0
   --enable-bagel-wilson-dslash-version
-                          Select version of bagel to use, default is 1.3.3
+                          Select version of bagel to use, default is 1.4.2
   --enable-bagel-qdp-version
                           Select version of bagel to use, default is
                           bagel_qdp1-1-5
@@ -1285,7 +1285,7 @@ if test "${enable_bagel_version+set}" = set; then
   enableval="$enable_bagel_version"
   ac_bagel_vers=${enableval}
 else
-  ac_bagel_vers="1.3.2"
+  ac_bagel_vers="1.4.0"
 
 fi;
 BAGEL_VERSION=${ac_bagel_vers}
@@ -1296,7 +1296,7 @@ if test "${enable_bagel_wilson_dslash_version+set}" = set; then
   enableval="$enable_bagel_wilson_dslash_version"
   ac_bagel_wilson_dslash_vers=${enableval}
 else
-  ac_bagel_wilson_dslash_vers="1.3.3"
+  ac_bagel_wilson_dslash_vers="1.4.2"
 
 fi;
 BAGEL_WILSON_DSLASH_VERSION=${ac_bagel_wilson_dslash_vers}

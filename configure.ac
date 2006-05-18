@@ -34,17 +34,17 @@ AC_SUBST(CHROMA_VERSION, [${ac_chroma_vers}])
 
 AC_ARG_ENABLE(bagel-version,
 	AC_HELP_STRING([--enable-bagel-version],
-	[Select version of bagel to use, default is 1.3.2 ]),
+	[Select version of bagel to use, default is 1.4.0 ]),
 	[ac_bagel_vers=${enableval}],
-	[ac_bagel_vers="1.3.2"]
+	[ac_bagel_vers="1.4.0"]
 )
 AC_SUBST(BAGEL_VERSION, [${ac_bagel_vers}])
 
 AC_ARG_ENABLE(bagel-wilson-dslash-version,
 	AC_HELP_STRING([--enable-bagel-wilson-dslash-version],
-	[Select version of bagel to use, default is 1.3.3 ]),
+	[Select version of bagel to use, default is 1.4.2 ]),
 	[ac_bagel_wilson_dslash_vers=${enableval}],
-	[ac_bagel_wilson_dslash_vers="1.3.3"]
+	[ac_bagel_wilson_dslash_vers="1.4.2"]
 )
 AC_SUBST(BAGEL_WILSON_DSLASH_VERSION, [${ac_bagel_wilson_dslash_vers}])
 
