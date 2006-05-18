@@ -20,7 +20,7 @@ AC_ARG_ENABLE(qdp-version,
 	AC_HELP_STRING([--enable-qdp-version],
 	[Select version of qdp++ to use, default is qdp1-20-2 ]),
 	[ac_qdp_vers=${enableval}],
-	[ac_qdp_vers="qdp1-20-4"]
+	[ac_qdp_vers="qdp1-20-5"]
 )
 AC_SUBST(QDP_VERSION, [${ac_qdp_vers}])
 
