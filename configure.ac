@@ -52,7 +52,7 @@ AC_ARG_ENABLE(bagel-qdp-version,
 	AC_HELP_STRING([--enable-bagel-qdp-version],
 	[Select version of bagel to use, default is bagel_qdp1-1-5 ]),
 	[ac_bagel_qdp_vers=${enableval}],
-	[ac_bagel_qdp_vers="bagel_qdp1-1-5"]
+	[ac_bagel_qdp_vers="bagel_qdp1-1-6"]
 )
 AC_SUBST(BAGEL_QDP_VERSION, [${ac_bagel_qdp_vers}])
 
