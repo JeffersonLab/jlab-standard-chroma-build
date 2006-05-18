@@ -1,5 +1,5 @@
 #!/bin/bash
-# $Id: build.sh,v 1.9 2006-05-18 03:21:08 edwards Exp $
+# $Id: build.sh,v 1.10 2006-05-18 17:21:21 edwards Exp $
 #
 #  Original author: Zbigniew Sroczynski
 #  See README_buildtest.sh for more information.
@@ -203,7 +203,7 @@ do
 	   echo Checking Out Head Revision
         fi 
 	case "${package}" in
-	   bagel|bagel_wilson_dslash)
+	   bagel)
 		unzipped_name=${package}-${version_tag}
 		gzfile_name=${unzipped_name}.tar.gz
 		tarfile_name=${unzipped_name}.tar
@@ -211,6 +211,21 @@ do
 		cat > ./download_script.sh <<EOF
 rm -rf ${gzfile_name} ${tarfile_name} ${unzipped_name} ${package}
 wget http://www.ph.ed.ac.uk/~paboyle/bagel/${gzfile_name}
+zcat ${gzfile_name} | tar xvf -
+mv ${unzipped_name} ${package}
+EOF
+		chmod u+x ./download_script.sh
+		action="./download_script.sh"
+		action_name="download"
+		;;
+	   bagel_wilson_dslash)
+		unzipped_name=${package}-${version_tag}
+		gzfile_name=${unzipped_name}.tar.gz
+		tarfile_name=${unzipped_name}.tar
+
+		cat > ./download_script.sh <<EOF
+rm -rf ${gzfile_name} ${tarfile_name} ${unzipped_name} ${package}
+wget http://www.jlab.org/~edwards/stuff/${gzfile_name}
 zcat ${gzfile_name} | tar xvf -
 mv ${unzipped_name} ${package}
 EOF
