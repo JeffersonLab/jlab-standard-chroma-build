@@ -12,7 +12,7 @@ set install_root="$HOME/arch/nightly"
   --enable-bagel-version=1.3.2 \
   --enable-bagel-wilson-dslash-version=1.3.3 \
   --enable-bagel-qdp-version=HEAD \
-  --enable-install-root=${install_root}
+  --enable-install-root=$install_root
 
 
 ./build.sh  bagel/native/bagel \
