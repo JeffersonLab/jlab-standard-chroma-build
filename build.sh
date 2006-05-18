@@ -1,5 +1,5 @@
 #!/bin/bash
-# $Id: build.sh,v 1.8 2006-05-17 23:15:58 bjoo Exp $
+# $Id: build.sh,v 1.9 2006-05-18 03:21:08 edwards Exp $
 #
 #  Original author: Zbigniew Sroczynski
 #  See README_buildtest.sh for more information.
@@ -112,7 +112,7 @@ echo Building Modules:  $modules
 failmailto="bjoo@jlab.org edwards@jlab.org"
 
 # In case of success send to archive list only
-successmailto="bjoo@jlab.org"
+successmailto="bjoo@jlab.org edwards@jlab.org"
 
 # Send mail if something goes wrong
 
