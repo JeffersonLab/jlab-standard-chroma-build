@@ -9,10 +9,11 @@ set install_root="$HOME/arch/nightly"
   --enable-qmp-version=HEAD \
   --enable-qdp-version=HEAD \
   --enable-chroma-version=HEAD \
-  --enable-bagel-version=HEAD \
   --enable-bagel-qdp-version=HEAD \
-  --enable-bagel-wilson-dslash-version=HEAD \
   --enable-install-root=${install_root}
+
+#  --enable-bagel-version=HEAD
+#  --enable-bagel-wilson-dslash-version=HEAD 
 
 ./build.sh  bagel/native/bagel \
             bagel_qdp/noarch/noarch-double
