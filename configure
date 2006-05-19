@@ -796,7 +796,7 @@ Optional Features:
                           Select version of bagel to use, default is 1.4.2
   --enable-bagel-qdp-version
                           Select version of bagel to use, default is
-                          bagel_qdp1-1-5
+                          bagel_qdp1-1-6
   --enable-install-root   Select a root directory to install all the packages
                           to. Default is /usr/local
 
