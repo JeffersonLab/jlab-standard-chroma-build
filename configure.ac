@@ -10,7 +10,7 @@ AC_SUBST(QMP_MVIA_VERSION, [${ac_qmp_mvia_vers}])
 
 AC_ARG_ENABLE(qmp-version,
 	AC_HELP_STRING([--enable-qmp-version],
-	[Select version of MPI qmp to use, default is qmp2-1-3 ]),
+	[Select version of MPI qmp to use, default is qmp2-1-5 ]),
 	[ac_qmp_vers=${enableval}],
 	[ac_qmp_vers="qmp2-1-5"]
 )
@@ -18,7 +18,7 @@ AC_SUBST(QMP_VERSION, [${ac_qmp_vers}])
 
 AC_ARG_ENABLE(qdp-version,
 	AC_HELP_STRING([--enable-qdp-version],
-	[Select version of qdp++ to use, default is qdp1-20-2 ]),
+	[Select version of qdp++ to use, default is qdp1-20-5 ]),
 	[ac_qdp_vers=${enableval}],
 	[ac_qdp_vers="qdp1-20-5"]
 )
@@ -26,7 +26,7 @@ AC_SUBST(QDP_VERSION, [${ac_qdp_vers}])
 
 AC_ARG_ENABLE(chroma-version,
 	AC_HELP_STRING([--enable-chroma-version],
-	[Select version of chroma to use, default is chroma3-2-1 ]),
+	[Select version of chroma to use, default is chroma3-4-3 ]),
 	[ac_chroma_vers=${enableval}],
 	[ac_chroma_vers="chroma3-4-3"]
 )
