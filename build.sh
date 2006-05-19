@@ -1,5 +1,5 @@
 #!/bin/bash
-# $Id: build.sh,v 1.11 2006-05-18 17:25:51 edwards Exp $
+# $Id: build.sh,v 1.12 2006-05-19 01:49:12 edwards Exp $
 #
 #  Original author: Zbigniew Sroczynski
 #  See README_buildtest.sh for more information.
@@ -106,6 +106,7 @@ fi
 
 echo Building Modules:  $modules
 
+failcnt=0
 
 # Send mail to these addresses
 # In case of failure mail everyone on this list  
@@ -130,8 +131,8 @@ successmail(){
 
 # Send mail to indicate the tests are all done -- send to everyone
 finishmail(){
-    mail -s "buildtest: Build Complete" $failmailto &> /dev/null <<EOF
-All tests done. 
+    mail -s "buildtest: Build Complete: $failcnt errors" $failmailto &> /dev/null <<EOF
+All builds done: $failcnt errors
 EOF
 }
 
@@ -157,6 +158,7 @@ perform_action(){
 
     if [ $status -ne 0 ]
     then
+        let failcnt++
  	echo ... failed	
     	failmail $action_name 
     else
