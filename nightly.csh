@@ -12,8 +12,8 @@ install_root="$HOME/arch/nightly"
   --enable-bagel-qdp-version=HEAD \
   --enable-install-root=${install_root}
 
-#  --enable-bagel-version=1.3.2
-#  --enable-bagel-wilson-dslash-version=1.3.3
+#  --enable-bagel-version=1.4.0
+#  --enable-bagel-wilson-dslash-version=1.4.2
 
 ./build.sh  bagel/native/bagel \
             bagel_qdp/noarch/noarch-double \
