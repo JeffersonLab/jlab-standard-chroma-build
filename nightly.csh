@@ -18,14 +18,17 @@ install_root="$HOME/arch/nightly"
 ./build.sh  bagel/native/bagel \
             bagel_qdp/noarch/noarch-double \
             qmp/single/single \
+            qmp/single/single-gcc4 \
             qmp/ibg2-mpi/ibg2-mpi \
             bagel_wilson_dslash/ibg2-mpi/parscalar-ibg2-mpi-double \
             qdp++/scalar/scalar \
             qdp++/single/parscalar-single \
+            qdp++/single/parscalar-single-gcc4 \
             qdp++/ibg2-mpi/parscalar-ibg2-mpi \
             qdp++/ibg2-mpi/parscalar-ibg2-mpi-double-bagelqdp \
             chroma/scalar/scalar \
             chroma/single/parscalar-single \
+            chroma/single/parscalar-single-gcc4 \
             chroma/ibg2-mpi/parscalar-ibg2-mpi-noavp \
             chroma/ibg2-mpi/parscalar-ibg2-mpi-double-bagel
 
