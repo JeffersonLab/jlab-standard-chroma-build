@@ -1,5 +1,5 @@
 #!/bin/bash
-# $Id: build.sh,v 1.12 2006-05-19 01:49:12 edwards Exp $
+# $Id: build.sh,v 1.13 2006-05-25 20:03:07 edwards Exp $
 #
 #  Original author: Zbigniew Sroczynski
 #  See README_buildtest.sh for more information.
@@ -35,7 +35,7 @@ then
     case $arch in
 	gigE)
 	  modules="\
-	      qmp-mvia-mesh/qmp-mvia-mesh \
+	      qmp-mvia-mesh/${arch}/gigE \
 	      qdp++/${arch}/parscalar-gigE \
 	      qdp++/${arch}/parscalar-gigE-double \
 	      chroma/${arch}/parscalar-gigE \
