@@ -59,9 +59,9 @@ AC_SUBST(BAGEL_QDP_VERSION, [${ac_bagel_qdp_vers}])
 
 AC_ARG_ENABLE(install-root,
 	AC_HELP_STRING([--enable-install-root],
-	[ Select a root directory to install all the packages to. Default is /usr/local ]),
+	[ Select a root directory to install all the packages to. Default is /dist/scidac ]),
 	[ac_install_root=${enableval}],
-	[ac_install_root="/usr/local"]
+	[ac_install_root="/dist/scidac"]
 )
 
 
