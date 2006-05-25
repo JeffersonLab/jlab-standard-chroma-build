@@ -798,7 +798,7 @@ Optional Features:
                           Select version of bagel to use, default is
                           bagel_qdp1-1-6
   --enable-install-root   Select a root directory to install all the packages
-                          to. Default is /usr/local
+                          to. Default is /dist/scidac
 
 _ACEOF
 fi
@@ -1319,7 +1319,7 @@ if test "${enable_install_root+set}" = set; then
   enableval="$enable_install_root"
   ac_install_root=${enableval}
 else
-  ac_install_root="/usr/local"
+  ac_install_root="/dist/scidac"
 
 fi;
 
