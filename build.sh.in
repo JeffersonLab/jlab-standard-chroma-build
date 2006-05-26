@@ -1,5 +1,5 @@
 #!/bin/bash
-# $Id: build.sh.in,v 1.1 2006-05-26 18:37:59 bjoo Exp $
+# $Id: build.sh.in,v 1.2 2006-05-26 18:48:04 bjoo Exp $
 #
 #  Original author: Zbigniew Sroczynski
 #  See README_buildtest.sh for more information.
@@ -8,6 +8,7 @@
 ## AUTOCONF SUBSTITUTIONS ##
 make_args="@MAKE_ARGS@"
 mailto_list="@MAILTO@"
+build_name="@BUILDNAME@"
 ##
 
 
@@ -121,7 +122,7 @@ failcnt=0
 failmail(){
     if [ "X${mailto_list}X" != "XnobodyX" ];
     then
-	cat $logfile | mail -s "buildtest: $module $build $1 failed" $mailto_list &> /dev/null
+	cat $logfile | mail -s "${build_name} :  $module $build $1 failed" $mailto_list &> /dev/null
     fi
 }
 
@@ -129,7 +130,7 @@ failmail(){
 finishmail(){
     if [ "X${mailto_list}X" != "XnobodyX" ];
     then 
-	mail -s "buildtest: Build Complete: $failcnt errors" $mailto_list &> /dev/null <<EOF
+	mail -s "${build_name} : Build Complete: $failcnt errors" $mailto_list &> /dev/null <<EOF
 All builds done: $failcnt errors
 EOF
     fi

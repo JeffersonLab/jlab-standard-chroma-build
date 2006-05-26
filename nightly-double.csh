@@ -14,7 +14,8 @@ mailto_list="bjoo@jlab.org edwards@jlab.org"
   --enable-bagel-qdp-version=HEAD \
   --enable-install-root=${install_root} \
   --enable-parallel-make=${parallel_make} \ 
-  --enable-mailto=${mailto_list}
+  --enable-mailto=${mailto_list} \
+  --enable-build-name="Nightly Double Prec Build"
 
 #  --enable-bagel-version=1.4.0
 #  --enable-bagel-wilson-dslash-version=1.4.2

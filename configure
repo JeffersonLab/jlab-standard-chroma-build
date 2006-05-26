@@ -271,8 +271,8 @@ PACKAGE_VERSION=
 PACKAGE_STRING=
 PACKAGE_BUGREPORT=
 
-ac_unique_file="build.sh"
-ac_subst_vars='SHELL PATH_SEPARATOR PACKAGE_NAME PACKAGE_TARNAME PACKAGE_VERSION PACKAGE_STRING PACKAGE_BUGREPORT exec_prefix prefix program_transform_name bindir sbindir libexecdir datadir sysconfdir sharedstatedir localstatedir libdir includedir oldincludedir infodir mandir build_alias host_alias target_alias DEFS ECHO_C ECHO_N ECHO_T LIBS QMP_MVIA_VERSION QMP_VERSION QDP_VERSION CHROMA_VERSION BAGEL_VERSION BAGEL_WILSON_DSLASH_VERSION BAGEL_QDP_VERSION SFW_INSTALL_ROOT MAKE_ARGS MAILTO LIBOBJS LTLIBOBJS'
+ac_unique_file="build.sh.in"
+ac_subst_vars='SHELL PATH_SEPARATOR PACKAGE_NAME PACKAGE_TARNAME PACKAGE_VERSION PACKAGE_STRING PACKAGE_BUGREPORT exec_prefix prefix program_transform_name bindir sbindir libexecdir datadir sysconfdir sharedstatedir localstatedir libdir includedir oldincludedir infodir mandir build_alias host_alias target_alias DEFS ECHO_C ECHO_N ECHO_T LIBS QMP_MVIA_VERSION QMP_VERSION QDP_VERSION CHROMA_VERSION BAGEL_VERSION BAGEL_WILSON_DSLASH_VERSION BAGEL_QDP_VERSION SFW_INSTALL_ROOT MAKE_ARGS MAILTO BUILDNAME LIBOBJS LTLIBOBJS'
 ac_subst_files=''
 
 # Initialize some variables set by options.
@@ -804,6 +804,7 @@ Optional Features:
                           parallel builds
   --enable-mailto=List of email addreses
                           Sent mail to the list of addresses
+  --enable-build-name     Set the name of the build for mail messages
 
 _ACEOF
 fi
@@ -1349,6 +1350,15 @@ else
 
 fi;
 
+# Check whether --enable-build-name or --disable-build-name was given.
+if test "${enable_build_name+set}" = set; then
+  enableval="$enable_build_name"
+   ac_build_name=${enableval}
+else
+   ac_build_name="Buildtest"
+
+fi;
+
 if test "X${ac_make_threads}X" != "XX" ;
 then
      MAKE_ARGS=" -j ${ac_make_threads}"
@@ -1360,6 +1370,8 @@ fi
 MAKE_ARGS=${MAKE_ARGS}
 
 MAILTO=${ac_mailto}
+
+BUILDNAME=${ac_build_name}
 
 
           ac_config_files="$ac_config_files bagel/PREFIX"
@@ -2065,6 +2077,7 @@ s,@BAGEL_QDP_VERSION@,$BAGEL_QDP_VERSION,;t t
 s,@SFW_INSTALL_ROOT@,$SFW_INSTALL_ROOT,;t t
 s,@MAKE_ARGS@,$MAKE_ARGS,;t t
 s,@MAILTO@,$MAILTO,;t t
+s,@BUILDNAME@,$BUILDNAME,;t t
 s,@LIBOBJS@,$LIBOBJS,;t t
 s,@LTLIBOBJS@,$LTLIBOBJS,;t t
 CEOF

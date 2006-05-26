@@ -1,4 +1,4 @@
-AC_INIT([build.sh])
+AC_INIT([build.sh.in])
 
 AC_ARG_ENABLE(qmp-mvia-version,
 	AC_HELP_STRING([--enable-qmp-mvia-version],
@@ -80,6 +80,13 @@ AC_ARG_ENABLE(mailto,
 	[ ac_mailto="nobody" ]
 )
 
+AC_ARG_ENABLE(build-name,
+	AC_HELP_STRING([--enable-build-name ],
+	[ Set the name of the build for mail messages ]),
+	[ ac_build_name=${enableval} ],
+	[ ac_build_name="Buildtest" ]
+)
+
 if test "X${ac_make_threads}X" != "XX" ;
 then 
      MAKE_ARGS=" -j ${ac_make_threads}"
@@ -90,6 +97,7 @@ fi
 
 AC_SUBST(MAKE_ARGS,[${MAKE_ARGS}])
 AC_SUBST(MAILTO, [${ac_mailto}])
+AC_SUBST(BUILDNAME,[${ac_build_name}])
 
 AC_CONFIG_FILES(bagel/PREFIX)
 AC_CONFIG_FILES(bagel/VERSION)
