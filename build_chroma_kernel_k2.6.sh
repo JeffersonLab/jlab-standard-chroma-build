@@ -4,6 +4,10 @@ mailto_list="bjoo@jlab.org edwards@jlab.org"
 parallel_make=4
 build_name="Chroma site install"
 
+echo ""
+echo -n "Starting date: "
+date
+
 # Build standard versions and install insto standard location
 ./configure  \
   --enable-parallel-make=${parallel_make} \
@@ -25,4 +29,8 @@ build_name="Chroma site install"
 
 ./build.sh  chroma/scalar/scalar \
             chroma/scalar/scalar-double
+
+echo ""
+echo -n "Ending date: "
+date
 

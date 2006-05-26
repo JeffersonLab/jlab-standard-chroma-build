@@ -5,6 +5,10 @@ mailto_list="bjoo@jlab.org edwards@jlab.org"
 parallel_make=4
 build_name="Nightly Build"
 
+echo ""
+echo -n "Starting date: "
+date
+
 ./configure  \
   --enable-qmp-mvia-version=HEAD \
   --enable-qmp-version=HEAD \
@@ -29,14 +33,19 @@ build_name="Nightly Build"
             qdp++/single/parscalar-single \
             qdp++/single/parscalar-single-gcc4 \
             qdp++/ibg2-mpi/parscalar-ibg2-mpi \
+            qdp++/ibg2-mpi/parscalar-ibg2-mpi-double \
             qdp++/ibg2-mpi/parscalar-ibg2-mpi-double-bagelqdp \
             chroma/scalar/scalar \
             chroma/single/parscalar-single \
             chroma/single/parscalar-single-gcc4 \
             chroma/ibg2-mpi/parscalar-ibg2-mpi-noavp \
+            chroma/ibg2-mpi/parscalar-ibg2-mpi-double \
             chroma/ibg2-mpi/parscalar-ibg2-mpi-double-bagel
 
 #            qmp/single/single-intel
 #            qdp++/single/parscalar-single-intel
 #            chroma/single/parscalar-single-intel
 
+echo ""
+echo -n "Ending date: "
+date
