@@ -64,8 +64,32 @@ AC_ARG_ENABLE(install-root,
 	[ac_install_root="/dist/scidac"]
 )
 
-
 AC_SUBST(SFW_INSTALL_ROOT,[${ac_install_root}])
+
+AC_ARG_ENABLE(parallel-make,
+	AC_HELP_STRING([--enable-parallel-make=N],
+	[ enables the -j N option to make to allow for parallel builds]),
+	[ ac_make_threads=${enableval}],
+	[ ac_make_threads=""]
+)
+
+AC_ARG_ENABLE(mailto,
+	AC_HELP_STRING([--enable-mailto=List of email addreses ],
+	[ Sent mail to the list of addresses ]),
+	[ ac_mailto=${enableval} ],
+	[ ac_mailto="nobody" ]
+)
+
+if test "X${ac_make_threads}X" != "XX" ;
+then 
+     MAKE_ARGS=" -j ${ac_make_threads}"
+else
+     MAKE_ARGS=""
+fi 
+
+
+AC_SUBST(MAKE_ARGS,[${MAKE_ARGS}])
+AC_SUBST(MAILTO, [${ac_mailto}])
 
 AC_CONFIG_FILES(bagel/PREFIX)
 AC_CONFIG_FILES(bagel/VERSION)
@@ -88,5 +112,7 @@ AC_CONFIG_FILES(qdp++/VERSION)
 AC_CONFIG_FILES(chroma/PREFIX)
 AC_CONFIG_FILES(chroma/VERSION)
 
+AC_CONFIG_FILES(build.sh)
+AC_CONFIG_COMMANDS(build,[chmod u+x ./build.sh])
 
 AC_OUTPUT

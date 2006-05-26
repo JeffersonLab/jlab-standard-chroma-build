@@ -10,4 +10,3 @@
 	      qdp++/single/parscalar-single-double \
 	      qdp++/scalar/scalar \
 	      qdp++/scalar/scalar-double
-
