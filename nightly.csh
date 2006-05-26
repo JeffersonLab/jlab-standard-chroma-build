@@ -1,8 +1,9 @@
 #!/bin/bash -x
 
 install_root="$HOME/arch/nightly"
-mailto_list="bjoo@jlab.org edwards@jlab.org"
+mailto_list="bjoo@jlab.org"
 parallel_make=4
+build_name="Testbuild"
 
 /bin/rm -rf $install_root
 
@@ -15,7 +16,7 @@ parallel_make=4
   --enable-install-root=${install_root} \
   --enable-parallel-make=${parallel_make} \
   --enable-mailto=${mailto_list} \
-  --enable-build-name="Nightly Build"
+  --enable-build-name=${buildname}
 
 #  --enable-bagel-version=1.4.0
 #  --enable-bagel-wilson-dslash-version=1.4.2

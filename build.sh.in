@@ -1,5 +1,5 @@
 #!/bin/bash
-# $Id: build.sh.in,v 1.2 2006-05-26 18:48:04 bjoo Exp $
+# $Id: build.sh.in,v 1.3 2006-05-26 19:00:56 bjoo Exp $
 #
 #  Original author: Zbigniew Sroczynski
 #  See README_buildtest.sh for more information.
@@ -240,13 +240,13 @@ EOF
     # Build 
 
     action_name="build"
-    action="gmake -k ${MAKE_ARGS}"
+    action="gmake -k ${make_args}"
     perform_action
     [ $? -eq 0 ] || continue
 
     # Check
     action_name="check"
-    action="gmake -k check ${MAKE_ARGS}"
+    action="gmake -k ${make_args} check"
     perform_action
     [ $? -eq 0 ] || continue
 	
@@ -270,7 +270,7 @@ EOF
 	
     # Install
     action_name="install"
-    action="gmake ${MAKE_ARGS} install"
+    action="gmake ${make_args} install"
     perform_action
     [ $? -eq 0 ] || continue
 
