@@ -1,11 +1,9 @@
 #!/bin/bash -x
 
-install_root="$HOME/arch/nightly"
+install_root="/dist/scidac"
 mailto_list="bjoo@jlab.org edwards@jlab.org"
 parallel_make=4
 build_name="Nightly Build"
-
-/bin/rm -rf $install_root
 
 ./configure  \
   --enable-qmp-mvia-version=HEAD \
