@@ -787,7 +787,7 @@ Optional Features:
                           Select version of qmp-mvia to use, default is
                           qmp-mvia-mesh-2-4
   --enable-qmp-version    Select version of MPI qmp to use, default is
-                          qmp2-1-5
+                          qmp2-1-6
   --enable-qdp-version    Select version of qdp++ to use, default is qdp1-20-6
   --enable-chroma-version Select version of chroma to use, default is
                           chroma3-6-0
@@ -1252,7 +1252,7 @@ if test "${enable_qmp_version+set}" = set; then
   enableval="$enable_qmp_version"
   ac_qmp_vers=${enableval}
 else
-  ac_qmp_vers="qmp2-1-5"
+  ac_qmp_vers="qmp2-1-6"
 
 fi;
 QMP_VERSION=${ac_qmp_vers}
