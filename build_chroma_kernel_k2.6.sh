@@ -1,5 +1,15 @@
 #!/bin/bash
 
+mailto_list="bjoo@jlab.org edwards@jlab.org"
+parallel_make=4
+build_name="Chroma site install"
+
+# Build standard versions and install insto standard location
+./configure  \
+  --enable-parallel-make=${parallel_make} \
+  --enable-mailto=${mailto_list} \
+  --enable-build-name="${build_name}"
+
 /bin/rm -rf chroma/chroma
 
 ./build.sh  chroma/gigE/parscalar-gigE \
