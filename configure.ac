@@ -10,9 +10,9 @@ AC_SUBST(QMP_MVIA_VERSION, [${ac_qmp_mvia_vers}])
 
 AC_ARG_ENABLE(qmp-version,
 	AC_HELP_STRING([--enable-qmp-version],
-	[Select version of MPI qmp to use, default is qmp2-1-5 ]),
+	[Select version of MPI qmp to use, default is qmp2-1-6 ]),
 	[ac_qmp_vers=${enableval}],
-	[ac_qmp_vers="qmp2-1-5"]
+	[ac_qmp_vers="qmp2-1-6"]
 )
 AC_SUBST(QMP_VERSION, [${ac_qmp_vers}])
 
