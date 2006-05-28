@@ -11,7 +11,7 @@ date
 # Build standard versions and install insto standard location
 ./configure  \
   --enable-parallel-make=${parallel_make} \
-  --enable-mailto=${mailto_list} \
+  --enable-mailto="${mailto_list}" \
   --enable-build-name="${build_name}"
 
 /bin/rm -rf chroma/chroma

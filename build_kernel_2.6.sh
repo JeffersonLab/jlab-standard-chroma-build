@@ -10,7 +10,7 @@ date
 # Build standard versions and install insto standard location
 ./configure  \
   --enable-parallel-make=${parallel_make} \
-  --enable-mailto=${mailto_list} \
+  --enable-mailto="${mailto_list}" \
   --enable-build-name="${build_name}"
 
 ./build.sh -a ibg2-mpi
