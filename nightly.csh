@@ -16,8 +16,8 @@ date
   --enable-chroma-version=HEAD \
   --enable-bagel-qdp-version=HEAD \
   --enable-install-root=${install_root} \
-  --enable-parallel-make=${parallel_make} \
-  --enable-mailto=${mailto_list} \
+  --enable-parallel-make="${parallel_make}" \
+  --enable-mailto="${mailto_list}" \
   --enable-build-name="${build_name}"
 
 #  --enable-bagel-version=1.4.0
