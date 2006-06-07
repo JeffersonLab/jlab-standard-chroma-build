@@ -1313,7 +1313,7 @@ if test "${enable_bagel_qdp_version+set}" = set; then
   enableval="$enable_bagel_qdp_version"
   ac_bagel_qdp_vers=${enableval}
 else
-  ac_bagel_qdp_vers="bagel_qdp1-1-6"
+  ac_bagel_qdp_vers="bagel_qdp1-1-7"
 
 fi;
 BAGEL_QDP_VERSION=${ac_bagel_qdp_vers}
