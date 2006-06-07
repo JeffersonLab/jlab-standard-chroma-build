@@ -21,7 +21,7 @@ echo ${BWD_PREFIX}
 export PATH=/bgl/BlueLight/ppcfloor/blrts-gnu/bin:$PATH
 
 ${CHROMADIR}/chroma/configure --prefix=${PREFIX} \
-			     --host=powerpg-bgl-blrts-gnu \
+			     --host=powerpc-bgl-blrts-gnu \
 			     --build=none \
 			     --with-qdp=${QDP_PREFIX} \
 			     CFLAGS="-O2" CXXFLAGS="" LIBS="" --with-bagel-wilson-dslash=${BWD_PREFIX}
