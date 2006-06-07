@@ -1,6 +1,6 @@
 #! /bin/bash
 
-./configure --enable-install-root=/scratch/bjoo/install
+./configure --enable-install-root=/project2/teraflop/bjoo/install
 
 ./build.sh libxml2/bgl/bgl \
            bagel/native/bagel \
