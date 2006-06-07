@@ -1,5 +1,5 @@
 #!/bin/bash
-# $Id: build.sh.in,v 1.4 2006-05-26 19:54:51 edwards Exp $
+# $Id: build.sh.in,v 1.5 2006-06-07 16:18:34 bjoo Exp $
 #
 #  Original author: Zbigniew Sroczynski
 #  See README_buildtest.sh for more information.
@@ -174,7 +174,7 @@ do
     arch=`echo $module | cut -f2 -d/`
     build=`echo $module | cut -f3 -d/`
     echo Package is: $package
-    echo Aarch is $arch
+    echo Arch is $arch
     echo Build is: ${build}
 
     moduledir=$checkdir/$package
@@ -203,14 +203,27 @@ do
 	   echo Checking Out Head Revision
         fi 
 	case "${package}" in
-	   bagel|bagel_wilson_dslash)
+	   bagel|bagel_wilson_dslash|libxml2)
 		unzipped_name=${package}-${version_tag}
-		gzfile_name=${unzipped_name}.tar.gz
 		tarfile_name=${unzipped_name}.tar
+		gzfile_name=${tarfile_name}.gz
+
+		case "${package}" in
+		    bagel|bagel_wilson_dslash)
+		       download_root="http://www.ph.ed.ac.uk/~paboyle/bagel"
+		       ;;
+		    libxml2)
+		       download_root="ftp://ftp.gnome.org/pub/GNOME/sources/libxml2/2.6"
+		       ;;
+		    *)
+		    echo "Download root cannot be determined"
+		    exit 1
+		    ;;
+		esac
 
 		cat > ./download_script.sh <<EOF
 rm -rf ${gzfile_name} ${tarfile_name} ${unzipped_name} ${package}
-wget http://www.ph.ed.ac.uk/~paboyle/bagel/${gzfile_name}
+wget ${download_root}/${gzfile_name}
 zcat ${gzfile_name} | tar xvf -
 mv ${unzipped_name} ${package}
 EOF
@@ -218,6 +231,7 @@ EOF
 		action="./download_script.sh"
 		action_name="download"
 		;;
+
 	    *)
 		action="cvs -d :pserver:anonymous@cvs.jlab.org:/group/lattice/cvsroot checkout -P ${version_flag} ${package} "
 		action_name="checkout"
