@@ -1423,6 +1423,11 @@ BUILDNAME=${ac_build_name}
           ac_config_files="$ac_config_files chroma/VERSION"
 
 
+          ac_config_files="$ac_config_files libxml2/PREFIX"
+
+          ac_config_files="$ac_config_files libxml2/VERSION"
+
+
           ac_config_files="$ac_config_files build.sh"
 
           ac_config_commands="$ac_config_commands build"
@@ -1995,6 +2000,8 @@ do
   "qdp++/VERSION" ) CONFIG_FILES="$CONFIG_FILES qdp++/VERSION" ;;
   "chroma/PREFIX" ) CONFIG_FILES="$CONFIG_FILES chroma/PREFIX" ;;
   "chroma/VERSION" ) CONFIG_FILES="$CONFIG_FILES chroma/VERSION" ;;
+  "libxml2/PREFIX" ) CONFIG_FILES="$CONFIG_FILES libxml2/PREFIX" ;;
+  "libxml2/VERSION" ) CONFIG_FILES="$CONFIG_FILES libxml2/VERSION" ;;
   "build.sh" ) CONFIG_FILES="$CONFIG_FILES build.sh" ;;
   "build" ) CONFIG_COMMANDS="$CONFIG_COMMANDS build" ;;
   *) { { echo "$as_me:$LINENO: error: invalid argument: $ac_config_target" >&5
