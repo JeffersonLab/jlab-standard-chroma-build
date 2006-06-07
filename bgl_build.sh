@@ -4,5 +4,6 @@
 
 ./build.sh bagel/native/bagel \
 	   bagel_qdp/bgl/bgl-double \
-	   qmp/bgl/bgl
+	   qmp/bgl/bgl \
+	   bagel_wilson_dslash/bgl/parscalar-bgl-double
 
