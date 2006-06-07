@@ -272,7 +272,7 @@ PACKAGE_STRING=
 PACKAGE_BUGREPORT=
 
 ac_unique_file="build.sh.in"
-ac_subst_vars='SHELL PATH_SEPARATOR PACKAGE_NAME PACKAGE_TARNAME PACKAGE_VERSION PACKAGE_STRING PACKAGE_BUGREPORT exec_prefix prefix program_transform_name bindir sbindir libexecdir datadir sysconfdir sharedstatedir localstatedir libdir includedir oldincludedir infodir mandir build_alias host_alias target_alias DEFS ECHO_C ECHO_N ECHO_T LIBS QMP_MVIA_VERSION QMP_VERSION QDP_VERSION CHROMA_VERSION BAGEL_VERSION BAGEL_WILSON_DSLASH_VERSION BAGEL_QDP_VERSION SFW_INSTALL_ROOT MAKE_ARGS MAILTO BUILDNAME LIBOBJS LTLIBOBJS'
+ac_subst_vars='SHELL PATH_SEPARATOR PACKAGE_NAME PACKAGE_TARNAME PACKAGE_VERSION PACKAGE_STRING PACKAGE_BUGREPORT exec_prefix prefix program_transform_name bindir sbindir libexecdir datadir sysconfdir sharedstatedir localstatedir libdir includedir oldincludedir infodir mandir build_alias host_alias target_alias DEFS ECHO_C ECHO_N ECHO_T LIBS QMP_MVIA_VERSION QMP_VERSION QDP_VERSION CHROMA_VERSION BAGEL_VERSION BAGEL_WILSON_DSLASH_VERSION BAGEL_QDP_VERSION LIBXML2_VERSION SFW_INSTALL_ROOT MAKE_ARGS MAILTO BUILDNAME LIBOBJS LTLIBOBJS'
 ac_subst_files=''
 
 # Initialize some variables set by options.
@@ -797,6 +797,8 @@ Optional Features:
   --enable-bagel-qdp-version
                           Select version of bagel to use, default is
                           bagel_qdp1-1-6
+  --enable-libxml2-version
+default is 2.6.24"{Select version of libxml to use]
   --enable-install-root   Select a root directory to install all the packages
                           to. Default is /dist/scidac
   --enable-parallel-make=N
@@ -1320,6 +1322,17 @@ BAGEL_QDP_VERSION=${ac_bagel_qdp_vers}
 
 
 
+# Check whether --enable-libxml2-version or --disable-libxml2-version was given.
+if test "${enable_libxml2_version+set}" = set; then
+  enableval="$enable_libxml2_version"
+  ac_libxml2_vers=${enableval}
+else
+  ac_libxml2_vers="2.6.24"
+
+fi;
+LIBXML2_VERSION=${ac_libxml2_vers}
+
+
 # Check whether --enable-install-root or --disable-install-root was given.
 if test "${enable_install_root+set}" = set; then
   enableval="$enable_install_root"
@@ -1328,6 +1341,7 @@ else
   ac_install_root="/dist/scidac"
 
 fi;
+
 
 SFW_INSTALL_ROOT=${ac_install_root}
 
@@ -2074,6 +2088,7 @@ s,@CHROMA_VERSION@,$CHROMA_VERSION,;t t
 s,@BAGEL_VERSION@,$BAGEL_VERSION,;t t
 s,@BAGEL_WILSON_DSLASH_VERSION@,$BAGEL_WILSON_DSLASH_VERSION,;t t
 s,@BAGEL_QDP_VERSION@,$BAGEL_QDP_VERSION,;t t
+s,@LIBXML2_VERSION@,$LIBXML2_VERSION,;t t
 s,@SFW_INSTALL_ROOT@,$SFW_INSTALL_ROOT,;t t
 s,@MAKE_ARGS@,$MAKE_ARGS,;t t
 s,@MAILTO@,$MAILTO,;t t

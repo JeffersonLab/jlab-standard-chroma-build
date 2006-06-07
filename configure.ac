@@ -57,12 +57,21 @@ AC_ARG_ENABLE(bagel-qdp-version,
 AC_SUBST(BAGEL_QDP_VERSION, [${ac_bagel_qdp_vers}])
 
 
+AC_ARG_ENABLE(libxml2-version,
+	AC_HELP_STRING([--enable-libxml2-version],
+	{Select version of libxml to use, default is 2.6.24"]),
+	[ac_libxml2_vers=${enableval}],
+	[ac_libxml2_vers="2.6.24"]
+)
+AC_SUBST(LIBXML2_VERSION, [${ac_libxml2_vers}])
+
 AC_ARG_ENABLE(install-root,
 	AC_HELP_STRING([--enable-install-root],
 	[ Select a root directory to install all the packages to. Default is /dist/scidac ]),
 	[ac_install_root=${enableval}],
 	[ac_install_root="/dist/scidac"]
 )
+
 
 AC_SUBST(SFW_INSTALL_ROOT,[${ac_install_root}])
 
