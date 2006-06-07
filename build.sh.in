@@ -1,5 +1,5 @@
 #!/bin/bash
-# $Id: build.sh.in,v 1.6 2006-06-07 16:33:17 bjoo Exp $
+# $Id: build.sh.in,v 1.7 2006-06-07 16:55:23 bjoo Exp $
 #
 #  Original author: Zbigniew Sroczynski
 #  See README_buildtest.sh for more information.
@@ -177,6 +177,15 @@ do
     echo Arch is $arch
     echo Build is: ${build}
 
+    case "${arch}" in
+	bgl)
+	  export PATH=/bgl/BlueLight/ppcfloor/blrts-gnu/bin:$PATH
+	  ;;
+        *)
+	  ;;
+    esac
+ 
+	 
     moduledir=$checkdir/$package
 
     # Check out new code
