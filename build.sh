@@ -1,0 +1,308 @@
+#!/bin/bash
+# $Id: build.sh,v 1.15 2006-06-07 15:48:28 bjoo Exp $
+#
+#  Original author: Zbigniew Sroczynski
+#  See README_buildtest.sh for more information.
+#
+
+## AUTOCONF SUBSTITUTIONS ##
+make_args=""
+mailto_list="nobody"
+build_name="Buildtest"
+##
+
+
+cd `dirname $0`
+checkdir=$PWD
+logdir=$checkdir/logs
+
+
+# Interpret arguments. $1 is the architecture
+# The remaining arguments are module names to build for this architecture
+#
+if [ $# -lt 1 ];
+then 
+   echo "Usage: $0 -a <arch>"
+   echo "or"
+   echo "$0 <module list>"
+   exit 1;
+fi
+
+
+if [ "X${1}X" == "X-aX" ];
+then
+    if [ $# -ne 2 ];
+    then 
+      echo "Usage: $0 -a <arch>"
+      echo "or"
+      echo "$0 <module list>"
+      exit 1;
+    fi
+    arch=$2
+    
+    case $arch in
+	gigE)
+	  modules="\
+	      qmp-mvia-mesh/${arch}/gigE \
+	      qdp++/${arch}/parscalar-gigE \
+	      qdp++/${arch}/parscalar-gigE-double \
+	      chroma/${arch}/parscalar-gigE \
+	      chroma/${arch}/parscalar-gigE-double \
+	      chroma/${arch}/parscalar-gigE-noavp"
+	;;
+	ibg2-mpi)
+          modules="\
+	      bagel/native/bagel \
+	      bagel_qdp/noarch/noarch-double \
+	      qmp/ibg2-mpi/ibg2-mpi \
+	      bagel_wilson_dslash/ibg2-mpi/parscalar-ibg2-mpi \
+	      bagel_wilson_dslash/ibg2-mpi/parscalar-ibg2-mpi-double \
+	      qdp++/${arch}/parscalar-ibg2-mpi \
+	      qdp++/${arch}/parscalar-ibg2-mpi-double \
+	      qdp++/${arch}/parscalar-ibg2-mpi-double-bagelqdp \
+	      chroma/${arch}/parscalar-ibg2-mpi \
+	      chroma/${arch}/parscalar-ibg2-mpi-double \
+	      chroma/${arch}/parscalar-ibg2-mpi-noavp \
+	      chroma/${arch}/parscalar-ibg2-mpi-double-bagel"
+	  ;;
+	ib-mpi)
+	  modules="\
+	      qmp/ib-mpi/ib-mpi \
+	      qdp++/${arch}/parscalar-ib-mpi \
+	      qdp++/${arch}/parscalar-ib-mpi-double \
+	      chroma/${arch}/parscalar-ib-mpi \
+	      chroma/${arch}/parscalar-ib-mpi-double \
+	      chroma/${arch}/parscalar-ib-mpi-noavp"
+	  ;;
+        gm)
+  	  modules="\
+	      qmp/gm/gm \
+	      qdp++/${arch}/parscalar-gm \
+	      qdp++/${arch}/parscalar-gm-double \
+	      chroma/${arch}/parscalar-gm \
+	      chroma/${arch}/parscalar-gm-double \
+	      chroma/${arch}/parscalar-gm-noavp"
+	  ;;
+	single)
+	  modules="\
+	      qmp/single/single \
+	      qdp++/${arch}/parscalar-single \
+	      qdp++/${arch}/parscalar-single-double \
+	      chroma/${arch}/parscalar-single \
+	      chroma/${arch}/parscalar-single-double \
+	      chroma/${arch}/parscalar-single-noavp"
+	  ;;
+	scalar)
+	  modules="\
+	      qdp++/${arch}/scalar \
+	      qdp++/${arch}/scalar-double \
+	      chroma/${arch}/scalar \
+	      chroma/${arch}/scalar-double"
+	  ;;
+	*)
+	  echo Unsupported architecture ${arch}
+	  exit 1;
+	  ;;
+	esac
+else 
+    modules=""
+    while [ $# != 0 ];
+    do
+      modules=$modules" "$1
+      shift
+    done
+fi
+
+echo Building Modules:  $modules
+
+failcnt=0
+
+
+# Send mail if something goes wrong
+
+failmail(){
+    if [ "X${mailto_list}X" != "XnobodyX" ];
+    then
+	cat $logfile | mail -s "${build_name} :  $module $build $1 failed" $mailto_list &> /dev/null
+    fi
+}
+
+# Send mail to indicate the tests are all done -- send to everyone
+finishmail(){
+    if [ "X${mailto_list}X" != "XnobodyX" ];
+    then 
+	mail -s "${build_name} : Build Complete: $failcnt errors" $mailto_list &> /dev/null <<EOF
+All builds done: $failcnt errors
+EOF
+    fi
+}
+
+# Identify the subdirectories for the different types of build
+
+builddirs(){
+    ls $moduledir/$arch/*/build/configure.sh | sed -e s,$moduledir/,, -e s,/build/configure.sh,,
+}
+
+
+perform_action(){
+
+    logfile=$logdir/$package/${arch}/${build}/${action_name}_$now
+
+    echo Performing action: $arch $package $build ${action_name}
+
+    uname -a > $logfile
+    echo '------------------------' >> $logfile
+
+    $action >> $logfile 2>&1
+    local status=$?
+
+
+    if [ $status -ne 0 ]
+    then
+        let failcnt++
+ 	echo ... failed	
+    	failmail $action_name 
+    fi
+
+    gzip $logfile
+    return $status 
+}
+
+for module in $modules
+do
+    package=`echo $module | cut -f1 -d/`
+    arch=`echo $module | cut -f2 -d/`
+    build=`echo $module | cut -f3 -d/`
+    echo Package is: $package
+    echo Aarch is $arch
+    echo Build is: ${build}
+
+    moduledir=$checkdir/$package
+
+    # Check out new code
+
+    srcdir=$moduledir/$package
+    
+    cd $moduledir
+    now=`date +"%F_%H.%M_%Z"`
+    if ! [ -d $logdir/${package}/${arch}/${build} ]
+    then
+        mkdir -p $logdir/${package}/${arch}/${build}
+    fi
+
+    # Deal with the checkout 
+    if ! [ -d ${package} ]
+    then 
+	if [ -f ./VERSION ]
+        then 
+	   version_tag=`cat VERSION`
+           version_flag="-r ${version_tag}"
+	   echo Checking Out Version: ${version_tag}
+        else 
+	   version_flag=""
+	   echo Checking Out Head Revision
+        fi 
+	case "${package}" in
+	   bagel|bagel_wilson_dslash)
+		unzipped_name=${package}-${version_tag}
+		gzfile_name=${unzipped_name}.tar.gz
+		tarfile_name=${unzipped_name}.tar
+
+		cat > ./download_script.sh <<EOF
+rm -rf ${gzfile_name} ${tarfile_name} ${unzipped_name} ${package}
+wget http://www.ph.ed.ac.uk/~paboyle/bagel/${gzfile_name}
+zcat ${gzfile_name} | tar xvf -
+mv ${unzipped_name} ${package}
+EOF
+		chmod u+x ./download_script.sh
+		action="./download_script.sh"
+		action_name="download"
+		;;
+	    *)
+		action="cvs -d :pserver:anonymous@cvs.jlab.org:/group/lattice/cvsroot checkout -P ${version_flag} ${package} "
+		action_name="checkout"
+		;;
+	esac
+	perform_action
+        [ $? -eq 0 ] || continue
+    fi
+    
+    # Build the code
+    # Configure
+
+    builddir=$moduledir/$arch/$build/build
+    cd $builddir
+
+    action_name="configure"
+    action="sh configure.sh"
+    perform_action
+    [ $? -eq 0 ] || continue
+
+    # Build 
+
+    action_name="build"
+    action="gmake -k ${make_args}"
+    perform_action
+    [ $? -eq 0 ] || continue
+
+    # Check
+    action_name="check"
+    action="gmake -k ${make_args} check"
+    perform_action
+    [ $? -eq 0 ] || continue
+	
+    # XCheck
+
+    if [ $package == "chroma" ]
+    then
+      # Skip regressions on IB - dont know how to do the running
+      # Need to generalise system to be able to launch mpi jobs
+      # As regressions
+	case $arch in
+	    scalar|single|ibg2-mpi)
+	    action_name="xcheck"
+	    action="gmake -k xcheck"
+	    perform_action
+	    ;;
+	    *)
+	    ;;
+	esac
+    fi 
+	
+    # Install
+    action_name="install"
+    action="gmake ${make_args} install"
+    perform_action
+    [ $? -eq 0 ] || continue
+
+    # Link
+	
+    [ ! -d ../link ] && mkdir ../link
+    cd ../link
+
+    action_name="link"
+    action="perl $checkdir/link $package"
+    perform_action
+    [ $? -eq 0 ] || continue
+    
+    cd ..
+    rm -r link
+
+    cd $moduledir
+    version=`cat VERSION`
+    prefix=`cat PREFIX`
+    install_srcdir=${prefix}/${version}/src
+    if [ ! -d ${install_srcdir} ]
+    then
+	echo Installing source for $package in ${install_srcdir}
+	mkdir -p ${install_srcdir}
+	cp -r ${package} ${install_srcdir}
+    else 
+	echo Sources already installed
+    fi
+done
+
+# Remove old logfiles
+
+find $logdir -type f -mtime +14 -exec rm '{}' ';'
+finishmail
