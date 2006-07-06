@@ -26,9 +26,9 @@ AC_SUBST(QDP_VERSION, [${ac_qdp_vers}])
 
 AC_ARG_ENABLE(chroma-version,
 	AC_HELP_STRING([--enable-chroma-version],
-	[Select version of chroma to use, default is chroma3-7-3 ]),
+	[Select version of chroma to use, default is chroma3-8-1 ]),
 	[ac_chroma_vers=${enableval}],
-	[ac_chroma_vers="chroma3-7-3"]
+	[ac_chroma_vers="chroma3-8-1"]
 )
 AC_SUBST(CHROMA_VERSION, [${ac_chroma_vers}])
 
@@ -42,9 +42,9 @@ AC_SUBST(BAGEL_VERSION, [${ac_bagel_vers}])
 
 AC_ARG_ENABLE(bagel-wilson-dslash-version,
 	AC_HELP_STRING([--enable-bagel-wilson-dslash-version],
-	[Select version of bagel to use, default is 1.4.2 ]),
+	[Select version of bagel to use, default is 1.4.3 ]),
 	[ac_bagel_wilson_dslash_vers=${enableval}],
-	[ac_bagel_wilson_dslash_vers="1.4.2"]
+	[ac_bagel_wilson_dslash_vers="1.4.3"]
 )
 AC_SUBST(BAGEL_WILSON_DSLASH_VERSION, [${ac_bagel_wilson_dslash_vers}])
 
