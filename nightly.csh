@@ -28,6 +28,7 @@ date
             qmp/single/single \
             qmp/single/single-gcc4 \
             qmp/ibg2-mpi/ibg2-mpi \
+            qmp-mvia-mesh/gigE/gigE \
             bagel_wilson_dslash/ibg2-mpi/parscalar-ibg2-mpi-double \
             qdp++/scalar/scalar \
             qdp++/single/parscalar-single \
@@ -35,12 +36,15 @@ date
             qdp++/ibg2-mpi/parscalar-ibg2-mpi \
             qdp++/ibg2-mpi/parscalar-ibg2-mpi-double \
             qdp++/ibg2-mpi/parscalar-ibg2-mpi-double-bagelqdp \
+            qdp++/gigE/parscalar-gigE \
             chroma/scalar/scalar \
             chroma/single/parscalar-single \
             chroma/single/parscalar-single-gcc4 \
             chroma/ibg2-mpi/parscalar-ibg2-mpi-noavp \
             chroma/ibg2-mpi/parscalar-ibg2-mpi-double \
-            chroma/ibg2-mpi/parscalar-ibg2-mpi-double-bagel
+            chroma/ibg2-mpi/parscalar-ibg2-mpi-double-bagel \
+            chroma/gigE/parscalar-gigE-noavp
+
 
 #            qmp/single/single-intel
 #            qdp++/single/parscalar-single-intel
