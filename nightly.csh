@@ -29,7 +29,6 @@ date
             qmp/single/single-gcc4 \
             qmp/ibg2-mpi/ibg2-mpi \
             qmp-mvia-mesh/gigE/gigE \
-            bagel_wilson_dslash/ibg2-mpi/parscalar-ibg2-mpi-double \
             qdp++/scalar/scalar \
             qdp++/single/parscalar-single \
             qdp++/single/parscalar-single-gcc4 \
@@ -42,9 +41,11 @@ date
             chroma/single/parscalar-single-gcc4 \
             chroma/ibg2-mpi/parscalar-ibg2-mpi-noavp \
             chroma/ibg2-mpi/parscalar-ibg2-mpi-double \
-            chroma/ibg2-mpi/parscalar-ibg2-mpi-double-bagel \
             chroma/gigE/parscalar-gigE-noavp
 
+# This is buggy at the moment
+#            bagel_wilson_dslash/ibg2-mpi/parscalar-ibg2-mpi-double
+#            chroma/ibg2-mpi/parscalar-ibg2-mpi-double-bagel
 
 #            qmp/single/single-intel
 #            qdp++/single/parscalar-single-intel
