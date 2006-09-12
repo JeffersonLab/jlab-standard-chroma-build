@@ -46,7 +46,7 @@ date
             chroma/ibg2-mpi/parscalar-ibg2-mpi-double \
 	    chroma/ib-ofed1-mpi/parscalar-ofed1-mpi \
 	    chroma/ib-ofed1-mpi/parscalar-ofed1-mpi-double \
-	    chomra/ib-ofed1-mpi/parscalar-ofed1-mpi-noavp \
+	    chroma/ib-ofed1-mpi/parscalar-ofed1-mpi-noavp \
             chroma/gigE/parscalar-gigE-noavp
 
 # This is buggy at the moment
