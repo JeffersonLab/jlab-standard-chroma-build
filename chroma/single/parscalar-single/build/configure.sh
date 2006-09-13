@@ -4,7 +4,7 @@ ARCH=parscalar-single
 CHROMADIR=../../..
 ROOTDIR=../../../..
 QDPDIR=${ROOTDIR}/qdp++
-QMPDIR=$(ROOTDIR)/qmp
+QMPDIR=${ROOTDIR}/qmp
 
 . ${ROOTDIR}/functions.sh
 PREFIX=`make_prefix ${CHROMADIR}/PREFIX ${CHROMADIR}/VERSION ${ARCH}`
