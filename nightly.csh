@@ -44,9 +44,9 @@ date
             chroma/single/parscalar-single-gcc4 \
             chroma/ibg2-mpi/parscalar-ibg2-mpi-noavp \
             chroma/ibg2-mpi/parscalar-ibg2-mpi-double \
-	    chroma/ib-ofed1-mpi/parscalar-ofed1-mpi \
-	    chroma/ib-ofed1-mpi/parscalar-ofed1-mpi-double \
-	    chroma/ib-ofed1-mpi/parscalar-ofed1-mpi-noavp \
+	    chroma/ib-ofed1-mpi/parscalar-ib-ofed1-mpi \
+	    chroma/ib-ofed1-mpi/parscalar-ib-ofed1-mpi-double \
+	    chroma/ib-ofed1-mpi/parscalar-ib-ofed1-mpi-noavp \
             chroma/gigE/parscalar-gigE-noavp
 
 # This is buggy at the moment
