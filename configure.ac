@@ -28,7 +28,7 @@ AC_ARG_ENABLE(chroma-version,
 	AC_HELP_STRING([--enable-chroma-version],
 	[Select version of chroma to use, default is chroma3-14-0]),
 	[ac_chroma_vers=${enableval}],
-	[ac_chroma_vers="chroma3-14-0"]
+	[ac_chroma_vers="chroma3-14-2"]
 )
 AC_SUBST(CHROMA_VERSION, [${ac_chroma_vers}])
 
