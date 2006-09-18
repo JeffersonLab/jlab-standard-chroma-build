@@ -23,6 +23,12 @@ date
 #  --enable-bagel-version=1.4.0
 #  --enable-bagel-wilson-dslash-version=1.4.2
 
+/bin/rm -rf ${install_root}/bagel/HEAD \
+            ${install_root}/bagel_qdp/HEAD \
+            ${install_root}/qmp/HEAD \
+            ${install_root}/qdp++/HEAD \
+            ${install_root}/chroma/HEAD
+
 ./build.sh  bagel/native/bagel \
             bagel_qdp/noarch/noarch-double \
             qmp/single/single \
