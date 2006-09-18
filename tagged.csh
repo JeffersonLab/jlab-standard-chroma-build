@@ -14,12 +14,12 @@ date
   --enable-build-name="${build_name}"
 
 ./build.sh \
-	      qmp/ibg2-mpi/ibg2-mpi \
-	      qdp++/ibg2-mpi/parscalar-ibg2-mpi \
-	      qdp++/ibg2-mpi/parscalar-ibg2-mpi-double \
-	      chroma/ibg2-mpi/parscalar-ibg2-mpi \
-	      chroma/ibg2-mpi/parscalar-ibg2-mpi-double \
-	      chroma/ibg2-mpi/parscalar-ibg2-mpi-noavp \
+	      qmp/ib-ofed1-mpi/ib-ofed1-mpi \
+	      qdp++/ib-ofed1-mpi/parscalar-ib-ofed1-mpi \
+	      qdp++/ib-ofed1-mpi/parscalar-ib-ofed1-mpi-double \
+	      chroma/ib-ofed1-mpi/parscalar-ib-ofed1-mpi \
+	      chroma/ib-ofed1-mpi/parscalar-ib-ofed1-mpi-double \
+	      chroma/ib-ofed1-mpi/parscalar-ib-ofed1-mpi-noavp \
 	      qmp-mvia-mesh/gigE/gigE \
 	      qdp++/gigE/parscalar-gigE \
 	      qdp++/gigE/parscalar-gigE-double \
