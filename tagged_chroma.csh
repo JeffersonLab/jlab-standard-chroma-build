@@ -14,9 +14,9 @@ date
   --enable-build-name="${build_name}"
 
 ./build.sh \
-	      chroma/ibg2-mpi/parscalar-ibg2-mpi \
-	      chroma/ibg2-mpi/parscalar-ibg2-mpi-double \
-	      chroma/ibg2-mpi/parscalar-ibg2-mpi-noavp \
+	      chroma/ib-ofed1-mpi/parscalar-ib-ofed1-mpi \
+	      chroma/ib-ofed1-mpi/parscalar-ib-ofed1-mpi-double \
+	      chroma/ib-ofed1-mpi/parscalar-ib-ofed1-mpi-noavp \
 	      chroma/gigE/parscalar-gigE \
 	      chroma/gigE/parscalar-gigE-double \
 	      chroma/gigE/parscalar-gigE-noavp \
