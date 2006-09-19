@@ -1,7 +1,7 @@
 #!/bin/bash -x
 
-install_root="/dist/scidac"
-mailto_list="bjoo@jlab.org edwards@jlab.org"
+install_root="/home/bjoo/Devel/QCD/install"
+mailto_list="bjoo@jlab.org"
 parallel_make=4
 build_name="Nightly Build"
 
@@ -37,10 +37,12 @@ date
             qmp-mvia-mesh/gigE/gigE \
             qdp++/scalar/scalar \
             qdp++/single/parscalar-single \
+	    qdp++/single/parscalar-single-double \
             qdp++/single/parscalar-single-gcc4 \
 	    qdp++/ib-ofed1-mpi/parscalar-ib-ofed1-mpi \
 	    qdp++/ib-ofed1-mpi/parscalar-ib-ofed1-mpi-double \
             qdp++/gigE/parscalar-gigE \
+	    qdp++/gigE/parscalar-gigE-double \
             chroma/scalar/scalar \
             chroma/single/parscalar-single \
             chroma/single/parscalar-single-gcc4 \

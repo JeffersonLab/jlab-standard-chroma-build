@@ -30,20 +30,12 @@ date
 	      qdp++/scalar/scalar-double \
 	      chroma/scalar/scalar \
 	      chroma/scalar/scalar-double 
-
-#	      qmp/single/single 
-#	      qdp++/single/parscalar-single 
-#	      qdp++/single/parscalar-single-double 
-#	      chroma/single/parscalar-single 
-#	      chroma/single/parscalar-single-double 
-#	      chroma/single/parscalar-single-noavp 
-
-#	      qmp/ib-mpi/ib-mpi 
-#	      qdp++/ib-mpi/parscalar-ib-mpi 
-#	      qdp++/ib-mpi/parscalar-ib-mpi-double 
-#	      chroma/ib-mpi/parscalar-ib-mpi 
-#	      chroma/ib-mpi/parscalar-ib-mpi-double 
-#	      chroma/ib-mpi/parscalar-ib-mpi-noavp 
+	      qmp/single/single 
+	      qdp++/single/parscalar-single 
+	      qdp++/single/parscalar-single-double 
+	      chroma/single/parscalar-single 
+	      chroma/single/parscalar-single-double 
+	      chroma/single/parscalar-single-noavp 
 
 echo ""
 echo -n "Ending date: "
