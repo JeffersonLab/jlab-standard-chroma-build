@@ -29,12 +29,12 @@ date
 	      qdp++/scalar/scalar \
 	      qdp++/scalar/scalar-double \
 	      chroma/scalar/scalar \
-	      chroma/scalar/scalar-double 
-	      qmp/single/single 
-	      qdp++/single/parscalar-single 
-	      qdp++/single/parscalar-single-double 
-	      chroma/single/parscalar-single 
-	      chroma/single/parscalar-single-double 
+	      chroma/scalar/scalar-double \
+	      qmp/single/single \
+	      qdp++/single/parscalar-single \
+	      qdp++/single/parscalar-single-double \
+	      chroma/single/parscalar-single \
+	      chroma/single/parscalar-single-double \
 	      chroma/single/parscalar-single-noavp 
 
 echo ""
