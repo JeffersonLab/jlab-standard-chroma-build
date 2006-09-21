@@ -1,7 +1,7 @@
 #!/bin/bash -x
 
-install_root="/home/bjoo/Devel/QCD/install"
-mailto_list="bjoo@jlab.org"
+install_root="/dist/scidac"
+mailto_list="bjoo@jlab.org edwards@jlab.org"
 parallel_make=4
 build_name="Nightly Build"
 
