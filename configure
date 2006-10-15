@@ -788,9 +788,9 @@ Optional Features:
                           qmp-mvia-mesh-2-4
   --enable-qmp-version    Select version of MPI qmp to use, default is
                           qmp2-1-6
-  --enable-qdp-version    Select version of qdp++ to use, default is qdp1-21-0
+  --enable-qdp-version    Select version of qdp++ to use, default is qdp1-21-3
   --enable-chroma-version Select version of chroma to use, default is
-                          chroma3-15-0
+                          chroma3-17-0
   --enable-bagel-version  Select version of bagel to use, default is 1.4.0
   --enable-bagel-wilson-dslash-version
                           Select version of bagel to use, default is 1.4.3
@@ -1271,7 +1271,7 @@ if test "${enable_qdp_version+set}" = set; then
   enableval="$enable_qdp_version"
   ac_qdp_vers=${enableval}
 else
-  ac_qdp_vers="qdp1-21-0"
+  ac_qdp_vers="qdp1-21-3"
 
 fi;
 QDP_VERSION=${ac_qdp_vers}
@@ -1282,7 +1282,7 @@ if test "${enable_chroma_version+set}" = set; then
   enableval="$enable_chroma_version"
   ac_chroma_vers=${enableval}
 else
-  ac_chroma_vers="chroma3-15-0"
+  ac_chroma_vers="chroma3-17-0"
 
 fi;
 CHROMA_VERSION=${ac_chroma_vers}
@@ -1349,27 +1349,27 @@ SFW_INSTALL_ROOT=${ac_install_root}
 # Check whether --enable-parallel-make or --disable-parallel-make was given.
 if test "${enable_parallel_make+set}" = set; then
   enableval="$enable_parallel_make"
-   ac_make_threads=${enableval}
+  ac_make_threads=${enableval}
 else
-   ac_make_threads=""
+  ac_make_threads=""
 
 fi;
 
 # Check whether --enable-mailto or --disable-mailto was given.
 if test "${enable_mailto+set}" = set; then
   enableval="$enable_mailto"
-   ac_mailto=${enableval}
+  ac_mailto=${enableval}
 else
-   ac_mailto="nobody"
+  ac_mailto="nobody"
 
 fi;
 
 # Check whether --enable-build-name or --disable-build-name was given.
 if test "${enable_build_name+set}" = set; then
   enableval="$enable_build_name"
-   ac_build_name=${enableval}
+  ac_build_name=${enableval}
 else
-   ac_build_name="Buildtest"
+  ac_build_name="Buildtest"
 
 fi;
 
