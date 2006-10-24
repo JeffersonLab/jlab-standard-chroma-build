@@ -20,6 +20,12 @@ date
 	      chroma/ib-ofed1-mpi/parscalar-ib-ofed1-mpi \
 	      chroma/ib-ofed1-mpi/parscalar-ib-ofed1-mpi-double \
 	      chroma/ib-ofed1-mpi/parscalar-ib-ofed1-mpi-noavp \
+	      qmp/ib-ofed1-ompi/ib-ofed1-ompi \
+	      qdp++/ib-ofed1-ompi/parscalar-ib-ofed1-ompi \
+	      qdp++/ib-ofed1-ompi/parscalar-ib-ofed1-ompi-double \
+	      chroma/ib-ofed1-ompi/parscalar-ib-ofed1-ompi \
+	      chroma/ib-ofed1-ompi/parscalar-ib-ofed1-ompi-double \
+	      chroma/ib-ofed1-ompi/parscalar-ib-ofed1-ompi-noavp \
 	      qmp-mvia-mesh/gigE/gigE \
 	      qdp++/gigE/parscalar-gigE \
 	      qdp++/gigE/parscalar-gigE-double \

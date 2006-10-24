@@ -34,6 +34,7 @@ date
             qmp/single/single \
             qmp/single/single-gcc4 \
 	    qmp/ib-ofed1-mpi/ib-ofed1-mpi \
+	    qmp/ib-ofed1-ompi/ib-ofed1-ompi \
             qmp-mvia-mesh/gigE/gigE \
             qdp++/scalar/scalar \
             qdp++/single/parscalar-single \
@@ -41,6 +42,8 @@ date
             qdp++/single/parscalar-single-gcc4 \
 	    qdp++/ib-ofed1-mpi/parscalar-ib-ofed1-mpi \
 	    qdp++/ib-ofed1-mpi/parscalar-ib-ofed1-mpi-double \
+	    qdp++/ib-ofed1-ompi/parscalar-ib-ofed1-ompi \
+	    qdp++/ib-ofed1-ompi/parscalar-ib-ofed1-ompi-double \
             qdp++/gigE/parscalar-gigE \
 	    qdp++/gigE/parscalar-gigE-double \
             chroma/scalar/scalar \
@@ -49,6 +52,9 @@ date
 	    chroma/ib-ofed1-mpi/parscalar-ib-ofed1-mpi \
 	    chroma/ib-ofed1-mpi/parscalar-ib-ofed1-mpi-double \
 	    chroma/ib-ofed1-mpi/parscalar-ib-ofed1-mpi-noavp \
+	    chroma/ib-ofed1-ompi/parscalar-ib-ofed1-ompi \
+	    chroma/ib-ofed1-ompi/parscalar-ib-ofed1-ompi-double \
+	    chroma/ib-ofed1-ompi/parscalar-ib-ofed1-ompi-noavp \
             chroma/gigE/parscalar-gigE-noavp
 
 # This is buggy at the moment
