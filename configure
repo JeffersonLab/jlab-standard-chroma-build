@@ -1325,9 +1325,9 @@ BAGEL_QDP_VERSION=${ac_bagel_qdp_vers}
 # Check whether --enable-adat-version or --disable-adat-version was given.
 if test "${enable_adat_version+set}" = set; then
   enableval="$enable_adat_version"
-  ac_adat=${enableval}
+  ac_adat_vers=${enableval}
 else
-  ac_adat="1.28.0"
+  ac_adat_vers="1.28.0"
 
 fi;
 ADAT_VERSION=${ac_adat_vers}
