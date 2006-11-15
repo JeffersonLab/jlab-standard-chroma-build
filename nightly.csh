@@ -15,6 +15,7 @@ date
   --enable-qdp-version=HEAD \
   --enable-chroma-version=HEAD \
   --enable-bagel-qdp-version=HEAD \
+  --enable-adat-version=HEAD \
   --enable-install-root=${install_root} \
   --enable-parallel-make="${parallel_make}" \
   --enable-mailto="${mailto_list}" \
@@ -23,13 +24,15 @@ date
 #  --enable-bagel-version=1.4.0
 #  --enable-bagel-wilson-dslash-version=1.4.2
 
-/bin/rm -rf ${install_root}/bagel/HEAD \
+/bin/rm -rf ${install_root}/adat/HEAD \
+            ${install_root}/bagel/HEAD \
             ${install_root}/bagel_qdp/HEAD \
             ${install_root}/qmp/HEAD \
             ${install_root}/qdp++/HEAD \
             ${install_root}/chroma/HEAD
 
-./build.sh  bagel/native/bagel \
+./build.sh  adat/scalar/scalar \
+            bagel/native/bagel \
             bagel_qdp/noarch/noarch-double \
             qmp/single/single \
             qmp/single/single-gcc4 \
