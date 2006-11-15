@@ -272,7 +272,7 @@ PACKAGE_STRING=
 PACKAGE_BUGREPORT=
 
 ac_unique_file="build.sh.in"
-ac_subst_vars='SHELL PATH_SEPARATOR PACKAGE_NAME PACKAGE_TARNAME PACKAGE_VERSION PACKAGE_STRING PACKAGE_BUGREPORT exec_prefix prefix program_transform_name bindir sbindir libexecdir datadir sysconfdir sharedstatedir localstatedir libdir includedir oldincludedir infodir mandir build_alias host_alias target_alias DEFS ECHO_C ECHO_N ECHO_T LIBS QMP_MVIA_VERSION QMP_VERSION QDP_VERSION CHROMA_VERSION BAGEL_VERSION BAGEL_WILSON_DSLASH_VERSION BAGEL_QDP_VERSION LIBXML2_VERSION SFW_INSTALL_ROOT MAKE_ARGS MAILTO BUILDNAME LIBOBJS LTLIBOBJS'
+ac_subst_vars='SHELL PATH_SEPARATOR PACKAGE_NAME PACKAGE_TARNAME PACKAGE_VERSION PACKAGE_STRING PACKAGE_BUGREPORT exec_prefix prefix program_transform_name bindir sbindir libexecdir datadir sysconfdir sharedstatedir localstatedir libdir includedir oldincludedir infodir mandir build_alias host_alias target_alias DEFS ECHO_C ECHO_N ECHO_T LIBS QMP_MVIA_VERSION QMP_VERSION QDP_VERSION CHROMA_VERSION BAGEL_VERSION BAGEL_WILSON_DSLASH_VERSION BAGEL_QDP_VERSION ADAT_VERSION LIBXML2_VERSION SFW_INSTALL_ROOT MAKE_ARGS MAILTO BUILDNAME LIBOBJS LTLIBOBJS'
 ac_subst_files=''
 
 # Initialize some variables set by options.
@@ -797,6 +797,7 @@ Optional Features:
   --enable-bagel-qdp-version
                           Select version of bagel to use, default is
                           bagel_qdp1-1-7
+  --enable-adat-version   Select version of adat to use, default is 1.28.0
   --enable-libxml2-version
 default is 2.6.24"{Select version of libxml to use]
   --enable-install-root   Select a root directory to install all the packages
@@ -1321,6 +1322,16 @@ fi;
 BAGEL_QDP_VERSION=${ac_bagel_qdp_vers}
 
 
+# Check whether --enable-adat-version or --disable-adat-version was given.
+if test "${enable_adat_version+set}" = set; then
+  enableval="$enable_adat_version"
+  ac_adat=${enableval}
+else
+  ac_adat="1.28.0"
+
+fi;
+ADAT_VERSION=${ac_adat_vers}
+
 
 # Check whether --enable-libxml2-version or --disable-libxml2-version was given.
 if test "${enable_libxml2_version+set}" = set; then
@@ -1421,6 +1432,11 @@ BUILDNAME=${ac_build_name}
           ac_config_files="$ac_config_files chroma/PREFIX"
 
           ac_config_files="$ac_config_files chroma/VERSION"
+
+
+          ac_config_files="$ac_config_files adat/PREFIX"
+
+          ac_config_files="$ac_config_files adat/VERSION"
 
 
           ac_config_files="$ac_config_files libxml2/PREFIX"
@@ -2000,6 +2016,8 @@ do
   "qdp++/VERSION" ) CONFIG_FILES="$CONFIG_FILES qdp++/VERSION" ;;
   "chroma/PREFIX" ) CONFIG_FILES="$CONFIG_FILES chroma/PREFIX" ;;
   "chroma/VERSION" ) CONFIG_FILES="$CONFIG_FILES chroma/VERSION" ;;
+  "adat/PREFIX" ) CONFIG_FILES="$CONFIG_FILES adat/PREFIX" ;;
+  "adat/VERSION" ) CONFIG_FILES="$CONFIG_FILES adat/VERSION" ;;
   "libxml2/PREFIX" ) CONFIG_FILES="$CONFIG_FILES libxml2/PREFIX" ;;
   "libxml2/VERSION" ) CONFIG_FILES="$CONFIG_FILES libxml2/VERSION" ;;
   "build.sh" ) CONFIG_FILES="$CONFIG_FILES build.sh" ;;
@@ -2095,6 +2113,7 @@ s,@CHROMA_VERSION@,$CHROMA_VERSION,;t t
 s,@BAGEL_VERSION@,$BAGEL_VERSION,;t t
 s,@BAGEL_WILSON_DSLASH_VERSION@,$BAGEL_WILSON_DSLASH_VERSION,;t t
 s,@BAGEL_QDP_VERSION@,$BAGEL_QDP_VERSION,;t t
+s,@ADAT_VERSION@,$ADAT_VERSION,;t t
 s,@LIBXML2_VERSION@,$LIBXML2_VERSION,;t t
 s,@SFW_INSTALL_ROOT@,$SFW_INSTALL_ROOT,;t t
 s,@MAKE_ARGS@,$MAKE_ARGS,;t t
