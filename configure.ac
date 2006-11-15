@@ -56,6 +56,13 @@ AC_ARG_ENABLE(bagel-qdp-version,
 )
 AC_SUBST(BAGEL_QDP_VERSION, [${ac_bagel_qdp_vers}])
 
+AC_ARG_ENABLE(adat-version,
+	AC_HELP_STRING([--enable-adat-version],
+	[Select version of adat to use, default is 1.28.0]),
+	[ac_adat=${enableval}],
+	[ac_adat="1.28.0"]
+)
+AC_SUBST(ADAT_VERSION, [${ac_adat_vers}])
 
 AC_ARG_ENABLE(libxml2-version,
 	AC_HELP_STRING([--enable-libxml2-version],
@@ -128,6 +135,9 @@ AC_CONFIG_FILES(qdp++/VERSION)
 
 AC_CONFIG_FILES(chroma/PREFIX)
 AC_CONFIG_FILES(chroma/VERSION)
+
+AC_CONFIG_FILES(adat/PREFIX)
+AC_CONFIG_FILES(adat/VERSION)
 
 AC_CONFIG_FILES(libxml2/PREFIX)
 AC_CONFIG_FILES(libxml2/VERSION)
