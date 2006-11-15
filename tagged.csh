@@ -14,6 +14,7 @@ date
   --enable-build-name="${build_name}"
 
 ./build.sh \
+              adat/scalar/scalar \
 	      qmp/ib-ofed1-mpi/ib-ofed1-mpi \
 	      qdp++/ib-ofed1-mpi/parscalar-ib-ofed1-mpi \
 	      qdp++/ib-ofed1-mpi/parscalar-ib-ofed1-mpi-double \
