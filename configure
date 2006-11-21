@@ -788,7 +788,7 @@ Optional Features:
                           qmp-mvia-mesh-2-4
   --enable-qmp-version    Select version of MPI qmp to use, default is
                           qmp2-1-6
-  --enable-qdp-version    Select version of qdp++ to use, default is qdp1-21-5
+  --enable-qdp-version    Select version of qdp++ to use, default is qdp1-21-6
   --enable-chroma-version Select version of chroma to use, default is
                           chroma3-19-1
   --enable-bagel-version  Select version of bagel to use, default is 1.4.0
@@ -1272,7 +1272,7 @@ if test "${enable_qdp_version+set}" = set; then
   enableval="$enable_qdp_version"
   ac_qdp_vers=${enableval}
 else
-  ac_qdp_vers="qdp1-21-5"
+  ac_qdp_vers="qdp1-21-6"
 
 fi;
 QDP_VERSION=${ac_qdp_vers}
