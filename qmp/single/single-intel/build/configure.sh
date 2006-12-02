@@ -4,4 +4,6 @@
 PREFIX=`make_prefix ../../../PREFIX ../../../VERSION single-intel`
 clean_dir ${PREFIX}
 
-../../../qmp/configure --prefix=${PREFIX} --with-qmp-comms-type=SINGLE CC=/opt/intel/cc/9.0/bin/icc LIBS="-static"
+CC=/opt/intel/cc/9.1.043/bin/icc
+
+../../../qmp/configure --prefix=${PREFIX} --with-qmp-comms-type=SINGLE CC=${CC} LIBS="-static"
