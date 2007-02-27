@@ -8,7 +8,7 @@ BAGELQDPDIR=${ROOTDIR}/bagel_qdp
 
 . ${ROOTDIR}/functions.sh
 PREFIX=`make_prefix ${QDPDIR}/PREFIX ${QDPDIR}/VERSION parscalar-${ARCH}-double-bagelqdp`
-#clean_dir ${PREFI}
+clean_dir ${PREFI}
 
 QMP_PREFIX=`make_prefix ${QMPDIR}/PREFIX ${QMPDIR}/VERSION ${ARCH}`
 BAGELQDP_PREFIX=`make_prefix ${BAGELQDPDIR}/PREFIX ${BAGELQDPDIR}/VERSION noarch-double`
