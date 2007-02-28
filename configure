@@ -1272,7 +1272,7 @@ if test "${enable_qdp_version+set}" = set; then
   enableval="$enable_qdp_version"
   ac_qdp_vers=${enableval}
 else
-  ac_qdp_vers="qdp1-21-8"
+  ac_qdp_vers="qdp1-22-0"
 
 fi;
 QDP_VERSION=${ac_qdp_vers}
@@ -1283,7 +1283,7 @@ if test "${enable_chroma_version+set}" = set; then
   enableval="$enable_chroma_version"
   ac_chroma_vers=${enableval}
 else
-  ac_chroma_vers="chroma3-22-3"
+  ac_chroma_vers="chroma3-22-6"
 
 fi;
 CHROMA_VERSION=${ac_chroma_vers}
