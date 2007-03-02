@@ -42,7 +42,7 @@ AC_SUBST(BAGEL_VERSION, [${ac_bagel_vers}])
 
 AC_ARG_ENABLE(bagel-wilson-dslash-version,
 	AC_HELP_STRING([--enable-bagel-wilson-dslash-version],
-	[Select version of bagel to use, default is 1.4.3]),
+	[Select version of bagel to use, default is 1.4.5]),
 	[ac_bagel_wilson_dslash_vers=${enableval}],
 	[ac_bagel_wilson_dslash_vers="1.4.3"]
 )
