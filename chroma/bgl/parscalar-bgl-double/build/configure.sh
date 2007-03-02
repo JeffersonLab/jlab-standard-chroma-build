@@ -24,4 +24,6 @@ ${CHROMADIR}/chroma/configure --prefix=${PREFIX} \
 			     --host=powerpc-bgl-blrts-gnu \
 			     --build=none \
 			     --with-qdp=${QDP_PREFIX} \
-			     CFLAGS="-O2" CXXFLAGS="" LIBS="" --with-bagel-wilson-dslash=${BWD_PREFIX}
+			     --enable-testcase-runner=cobalt \
+			     CFLAGS="-O2" CXXFLAGS="" LIBS="" \
+	 --with-bagel-wilson-dslash=${BWD_PREFIX}
