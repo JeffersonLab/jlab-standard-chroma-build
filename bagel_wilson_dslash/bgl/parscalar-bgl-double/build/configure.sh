@@ -23,8 +23,9 @@ DSLASH_LIBS=`${QMPSCRIPT} --libs`
  ../../../bagel_wilson_dslash/configure --prefix=${PREFIX} \
     --enable-target-cpu=bgl \
     --enable-comms=qmp \
-    --enable-allocator=malloc \
+    --enable-allocator=memalign \
     --enable-precision=double \
+    --enable-swoa \
     --with-bagel=${BAGEL}  \
     --with-qmp=${QMP} \
     --host=powerpg-bgl-blrts-gnu \
