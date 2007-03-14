@@ -794,7 +794,7 @@ Optional Features:
                           chroma3-22-7
   --enable-bagel-version  Select version of bagel to use, default is 1.4.0
   --enable-bagel-wilson-dslash-version
-                          Select version of bagel to use, default is 1.4.5
+                          Select version of bagel to use, default is 1.4.6
   --enable-bagel-qdp-version
                           Select version of bagel to use, default is
                           bagel_qdp1-1-7
@@ -1318,7 +1318,7 @@ if test "${enable_bagel_wilson_dslash_version+set}" = set; then
   enableval="$enable_bagel_wilson_dslash_version"
   ac_bagel_wilson_dslash_vers=${enableval}
 else
-  ac_bagel_wilson_dslash_vers="1.4.5"
+  ac_bagel_wilson_dslash_vers="1.4.6"
 
 fi;
 BAGEL_WILSON_DSLASH_VERSION=${ac_bagel_wilson_dslash_vers}
