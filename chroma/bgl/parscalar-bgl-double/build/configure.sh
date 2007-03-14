@@ -11,7 +11,7 @@ QDPDIR=${ROOTDIR}/qdp++
 BWDDIR=${ROOTDIR}/bagel_wilson_dslash
 GMPDIR=${ROOTDIR}/gmp
 . ${ROOTDIR}/functions.sh
-PREFIX=`make_prefix ${CHROMADIR}/PREFIX ${CHROMADIR}/VERSION ${ARCH}`
+PREFIX=`make_prefix ${CHROMADIR}/PREFIX ${CHROMADIR}/VERSION ${ARCH}-sloppy`
 clean_dir ${PREFIX}
 
 QDP_PREFIX=`make_prefix ${QDPDIR}/PREFIX ${QDPDIR}/VERSION ${QDPARCH}`
@@ -30,4 +30,5 @@ ${CHROMADIR}/chroma/configure --prefix=${PREFIX} \
 			     --enable-testcase-runner=cobalt \
 			     CFLAGS="-O2" CXXFLAGS="" LIBS="" \
 	 --with-bagel-wilson-dslash=${BWD_PREFIX} \
+	 --enable-bagel-wilson-dslash-sloppy=yes \
 	 --with-gmp=${GMP_PREFIX}
