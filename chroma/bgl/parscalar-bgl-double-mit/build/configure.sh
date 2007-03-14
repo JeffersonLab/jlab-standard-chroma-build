@@ -3,6 +3,7 @@ BASEARCH=parscalar-bgl-double
 ARCH=${BASEARCH}-mit
 QDPARCH=${BASEARCH}
 BWDARCH=${BASEARCH}
+GMPARCH=bgl
 QMPARCH=bgl
 CHROMADIR=../../..
 ROOTDIR=../../../..
@@ -16,6 +17,7 @@ clean_dir ${PREFIX}
 QDP_PREFIX=`make_prefix ${QDPDIR}/PREFIX ${QDPDIR}/VERSION ${QDPARCH}`
 BWD_PREFIX=`make_prefix ${BWDDIR}/PREFIX ${BWDDIR}/VERSION ${BWDARCH}`
 QMP_PREFIX=`make_prefix ${ROOTDIR}/qmp/PREFIX ${ROOTDIR}/qmp/VERSION ${QMPARCH}`
+GMP_PREFIX=`make_prefix ${ROOTDIR}/gmp/PREFIX ${ROOTDIR}/gmp/VERSION ${GMPARCH}`
 echo $QDP_PREFIX
 
 echo ${BWD_PREFIX}
@@ -29,5 +31,6 @@ ${CHROMADIR}/chroma/configure --prefix=${PREFIX} \
 			     --enable-cg-dwf=bluelight \
 			     --with-qmp=${QMP_PREFIX} \
 			     CC=/opt/MITBGL/bin/bgl-gcc \
-			     CFLAGS="-O3"
+			     CFLAGS="-O3" \
+			     --with-gmp=${GMP_PREFIX}
 
