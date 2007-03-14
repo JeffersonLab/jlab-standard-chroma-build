@@ -1,5 +1,5 @@
 #!/bin/bash
-# $Id: build.sh.in,v 1.9 2007-02-23 21:42:13 edwards Exp $
+# $Id: build.sh.in,v 1.10 2007-03-14 14:28:47 bjoo Exp $
 #
 #  Original author: Zbigniew Sroczynski
 #  See README_buildtest.sh for more information.
@@ -271,13 +271,16 @@ EOF
 
     # Check
     # Libxml2 can't expect the tests to work crosscompiled so ignore it for now
-    if [ $package != "libxml2" ]
-    then
+    case $package in
+    libxml2|gmp)
+	;;
+    *)
       action_name="check"
       action="gmake -k ${make_args} check"
       perform_action
       [ $? -eq 0 ] || continue	
-    fi
+      ;;
+    esac
     # XCheck
 
     if [ $package == "chroma" ]
