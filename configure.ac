@@ -8,6 +8,15 @@ AC_ARG_ENABLE(qmp-mvia-version,
 )
 AC_SUBST(QMP_MVIA_VERSION, [${ac_qmp_mvia_vers}])
 
+
+AC_ARG_ENABLE(gmp-version,
+	AC_HELP_STRING([--enable-gmp-version],
+	[Select version of GMP to use, default is gmp4.1.2]),
+	[ac_gmp_vers=${enableval}],
+	[ac_gmp_vers="gmp-4.1.2"]
+)
+AC_SUBST(GMP_VERSION, [${ac_gmp_vers}])
+
 AC_ARG_ENABLE(qmp-version,
 	AC_HELP_STRING([--enable-qmp-version],
 	[Select version of MPI qmp to use, default is qmp2-1-6]),
@@ -126,6 +135,9 @@ AC_CONFIG_FILES(bagel_qdp/VERSION)
 
 AC_CONFIG_FILES(qmp-mvia-mesh/PREFIX)
 AC_CONFIG_FILES(qmp-mvia-mesh/VERSION)
+
+AC_CONFIG_FILES(gmp/PREFIX)
+AC_CONFIG_FILES(gmp/VERSION)
 
 AC_CONFIG_FILES(qmp/PREFIX)
 AC_CONFIG_FILES(qmp/VERSION)
