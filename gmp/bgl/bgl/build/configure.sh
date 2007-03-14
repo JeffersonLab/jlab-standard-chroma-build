@@ -1,7 +1,7 @@
 #! /bin/bash
 
 . ../../../../functions.sh
-PREFIX=`make_prefix ../../../PREFIX ../../../VERSION`
+PREFIX=`make_prefix ../../../PREFIX ../../../VERSION bgl`
 
 export PATH=/bgl/BlueLight/ppcfloor/blrts-gnu/bin:$PATH
 
