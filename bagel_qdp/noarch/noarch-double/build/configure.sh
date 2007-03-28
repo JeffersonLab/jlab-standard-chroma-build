@@ -12,6 +12,7 @@ clean_dir ${PREFIX}
     --enable-target-cpu=noarch \
     --enable-precision=double \
     --with-bagel=${BAGEL} \
+    --with-qdp=/home/bjoo/Devel/QCD/install/qdp++/qdp1-22-1/parscalar-single-double \
     CFLAGS="-O2" \
     CXXFLAGS="-O2"
 
