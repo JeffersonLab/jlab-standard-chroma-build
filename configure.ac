@@ -13,7 +13,7 @@ AC_ARG_ENABLE(gmp-version,
 	AC_HELP_STRING([--enable-gmp-version],
 	[Select version of GMP to use, default is gmp4.1.2]),
 	[ac_gmp_vers=${enableval}],
-	[ac_gmp_vers="gmp-4.1.2"]
+	[ac_gmp_vers="4.1.2"]
 )
 AC_SUBST(GMP_VERSION, [${ac_gmp_vers}])
 

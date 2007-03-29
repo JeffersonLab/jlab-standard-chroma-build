@@ -1,5 +1,5 @@
 #!/bin/bash
-# $Id: build.sh.in,v 1.10 2007-03-14 14:28:47 bjoo Exp $
+# $Id: build.sh.in,v 1.11 2007-03-29 17:53:53 bjoo Exp $
 #
 #  Original author: Zbigniew Sroczynski
 #  See README_buildtest.sh for more information.
@@ -213,7 +213,7 @@ do
 	   echo Checking Out Head Revision
         fi 
 	case "${package}" in
-	   bagel|bagel_wilson_dslash|libxml2)
+	   bagel|bagel_wilson_dslash|libxml2|gmp)
 		unzipped_name=${package}-${version_tag}
 		tarfile_name=${unzipped_name}.tar
 		gzfile_name=${tarfile_name}.gz
@@ -225,6 +225,9 @@ do
 		    libxml2)
 		       download_root="ftp://ftp.gnome.org/pub/GNOME/sources/libxml2/2.6"
 		       ;;
+	            gmp)
+	               download_root="ftp://ftp.gnu.org/gnu/gmp"
+			;;
 		    *)
 		    echo "Download root cannot be determined"
 		    exit 1
