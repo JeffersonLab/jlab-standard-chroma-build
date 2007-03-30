@@ -786,7 +786,7 @@ Optional Features:
   --enable-qmp-mvia-version
                           Select version of qmp-mvia to use, default is
                           qmp-mvia-mesh-2-4
-  --enable-gmp-version    Select version of GMP to use, default is gmp4.1.2
+  --enable-gmp-version    Select version of GMP to use, default is gmp4.2.1
   --enable-qmp-version    Select version of MPI qmp to use, default is
                           qmp2-1-6
   --enable-qdp-version    Select version of qdp++ to use, default is qdp1-23-1
@@ -1263,7 +1263,7 @@ if test "${enable_gmp_version+set}" = set; then
   enableval="$enable_gmp_version"
   ac_gmp_vers=${enableval}
 else
-  ac_gmp_vers="4.1.2"
+  ac_gmp_vers="4.2.1"
 
 fi;
 GMP_VERSION=${ac_gmp_vers}
