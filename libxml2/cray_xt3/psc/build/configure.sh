@@ -11,7 +11,7 @@ module load gcc-catamount/3.3
 
 ../../../libxml2/configure --prefix=${PREFIX} -host=x86_64-unknown-linux \
     --build=x86_64-suse-linux \
-    CC="cc -target=catamount" \
+    CC="/opt/xt-pe/${XTOS_VERSION}/bin/snos64/qk-gcc" \
     CFLAGS="-O2" \
     --disable-shared \
     --without-zlib \
