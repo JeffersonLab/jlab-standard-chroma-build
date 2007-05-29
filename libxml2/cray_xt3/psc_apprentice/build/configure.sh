@@ -1,7 +1,7 @@
 #! /bin/bash
 
 . ../../../../functions.sh
-PREFIX=`make_prefix ../../../PREFIX ../../../VERSION libxml2_finst`
+PREFIX=`make_prefix ../../../PREFIX ../../../VERSION libxml2`_finst
 clean_dir ${PREFIX}
 
 module unload PrgEnv-pgi
@@ -12,7 +12,7 @@ module load gcc-catamount/3.3
 ../../../libxml2/configure --prefix=${PREFIX} -host=x86_64-unknown-linux \
     --build=x86_64-suse-linux \
     CC="/opt/xt-pe/${XTOS_VERSION}/bin/snos64/qk-gcc" \
-    CFLAGS="-O2 -finstrument_functions" \
+    CFLAGS="-O2 -finstrument-functions" \
     --disable-shared \
     --without-zlib \
     --without-python \
