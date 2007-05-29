@@ -14,4 +14,4 @@ module load gcc-catamount/3.3
 	CC_FOR_BUILD=gcc \
      --prefix=${PREFIX} \
      --disable-shared \
-    CFLAGS="-O2 -finstrument_functions" 
+    CFLAGS="-O2 -finstrument-functions" 
