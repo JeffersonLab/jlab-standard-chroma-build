@@ -16,6 +16,6 @@ module load PrgEnv-gnu
 module unload gcc/3.2.3
 module load gcc-catamount/3.3
 
-${QDPDIR}/qdp++/configure --prefix=${PREFIX} --with-qmp=${QMP_PREFIX} --enable-parallel-arch=parscalar --enable-sse2 CXXFLAGS="-fargument-noalias-global -O2 -finline-limit=50000 -msse2 -finstrument_functions" CFLAGS="-fargument-noalias-global -O2 -msse2 -finstrument_functions" --enable-largefile  \
+${QDPDIR}/qdp++/configure --prefix=${PREFIX} --with-qmp=${QMP_PREFIX} --enable-parallel-arch=parscalar --enable-sse2 CXXFLAGS="-fargument-noalias-global -O2 -finline-limit=50000 -msse2 -finstrument-functions" CFLAGS="-fargument-noalias-global -O2 -msse2 -finstrument-functions" --enable-largefile  \
 CC="/opt/xt-pe/${XTOS_VERSION}/bin/snos64/qk-gcc" CXX="/opt/xt-pe/${XTOS_VERSION}/bin/snos64/qk-g++" --host=x86_64-unknown-linux-gnu --build=x86_64-suse-linux --with-libxml2=${LIBXML_PREFIX}
 
