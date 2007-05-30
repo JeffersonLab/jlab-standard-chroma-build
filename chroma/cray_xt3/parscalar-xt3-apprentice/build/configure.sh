@@ -9,10 +9,10 @@ ROOTDIR=../../../..
 QDPDIR=${ROOTDIR}/qdp++
 GMPDIR=${ROOTDIR}/gmp
 . ${ROOTDIR}/functions.sh
-PREFIX=`make_prefix ${CHROMADIR}/PREFIX ${CHROMADIR}/VERSION ${ARCH}`_finst
+PREFIX=`make_prefix ${CHROMADIR}/PREFIX ${CHROMADIR}/VERSION ${ARCH}-finst`
 clean_dir ${PREFIX}
 
-QDP_PREFIX=`make_prefix ${QDPDIR}/PREFIX ${QDPDIR}/VERSION ${QDPARCH}`_finst
+QDP_PREFIX=`make_prefix ${QDPDIR}/PREFIX ${QDPDIR}/VERSION ${QDPARCH}-finst`
 GMP_PREFIX=`make_prefix ${GMPDIR}/PREFIX ${GMPDIR}/VERSION ${GMPARCH}`_finst
 echo $QDP_PREFIX
 echo $GMP_PREFIX
