@@ -31,3 +31,8 @@ export PATH=/bgl/BlueLight/ppcfloor/blrts-gnu/bin:$PATH
     --without-modules \
     --without-xptr \
     --without-xinclude
+
+cp Makefile Makefile.bak
+sed -e 's/runsuite\$(EXEEXT)//' Makefile | sed -e 's/runtest\$(EXEEXT)\s\\//' > Makefile.new
+cp Makefile.new Makefile
+
