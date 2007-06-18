@@ -272,7 +272,7 @@ PACKAGE_STRING=
 PACKAGE_BUGREPORT=
 
 ac_unique_file="build.sh.in"
-ac_subst_vars='SHELL PATH_SEPARATOR PACKAGE_NAME PACKAGE_TARNAME PACKAGE_VERSION PACKAGE_STRING PACKAGE_BUGREPORT exec_prefix prefix program_transform_name bindir sbindir libexecdir datadir sysconfdir sharedstatedir localstatedir libdir includedir oldincludedir infodir mandir build_alias host_alias target_alias DEFS ECHO_C ECHO_N ECHO_T LIBS QMP_MVIA_VERSION GMP_VERSION QMP_VERSION QDP_VERSION CHROMA_VERSION BAGEL_VERSION BAGEL_WILSON_DSLASH_VERSION BAGEL_QDP_VERSION ADAT_VERSION LIBXML2_VERSION SFW_INSTALL_ROOT MAKE_ARGS MAILTO BUILDNAME LIBOBJS LTLIBOBJS'
+ac_subst_vars='SHELL PATH_SEPARATOR PACKAGE_NAME PACKAGE_TARNAME PACKAGE_VERSION PACKAGE_STRING PACKAGE_BUGREPORT exec_prefix prefix program_transform_name bindir sbindir libexecdir datadir sysconfdir sharedstatedir localstatedir libdir includedir oldincludedir infodir mandir build_alias host_alias target_alias DEFS ECHO_C ECHO_N ECHO_T LIBS QMP_MVIA_VERSION GMP_VERSION QMP_VERSION QDP_VERSION CHROMA_VERSION BAGEL_VERSION BAGEL_WILSON_DSLASH_VERSION BAGEL_CLOVER_VERSION BAGEL_QDP_VERSION ADAT_VERSION LIBXML2_VERSION SFW_INSTALL_ROOT MAKE_ARGS MAILTO BUILDNAME LIBOBJS LTLIBOBJS'
 ac_subst_files=''
 
 # Initialize some variables set by options.
@@ -795,6 +795,8 @@ Optional Features:
   --enable-bagel-version  Select version of bagel to use, default is 1.4.0
   --enable-bagel-wilson-dslash-version
                           Select version of bagel to use, default is 1.4.6
+  --enable-bagel-clover-version
+                          Select version of bagel to use, default is HEAD
   --enable-bagel-qdp-version
                           Select version of bagel to use, default is
                           bagel_qdp1-1-7
@@ -1324,6 +1326,17 @@ fi;
 BAGEL_WILSON_DSLASH_VERSION=${ac_bagel_wilson_dslash_vers}
 
 
+# Check whether --enable-bagel-clover-version or --disable-bagel-clover-version was given.
+if test "${enable_bagel_clover_version+set}" = set; then
+  enableval="$enable_bagel_clover_version"
+  ac_bagel_wilson_dslash_vers=${enableval}
+else
+  ac_bagel_wilson_dslash_vers="HEAD"
+
+fi;
+BAGEL_CLOVER_VERSION=${ac_bagel_wilson_dslash_vers}
+
+
 # Check whether --enable-bagel-qdp-version or --disable-bagel-qdp-version was given.
 if test "${enable_bagel_qdp_version+set}" = set; then
   enableval="$enable_bagel_qdp_version"
@@ -1425,6 +1438,11 @@ BUILDNAME=${ac_build_name}
           ac_config_files="$ac_config_files bagel_qdp/PREFIX"
 
           ac_config_files="$ac_config_files bagel_qdp/VERSION"
+
+
+          ac_config_files="$ac_config_files bagel_clover/PREFIX"
+
+          ac_config_files="$ac_config_files bagel_clover/VERSION"
 
 
           ac_config_files="$ac_config_files qmp-mvia-mesh/PREFIX"
@@ -2026,6 +2044,8 @@ do
   "bagel_wilson_dslash/VERSION" ) CONFIG_FILES="$CONFIG_FILES bagel_wilson_dslash/VERSION" ;;
   "bagel_qdp/PREFIX" ) CONFIG_FILES="$CONFIG_FILES bagel_qdp/PREFIX" ;;
   "bagel_qdp/VERSION" ) CONFIG_FILES="$CONFIG_FILES bagel_qdp/VERSION" ;;
+  "bagel_clover/PREFIX" ) CONFIG_FILES="$CONFIG_FILES bagel_clover/PREFIX" ;;
+  "bagel_clover/VERSION" ) CONFIG_FILES="$CONFIG_FILES bagel_clover/VERSION" ;;
   "qmp-mvia-mesh/PREFIX" ) CONFIG_FILES="$CONFIG_FILES qmp-mvia-mesh/PREFIX" ;;
   "qmp-mvia-mesh/VERSION" ) CONFIG_FILES="$CONFIG_FILES qmp-mvia-mesh/VERSION" ;;
   "gmp/PREFIX" ) CONFIG_FILES="$CONFIG_FILES gmp/PREFIX" ;;
@@ -2133,6 +2153,7 @@ s,@QDP_VERSION@,$QDP_VERSION,;t t
 s,@CHROMA_VERSION@,$CHROMA_VERSION,;t t
 s,@BAGEL_VERSION@,$BAGEL_VERSION,;t t
 s,@BAGEL_WILSON_DSLASH_VERSION@,$BAGEL_WILSON_DSLASH_VERSION,;t t
+s,@BAGEL_CLOVER_VERSION@,$BAGEL_CLOVER_VERSION,;t t
 s,@BAGEL_QDP_VERSION@,$BAGEL_QDP_VERSION,;t t
 s,@ADAT_VERSION@,$ADAT_VERSION,;t t
 s,@LIBXML2_VERSION@,$LIBXML2_VERSION,;t t
