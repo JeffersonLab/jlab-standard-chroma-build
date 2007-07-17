@@ -27,9 +27,9 @@ AC_SUBST(QMP_VERSION, [${ac_qmp_vers}])
 
 AC_ARG_ENABLE(qdp-version,
 	AC_HELP_STRING([--enable-qdp-version],
-	[Select version of qdp++ to use, default is qdp1-23-2]),
+	[Select version of qdp++ to use, default is qdp1-24-2]),
 	[ac_qdp_vers=${enableval}],
-	[ac_qdp_vers="qdp1-23-2"]
+	[ac_qdp_vers="qdp1-24-2"]
 )
 AC_SUBST(QDP_VERSION, [${ac_qdp_vers}])
 
