@@ -800,7 +800,7 @@ Optional Features:
   --enable-bagel-qdp-version
                           Select version of bagel to use, default is
                           bagel_qdp1-1-7
-  --enable-adat-version   Select version of adat to use, default is 1.28.0
+  --enable-adat-version   Select version of adat to use, default is 1.33.0
   --enable-libxml2-version
 default is 2.6.24"{Select version of libxml to use]
   --enable-install-root   Select a root directory to install all the packages
@@ -1353,7 +1353,7 @@ if test "${enable_adat_version+set}" = set; then
   enableval="$enable_adat_version"
   ac_adat_vers=${enableval}
 else
-  ac_adat_vers="1.28.0"
+  ac_adat_vers="1.33.0"
 
 fi;
 ADAT_VERSION=${ac_adat_vers}
