@@ -789,9 +789,9 @@ Optional Features:
   --enable-gmp-version    Select version of GMP to use, default is gmp4.2.1
   --enable-qmp-version    Select version of MPI qmp to use, default is
                           qmp2-1-6
-  --enable-qdp-version    Select version of qdp++ to use, default is qdp1-24-2
+  --enable-qdp-version    Select version of qdp++ to use, default is qdp1-23-2
   --enable-chroma-version Select version of chroma to use, default is
-                          chroma3-24-0
+                          chroma3-23-0-patch1-1
   --enable-bagel-version  Select version of bagel to use, default is 1.4.0
   --enable-bagel-wilson-dslash-version
                           Select version of bagel to use, default is 1.4.6
@@ -1287,7 +1287,7 @@ if test "${enable_qdp_version+set}" = set; then
   enableval="$enable_qdp_version"
   ac_qdp_vers=${enableval}
 else
-  ac_qdp_vers="qdp1-24-2"
+  ac_qdp_vers="qdp1-23-2"
 
 fi;
 QDP_VERSION=${ac_qdp_vers}
