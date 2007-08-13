@@ -48,12 +48,11 @@ date
 	    qdp++/gigE/parscalar-gigE-double \
             chroma/scalar/scalar \
             chroma/single/parscalar-single \
-            chroma/single/parscalar-single-gcc4 
-
-#	    chroma/ib-ofed1-mpi/parscalar-ib-ofed1-mpi \
-#	    chroma/ib-ofed1-mpi/parscalar-ib-ofed1-mpi-double \
-#	    chroma/ib-ofed1-mpi/parscalar-ib-ofed1-mpi-noavp \
-#           chroma/gigE/parscalar-gigE-noavp
+            chroma/single/parscalar-single-gcc4 \
+	    chroma/ib-ofed1-mpi/parscalar-ib-ofed1-mpi \
+	    chroma/ib-ofed1-mpi/parscalar-ib-ofed1-mpi-double \
+	    chroma/ib-ofed1-mpi/parscalar-ib-ofed1-mpi-noavp \
+            chroma/gigE/parscalar-gigE-noavp
 
 # RGE has no attachment to these - they are not much use at FNAL since
 # kaon has its own build anyway...
