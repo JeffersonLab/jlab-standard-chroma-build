@@ -68,10 +68,6 @@ date
 #            bagel_wilson_dslash/ib-ofed1-mpi/parscalar-ibg2-mpi-double
 #            chroma/ib-ofed1-mpi/parscalar-ibg2-mpi-double-bagel
 
-#            qmp/single/single-intel
-#            qdp++/single/parscalar-single-intel
-#            chroma/single/parscalar-single-intel
-
 echo ""
 echo -n "Ending date: "
 date
