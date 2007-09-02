@@ -36,12 +36,14 @@ date
             bagel_qdp/noarch/noarch-double \
             qmp/single/single \
             qmp/single/single-gcc4 \
+            qmp/single/single-intel \
 	    qmp/ib-ofed1-mpi/ib-ofed1-mpi \
             qmp-mvia-mesh/gigE/gigE \
             qdp++/scalar/scalar \
             qdp++/single/parscalar-single \
 	    qdp++/single/parscalar-single-double \
             qdp++/single/parscalar-single-gcc4 \
+            qdp++/single/parscalar-single-intel \
 	    qdp++/ib-ofed1-mpi/parscalar-ib-ofed1-mpi \
 	    qdp++/ib-ofed1-mpi/parscalar-ib-ofed1-mpi-double \
             qdp++/gigE/parscalar-gigE \
@@ -49,6 +51,7 @@ date
             chroma/scalar/scalar \
             chroma/single/parscalar-single \
             chroma/single/parscalar-single-gcc4 \
+            chroma/single/parscalar-single-intel \
  	    chroma/ib-ofed1-mpi/parscalar-ib-ofed1-mpi \
  	    chroma/ib-ofed1-mpi/parscalar-ib-ofed1-mpi-double \
  	    chroma/ib-ofed1-mpi/parscalar-ib-ofed1-mpi-noavp \
