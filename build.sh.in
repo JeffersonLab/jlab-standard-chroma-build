@@ -1,5 +1,5 @@
 #!/bin/bash
-# $Id: build.sh.in,v 1.11 2007-03-29 17:53:53 bjoo Exp $
+# $Id: build.sh.in,v 1.12 2007-09-02 02:17:14 edwards Exp $
 #
 #  Original author: Zbigniew Sroczynski
 #  See README_buildtest.sh for more information.
@@ -256,7 +256,6 @@ EOF
     
     # Build the code
     # Configure
-
     builddir=$moduledir/$arch/$build/build
     cd $builddir
 
@@ -266,7 +265,6 @@ EOF
     [ $? -eq 0 ] || continue
 
     # Build 
-
     action_name="build"
     action="gmake -k ${make_args}"
     perform_action
@@ -284,15 +282,15 @@ EOF
       [ $? -eq 0 ] || continue	
       ;;
     esac
-    # XCheck
 
+    # XCheck
     if [ $package == "chroma" ]
     then
       # Skip regressions on IB - dont know how to do the running
       # Need to generalise system to be able to launch mpi jobs
       # As regressions
 	case $arch in
-	    scalar|single|ib-ofed1-mpi)
+	    scalar|single|ib-ofed1-mpi|ib-7n)
 	    action_name="xcheck"
 	    action="gmake -k xcheck"
 	    perform_action
@@ -309,7 +307,6 @@ EOF
     [ $? -eq 0 ] || continue
 
     # Link
-	
     [ ! -d ../link ] && mkdir ../link
     cd ../link
 
