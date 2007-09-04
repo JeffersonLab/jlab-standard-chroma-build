@@ -4,15 +4,10 @@
 PREFIX=`make_prefix ../../../PREFIX ../../../VERSION libxml2`
 clean_dir ${PREFIX}
 
-module unload PrgEnv-pgi
-module load PrgEnv-gnu
-module unload gcc/3.2.3
-module load gcc-catamount/3.3
-
 ../../../libxml2/configure --prefix=${PREFIX} -host=x86_64-unknown-linux \
     --build=x86_64-suse-linux \
-    CC="/opt/xt-pe/${XTOS_VERSION}/bin/snos64/qk-gcc" \
-    CFLAGS="-O2" \
+    CC="cc" \
+    CFLAGS="-O2 -msse -msse2 -march=opteron" \
     --disable-shared \
     --without-zlib \
     --without-python \
