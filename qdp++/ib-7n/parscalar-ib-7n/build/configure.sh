@@ -10,4 +10,10 @@ clean_dir ${PREFIX}
 
 QMP_PREFIX=`make_prefix ${ROOTDIR}/qmp/PREFIX ${ROOTDIR}/qmp/VERSION ${ARCH}`
 
-${QDPDIR}/qdp++/configure --prefix=${PREFIX} --with-qmp=${QMP_PREFIX} --enable-parallel-arch=parscalar --enable-sse2 CXXFLAGS="-fargument-noalias-global -O2 -finline-limit=50000 -msse -msse2 -march=opteron -Wall"  CFLAGS="-fargument-noalias-global -O3 -msse -msse2 -march=opteron -Wall"  CXX=g++ CC=gcc
+export MPICH_HOME=/usr/local/mvapich-0.9.9
+${QDPDIR}/qdp++/configure --prefix=${PREFIX} --with-qmp=${QMP_PREFIX} --enable-parallel-arch=parscalar \
+	--enable-sse2 \
+	CXXFLAGS="-O3 -fargument-noalias-global -finline-limit=50000 -march=opteron -funroll-all-loops -fpeel-loops" \
+	CFLAGS="-O3 -fargument-noalias-global -funroll-all-loops -fpeel-loops -march=opteron"  \
+	CXX=${MPICH_HOME}/bin/mpicxx \
+	CC=${MPICH_HOME}/bin/mpicc
