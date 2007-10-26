@@ -27,17 +27,17 @@ AC_SUBST(QMP_VERSION, [${ac_qmp_vers}])
 
 AC_ARG_ENABLE(qdp-version,
 	AC_HELP_STRING([--enable-qdp-version],
-	[Select version of qdp++ to use, default is qdp1-25-0]),
+	[Select version of qdp++ to use, default is qdp1-25-1]),
 	[ac_qdp_vers=${enableval}],
-	[ac_qdp_vers="qdp1-25-0"]
+	[ac_qdp_vers="qdp1-25-1"]
 )
 AC_SUBST(QDP_VERSION, [${ac_qdp_vers}])
 
 AC_ARG_ENABLE(chroma-version,
 	AC_HELP_STRING([--enable-chroma-version],
-	[Select version of chroma to use, default is chroma3-24-3]),
+	[Select version of chroma to use, default is chroma3-26-0]),
 	[ac_chroma_vers=${enableval}],
-	[ac_chroma_vers="chroma3-24-3"]
+	[ac_chroma_vers="chroma3-26-0"]
 )
 AC_SUBST(CHROMA_VERSION, [${ac_chroma_vers}])
 
