@@ -11,5 +11,9 @@ clean_dir ${PREFIX}
 
 QDP_PREFIX=`make_prefix ${QDPDIR}/PREFIX ${QDPDIR}/VERSION ${ARCH}`
 
-${CHROMADIR}/chroma/configure --prefix=${PREFIX} --with-qdp=${QDP_PREFIX} CFLAGS="-O2 -msse -msse2 -march=opteron -m64" CXXFLAGS="-march=opteron -m64" LIBS="-lgmp" --enable-sse-wilson-dslash --with-gmp=/usr CC=gcc34 CXX=g++34 
+
+${CHROMADIR}/chroma/configure --prefix=${PREFIX} --with-qdp=${QDP_PREFIX} \
+	CFLAGS="-O3 -fargument-noalias-global -funroll-all-loops -fpeel-loops -march=opteron" \
+	CXXFLAGS="" \
+        LIBS="" --enable-sse-wilson-dslash --with-gmp=/usr CC=gcc CXX=g++
 
