@@ -4,7 +4,7 @@
 #
 install_root="/dist/scidac"
 mailto_list="bjoo@jlab.org edwards@jlab.org"
-parallel_make=4
+parallel_make=8
 build_name="Nightly Build for 7n"
 
 echo ""
