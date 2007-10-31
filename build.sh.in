@@ -1,5 +1,5 @@
 #!/bin/bash
-# $Id: build.sh.in,v 1.12 2007-09-02 02:17:14 edwards Exp $
+# $Id: build.sh.in,v 1.13 2007-10-31 14:21:05 edwards Exp $
 #
 #  Original author: Zbigniew Sroczynski
 #  See README_buildtest.sh for more information.
@@ -293,6 +293,9 @@ EOF
 	    scalar|single|ib-ofed1-mpi|ib-7n)
 	    action_name="xcheck"
 	    action="gmake -k xcheck"
+	    perform_action
+	    action_name="report"
+	    action="gmake -k report"
 	    perform_action
 	    ;;
 	    *)
