@@ -21,6 +21,7 @@ ${QDPDIR}/qdp++/configure --prefix=${PREFIX} \
 			  --with-libxml2=${LIBXML2_PREFIX} \
 			  --with-qmp=${QMP_PREFIX} \
 			  --with-bagel-qdp=${BAGEL_QDP_PREFIX} \
+			  --enable-largefile \
 			  --enable-parallel-arch=parscalar \
 			  --enable-precision=double \
 			  --disable-qmp-route \
