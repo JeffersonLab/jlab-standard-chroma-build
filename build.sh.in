@@ -1,5 +1,5 @@
 #!/bin/bash
-# $Id: build.sh.in,v 1.14 2007-12-01 21:51:43 edwards Exp $
+# $Id: build.sh.in,v 1.15 2007-12-01 21:52:22 edwards Exp $
 #
 #  Original author: Zbigniew Sroczynski
 #  See README_buildtest.sh for more information.
@@ -286,7 +286,6 @@ EOF
     # XCheck
     if [ $package == "chroma" ]
     then
-      # Skip regressions on IB - dont know how to do the running
       # Need to generalise system to be able to launch mpi jobs
       # As regressions
 	case $arch in
