@@ -36,7 +36,7 @@ date
             bagel_qdp/noarch/noarch-double \
             qmp/single/single \
 	    qmp/ib-7n/ib-7n \
-            qdp++/scalar-7n/scalar-7n \
+            qdp++/scalar/scalar-7n \
             qdp++/single/parscalar-single \
 	    qdp++/single/parscalar-single-double \
 	    qdp++/ib-7n/parscalar-ib-7n \
