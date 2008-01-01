@@ -5,13 +5,14 @@ QDPDIR=../../..
 ROOTDIR=../../../..
 QMPDIR=${ROOTDIR}/qmp
 
-CC=gcc
-CXX=g++
-
 . ${ROOTDIR}/functions.sh
 PREFIX=`make_prefix ${QDPDIR}/PREFIX ${QDPDIR}/VERSION parscalar-${ARCH}`
 clean_dir ${PREFIX}
 
 QMP_PREFIX=`make_prefix ${QMPDIR}/PREFIX ${QMPDIR}/VERSION ${ARCH}`
 
-${QDPDIR}/qdp++/configure --prefix=${PREFIX} --with-qmp=${QMP_PREFIX} --enable-sse2 --enable-largefile --enable-parallel-arch=parscalar CXX=${CXX} CXXFLAGS="-fargument-noalias-global -O2 -finline-limit=50000 -msse2 -march=pentium4" CC=${CC} CFLAGS=" -fargument-noalias-global -O2 -msse2" 
+${QDPDIR}/qdp++/configure --prefix=${PREFIX} --enable-parallel-arch=parscalar --with-qmp=${QMP_PREFIX} \
+        --enable-sse2 --enable-largefile \
+        CXXFLAGS="-fargument-noalias-global -O3 -finline-limit=50000 -march=opteron -funroll-all-loops -fpeel-loops" \
+        CFLAGS="-fargument-noalias-global -O3 -march=opteron -funroll-all-loops -fpeel-loops" \
+        CXX=g++ CC=gcc
