@@ -5,8 +5,8 @@ QDPDIR=../../..
 ROOTDIR=../../../..
 QMPDIR=${ROOTDIR}/qmp
 
-CC=/dist/gcc-4.1.1/bin/gcc
-CXX=/dist/gcc-4.1.1/bin/g++
+CC=gcc
+CXX=g++
 
 . ${ROOTDIR}/functions.sh
 PREFIX=`make_prefix ${QDPDIR}/PREFIX ${QDPDIR}/VERSION parscalar-${ARCH}`
