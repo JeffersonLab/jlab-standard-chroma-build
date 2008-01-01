@@ -4,8 +4,8 @@ ADATDIR=../../..
 ROOTDIR=../../../..
 . ${ROOTDIR}/functions.sh
 
-CC=/dist/gcc-4.1.1/bin/gcc
-CXX=/dist/gcc-4.1.1/bin/g++
+CC=gcc
+CXX=g++
 
 PREFIX=`make_prefix ${ADATDIR}/PREFIX ${ADATDIR}/VERSION scalar`
 clean_dir ${PREFIX}
