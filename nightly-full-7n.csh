@@ -41,7 +41,7 @@ date
 	    qdp++/single/parscalar-single-double \
 	    qdp++/ib-7n/parscalar-ib-7n \
 	    qdp++/ib-7n/parscalar-ib-7n-double \
-            chroma/scalar-7n/scalar-7n \
+            chroma/scalar/scalar-7n \
             chroma/single/parscalar-single \
  	    chroma/ib-7n/parscalar-ib-7n \
  	    chroma/ib-7n/parscalar-ib-7n-double
