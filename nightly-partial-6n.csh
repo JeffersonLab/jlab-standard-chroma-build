@@ -13,15 +13,16 @@ date
 ./build.sh  \
 	    qmp/ib-ofed1-mpi/ib-ofed1-mpi \
             qmp-mvia-mesh/gigE/gigE \
-            qdp++/single/parscalar-single-intel \
 	    qdp++/ib-ofed1-mpi/parscalar-ib-ofed1-mpi \
 	    qdp++/ib-ofed1-mpi/parscalar-ib-ofed1-mpi-double \
             qdp++/gigE/parscalar-gigE \
 	    qdp++/gigE/parscalar-gigE-double \
-            chroma/single/parscalar-single-intel \
  	    chroma/ib-ofed1-mpi/parscalar-ib-ofed1-mpi \
  	    chroma/ib-ofed1-mpi/parscalar-ib-ofed1-mpi-double \
             chroma/gigE/parscalar-gigE
+
+#            qdp++/single/parscalar-single-intel
+#            chroma/single/parscalar-single-intel
 
 echo ""
 echo -n "Ending date: "
