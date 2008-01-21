@@ -15,8 +15,8 @@ date
   --enable-build-name="${build_name}"
 
 
-./build.sh qdp++/scalar/scalar \
-            chroma/scalar/scalar
+./build.sh qdp++/scalar/scalar-7n \
+            chroma/scalar/scalar-7n
 
 echo ""
 echo -n "Ending date: "
