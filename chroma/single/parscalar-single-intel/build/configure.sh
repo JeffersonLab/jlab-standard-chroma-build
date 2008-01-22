@@ -12,4 +12,8 @@ clean_dir ${PREFIX}
 QDP_PREFIX=`make_prefix ${QDPDIR}/PREFIX ${QDPDIR}/VERSION ${ARCH}`
 CC=/opt/intel/cc/9.1.043/bin/icc
 
-${CHROMADIR}/chroma/configure --prefix=${PREFIX} --with-qdp=${QDP_PREFIX} CC=${CC} CFLAGS="-O2 -fast -msse -msse2 -march=pentium4" CXX=${CC} CXXFLAGS="" LIBS="-lgmp" --with-gmp=/usr  LIBS="-static"
+${CHROMADIR}/chroma/configure --prefix=${PREFIX} --with-qdp=${QDP_PREFIX} \
+  CFLAGS="-O2 -fast -msse -msse2 -march=pentium4"  \
+  CXXFLAGS="" LIBS="-lgmp" --with-gmp=/usr  --enable-testcase-runner=trivial_runner  \
+  LIBS="-static" \
+  CC=${CC} CXX=${CC} 
