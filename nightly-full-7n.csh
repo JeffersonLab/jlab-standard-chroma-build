@@ -39,12 +39,14 @@ date
             qdp++/scalar/scalar-7n \
             qdp++/single/parscalar-single \
 	    qdp++/single/parscalar-single-double \
+            qdp++/single/parscalar-single-double-bagelqdp \
 	    qdp++/ib-7n/parscalar-ib-7n \
 	    qdp++/ib-7n/parscalar-ib-7n-double \
-            chroma/scalar/scalar-7n \
             chroma/single/parscalar-single \
- 	    chroma/ib-7n/parscalar-ib-7n \
- 	    chroma/ib-7n/parscalar-ib-7n-double
+	    chroma/single/parscalar-single-double \
+            chroma/single/parscalar-single-double-bagelqdp \
+	    chroma/ib-7n/parscalar-ib-7n \
+	    chroma/ib-7n/parscalar-ib-7n-double
 
 # We don't have an intel compiler on 7n?
 #            qmp/single/single-intel
