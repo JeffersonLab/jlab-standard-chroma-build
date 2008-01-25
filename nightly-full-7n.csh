@@ -31,9 +31,11 @@ date
             ${install_root}/qdp++/HEAD \
             ${install_root}/chroma/HEAD
 
-./build.sh  adat/scalar/scalar \
+./build.sh  \
+            adat/scalar/scalar \
             bagel/native/bagel \
             bagel_qdp/noarch/noarch-double \
+	    bagel_wilson_dslash/single/parscalar-single-double \
             qmp/single/single \
 	    qmp/ib-7n/ib-7n \
             qdp++/scalar/scalar-7n \
@@ -42,9 +44,11 @@ date
             qdp++/single/parscalar-single-double-bagelqdp \
 	    qdp++/ib-7n/parscalar-ib-7n \
 	    qdp++/ib-7n/parscalar-ib-7n-double \
+            chroma/scalar/scalar-7n \
             chroma/single/parscalar-single \
 	    chroma/single/parscalar-single-double \
-            chroma/single/parscalar-single-double-bagelqdp \
+	    chroma/single/parscalar-single-double-bagel \
+            chroma/single/parscalar-single-double-bageldslash \
 	    chroma/ib-7n/parscalar-ib-7n \
 	    chroma/ib-7n/parscalar-ib-7n-double
 
