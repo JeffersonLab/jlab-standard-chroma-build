@@ -33,11 +33,11 @@ date
 
 ./build.sh  \
             adat/scalar/scalar \
+            qmp/single/single \
+	    qmp/ib-7n/ib-7n \
             bagel/native/bagel \
             bagel_qdp/noarch/noarch-double \
 	    bagel_wilson_dslash/single/parscalar-single-double \
-            qmp/single/single \
-	    qmp/ib-7n/ib-7n \
             qdp++/scalar/scalar-7n \
             qdp++/single/parscalar-single \
 	    qdp++/single/parscalar-single-double \
