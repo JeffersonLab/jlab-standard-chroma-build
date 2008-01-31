@@ -47,7 +47,6 @@ date
             chroma/scalar/scalar-7n \
             chroma/single/parscalar-single \
 	    chroma/single/parscalar-single-double \
-	    chroma/single/parscalar-single-double-bagel \
             chroma/single/parscalar-single-double-bageldslash \
 	    chroma/ib-7n/parscalar-ib-7n \
 	    chroma/ib-7n/parscalar-ib-7n-double
