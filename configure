@@ -1211,7 +1211,7 @@ Optional Features:
                           qmp2-1-6
   --enable-qdp-version    Select version of qdp++ to use, default is qdp1-25-1
   --enable-chroma-version Select version of chroma to use, default is
-                          chroma3-27-0
+                          chroma3-28-3
   --enable-bagel-version  Select version of bagel to use, default is 1.4.0
   --enable-bagel-wilson-dslash-version
                           Select version of bagel to use, default is 1.4.6
@@ -1701,7 +1701,7 @@ QDP_VERSION=${ac_qdp_vers}
 if test "${enable_chroma_version+set}" = set; then
   enableval=$enable_chroma_version; ac_chroma_vers=${enableval}
 else
-  ac_chroma_vers="chroma3-27-0"
+  ac_chroma_vers="chroma3-28-3"
 
 fi
 

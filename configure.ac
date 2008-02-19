@@ -35,7 +35,7 @@ AC_SUBST(QDP_VERSION, [${ac_qdp_vers}])
 
 AC_ARG_ENABLE(chroma-version,
 	AC_HELP_STRING([--enable-chroma-version],
-	[Select version of chroma to use, default is chroma3-27-0]),
+	[Select version of chroma to use, default is chroma3-28-3]),
 	[ac_chroma_vers=${enableval}],
 	[ac_chroma_vers="chroma3-28-3"]
 )
