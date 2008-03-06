@@ -37,19 +37,19 @@ date
 	    qmp/ib-7n/ib-7n \
             bagel/native/bagel \
             bagel_qdp/noarch/noarch-double \
-	    bagel_wilson_dslash/single/parscalar-single-double \
             qdp++/scalar/scalar-7n \
             qdp++/single/parscalar-single \
 	    qdp++/single/parscalar-single-double \
-            qdp++/single/parscalar-single-double-bagelqdp \
 	    qdp++/ib-7n/parscalar-ib-7n \
 	    qdp++/ib-7n/parscalar-ib-7n-double \
             chroma/scalar/scalar-7n \
             chroma/single/parscalar-single \
 	    chroma/single/parscalar-single-double \
-            chroma/single/parscalar-single-double-bageldslash \
 	    chroma/ib-7n/parscalar-ib-7n \
 	    chroma/ib-7n/parscalar-ib-7n-double
+
+#           bagel_wilson_dslash/single/parscalar-single-double
+#           chroma/single/parscalar-single-double-bageldslash
 
 # We don't have an intel compiler on 7n?
 #            qmp/single/single-intel
