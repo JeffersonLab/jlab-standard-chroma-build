@@ -17,4 +17,4 @@ ${CHROMADIR}/chroma/configure --prefix=${PREFIX} --with-qdp=${QDP_PREFIX} \
    CFLAGS="-O3 -march=opteron -funroll-loops -fpeel-loops" CXXFLAGS="" \
    --enable-sse-wilson-dslash  --with-gmp=/usr --enable-testcase-runner=6n_mpirun_rsh  \
    --enable-cg-dwf=sse --with-qmp=${QMP_PREFIX} CC=${MPICH_HOME}/bin/mpicc  CXX=${MPICH_HOME}/bin/mpicxx \
-   --enable-lapack=lapack LIBS="-llapack -lblas -lgfortran"
+   --enable-lapack=lapack LIBS="-llapack -lblas -lgfortran -lgmp"

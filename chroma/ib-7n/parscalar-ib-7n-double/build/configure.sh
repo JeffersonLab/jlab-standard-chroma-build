@@ -17,6 +17,7 @@ QMP_PREFIX=`make_prefix ${QMPDIR}/PREFIX ${QMPDIR}/VERSION ib-7n`
 ${CHROMADIR}/chroma/configure --prefix=${PREFIX} --with-qdp=${QDP_PREFIX} \
   CFLAGS="-O2 -msse -msse2 -march=opteron -m64" \
   CXXFLAGS="-march=opteron -m64" \
-  LIBS="-lgmp" \
   --enable-sse-wilson-dslash --with-gmp=/usr --enable-testcase-runner=6n_mpirun_rsh \
-  --enable-cg-dwf=sse --with-qmp=${QMP_PREFIX}
+  --enable-cg-dwf=sse --with-qmp=${QMP_PREFIX} \
+  --enable-lapack=lapack LIBS="-llapack -lblas -lgfortran -lgmp"
+

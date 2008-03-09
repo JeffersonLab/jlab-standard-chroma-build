@@ -18,7 +18,9 @@ QMP_PREFIX=`make_prefix ${QMPDIR}/PREFIX ${QMPDIR}/VERSION single`
 
 ${CHROMADIR}/chroma/configure --prefix=${PREFIX} --with-qdp=${QDP_PREFIX} \
         CFLAGS="-O3 -fargument-noalias-global -funroll-all-loops -fpeel-loops -march=opteron" \
-        CXXFLAGS="" LIBS="-lgmp"  --enable-testcase-runner=trivial_runner \
+        CXXFLAGS="" --enable-testcase-runner=trivial_runner \
         --enable-sse-wilson-dslash --with-qmp=${QMP_PREFIX} --enable-cg-dwf=sse --with-gmp=/usr \
-        CC=gcc CXX=g++
+        CC=gcc CXX=g++ \
+        --enable-lapack=lapack LIBS="-llapack -lblas -lgfortran -lgmp"
+
 
