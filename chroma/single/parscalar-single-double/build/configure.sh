@@ -21,6 +21,8 @@ ${CHROMADIR}/chroma/configure --prefix=${PREFIX} --with-qdp=${QDP_PREFIX} \
         CXXFLAGS="" --enable-testcase-runner=trivial_runner \
         --enable-sse-wilson-dslash --with-qmp=${QMP_PREFIX} --enable-cg-dwf=sse --with-gmp=/usr \
         CC=gcc CXX=g++ \
-        --enable-lapack=lapack LIBS="-llapack -lblas -lgfortran -lgmp"
+        LIBS="-lgmp"
+
+#        --enable-lapack=lapack LIBS="-llapack -lblas -lgfortran -lgmp"
 
 
