@@ -3,7 +3,7 @@
 install_root="/dist/scidac"
 mailto_list="bjoo@jlab.org edwards@jlab.org"
 parallel_make=8
-build_name="Nightly Build"
+build_name="7n Nightly Build"
 
 echo ""
 echo -n "Starting date: "
