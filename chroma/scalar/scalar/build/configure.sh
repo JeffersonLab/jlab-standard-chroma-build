@@ -14,4 +14,4 @@ QDP_PREFIX=`make_prefix ${QDPDIR}/PREFIX ${QDPDIR}/VERSION ${ARCH}`
 CC=gcc
 CXX=g++
 
-${CHROMADIR}/chroma/configure --prefix=${PREFIX} --with-qdp=${QDP_PREFIX} CFLAGS="-O2" CXXFLAGS="" LIBS="-lgmp" --enable-sse-wilson-dslash --with-gmp=/usr CC=${CC} CXX=${CXX}
+${CHROMADIR}/chroma/configure --prefix=${PREFIX} --with-qdp=${QDP_PREFIX} CFLAGS="-O2" CXXFLAGS="" LIBS="-lgmp" --with-gmp=/usr CC=${CC} CXX=${CXX} --enable-sse-wilson-dslash
