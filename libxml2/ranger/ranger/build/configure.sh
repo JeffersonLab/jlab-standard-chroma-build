@@ -4,9 +4,11 @@
 PREFIX=`make_prefix ../../../PREFIX ../../../VERSION libxml2`
 clean_dir ${PREFIX}
 
+TOOLS=/share/home/00496/tg457586
+
 ../../../libxml2/configure --prefix=${PREFIX} -host=x86_64-unknown-linux \
     --build=x86_64-suse-linux \
-    CC="mpicc -cc=$HOME/install/gcc-4.2.3/bin/gcc" \
+    CC="mpicc -cc=$TOOLS/install/gcc-4.2.3/bin/gcc" \
     CFLAGS="-O3 " \
     --disable-shared \
     --without-zlib \
