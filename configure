@@ -616,6 +616,7 @@ host_alias
 target_alias
 QMP_MVIA_VERSION
 GMP_VERSION
+QMT_VERSION
 QMP_VERSION
 QDP_VERSION
 CHROMA_VERSION
@@ -1207,6 +1208,7 @@ Optional Features:
                           Select version of qmp-mvia to use, default is
                           qmp-mvia-mesh-2-4
   --enable-gmp-version    Select version of GMP to use, default is gmp4.2.1
+  --enable-qmt-version    Select version of QMT to use, default is HEAD
   --enable-qmp-version    Select version of MPI qmp to use, default is
                           qmp2-1-6
   --enable-qdp-version    Select version of qdp++ to use, default is qdp1-28-0
@@ -1675,6 +1677,19 @@ fi
 GMP_VERSION=${ac_gmp_vers}
 
 
+
+# Check whether --enable-qmt-version was given.
+if test "${enable_qmt_version+set}" = set; then
+  enableval=$enable_qmt_version; ac_qmt_vers=${enableval}
+else
+  ac_qmt_vers="HEAD"
+
+fi
+
+QMT_VERSION=${ac_qmt_vers}
+
+
+
 # Check whether --enable-qmp-version was given.
 if test "${enable_qmp_version+set}" = set; then
   enableval=$enable_qmp_version; ac_qmp_vers=${enableval}
@@ -1857,6 +1872,11 @@ ac_config_files="$ac_config_files qmp-mvia-mesh/VERSION"
 ac_config_files="$ac_config_files gmp/PREFIX"
 
 ac_config_files="$ac_config_files gmp/VERSION"
+
+
+ac_config_files="$ac_config_files qmt/PREFIX"
+
+ac_config_files="$ac_config_files qmt/VERSION"
 
 
 ac_config_files="$ac_config_files qmp/PREFIX"
@@ -2472,6 +2492,8 @@ do
     "qmp-mvia-mesh/VERSION") CONFIG_FILES="$CONFIG_FILES qmp-mvia-mesh/VERSION" ;;
     "gmp/PREFIX") CONFIG_FILES="$CONFIG_FILES gmp/PREFIX" ;;
     "gmp/VERSION") CONFIG_FILES="$CONFIG_FILES gmp/VERSION" ;;
+    "qmt/PREFIX") CONFIG_FILES="$CONFIG_FILES qmt/PREFIX" ;;
+    "qmt/VERSION") CONFIG_FILES="$CONFIG_FILES qmt/VERSION" ;;
     "qmp/PREFIX") CONFIG_FILES="$CONFIG_FILES qmp/PREFIX" ;;
     "qmp/VERSION") CONFIG_FILES="$CONFIG_FILES qmp/VERSION" ;;
     "qdp++/PREFIX") CONFIG_FILES="$CONFIG_FILES qdp++/PREFIX" ;;
@@ -2584,6 +2606,7 @@ host_alias!$host_alias$ac_delim
 target_alias!$target_alias$ac_delim
 QMP_MVIA_VERSION!$QMP_MVIA_VERSION$ac_delim
 GMP_VERSION!$GMP_VERSION$ac_delim
+QMT_VERSION!$QMT_VERSION$ac_delim
 QMP_VERSION!$QMP_VERSION$ac_delim
 QDP_VERSION!$QDP_VERSION$ac_delim
 CHROMA_VERSION!$CHROMA_VERSION$ac_delim
@@ -2601,7 +2624,7 @@ LIBOBJS!$LIBOBJS$ac_delim
 LTLIBOBJS!$LTLIBOBJS$ac_delim
 _ACEOF
 
-  if test `sed -n "s/.*$ac_delim\$/X/p" conf$$subs.sed | grep -c X` = 54; then
+  if test `sed -n "s/.*$ac_delim\$/X/p" conf$$subs.sed | grep -c X` = 55; then
     break
   elif $ac_last_try; then
     { { echo "$as_me:$LINENO: error: could not make $CONFIG_STATUS" >&5

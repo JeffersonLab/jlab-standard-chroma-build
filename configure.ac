@@ -17,6 +17,16 @@ AC_ARG_ENABLE(gmp-version,
 )
 AC_SUBST(GMP_VERSION, [${ac_gmp_vers}])
 
+
+AC_ARG_ENABLE(qmt-version,
+	AC_HELP_STRING([--enable-qmt-version],
+	[Select version of QMT to use, default is HEAD]),
+	[ac_qmt_vers=${enableval}],
+	[ac_qmt_vers="HEAD"]
+)
+AC_SUBST(QMT_VERSION, [${ac_qmt_vers}])
+
+
 AC_ARG_ENABLE(qmp-version,
 	AC_HELP_STRING([--enable-qmp-version],
 	[Select version of MPI qmp to use, default is qmp2-1-6]),
@@ -149,6 +159,9 @@ AC_CONFIG_FILES(qmp-mvia-mesh/VERSION)
 
 AC_CONFIG_FILES(gmp/PREFIX)
 AC_CONFIG_FILES(gmp/VERSION)
+
+AC_CONFIG_FILES(qmt/PREFIX)
+AC_CONFIG_FILES(qmt/VERSION)
 
 AC_CONFIG_FILES(qmp/PREFIX)
 AC_CONFIG_FILES(qmp/VERSION)
