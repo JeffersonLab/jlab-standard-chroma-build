@@ -1,8 +1,7 @@
-#!/bin/bash
+#! /bin/bash
 
 QMTDIR=../../..
-ROOTDIR=../../../..
-. ${ROOTDIR}/functions.sh
+. ../../../../functions.sh
 
 PREFIX=`make_prefix ${QMTDIR}/PREFIX ${QMTDIR}/VERSION intel`
 clean_dir ${PREFIX}
