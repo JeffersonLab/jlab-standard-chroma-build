@@ -16,6 +16,6 @@ ${CHROMADIR}/chroma/configure --prefix=${PREFIX} --with-qdp=${QDP_PREFIX} \
 	CFLAGS="-O3 -fargument-noalias-global -funroll-all-loops -fpeel-loops -march=opteron" \
 	CXXFLAGS="" \
         --enable-sse-wilson-dslash --with-gmp=/usr CC=gcc CXX=g++ \
-        --enable-lapack=lapack LIBS="-llapack -lblas -lgfortran -lgmp"
+        --enable-lapack=lapack --enable-opt-eigcg LIBS="-llapack -lblas -lgfortran -lgmp"
 
 
