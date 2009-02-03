@@ -6,7 +6,7 @@ ROOTDIR=../../../..
 
 QMTDIR=${ROOTDIR}/qmt
 QDPDIR=${ROOTDIR}/qdp++
-PREFIX=`make_prefix ${QDPDIR}/PREFIX ${QDPDIR}/VERSION scalar-7n`
+PREFIX=`make_prefix ${QDPDIR}/PREFIX ${QDPDIR}/VERSION scalar-7n-qmt`
 QMT_PREFIX=`make_prefix ${QMTDIR}/PREFIX ${QMTDIR}/VERSION barcelona`
 clean_dir ${PREFIX}
 
