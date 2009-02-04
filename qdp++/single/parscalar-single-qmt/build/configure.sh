@@ -7,7 +7,7 @@ QMPDIR=${ROOTDIR}/qmp
 QMTDIR=${ROOTDIR}/qmt
 
 . ${ROOTDIR}/functions.sh
-PREFIX=`make_prefix ${QDPDIR}/PREFIX ${QDPDIR}/VERSION parscalar-${ARCH}`
+PREFIX=`make_prefix ${QDPDIR}/PREFIX ${QDPDIR}/VERSION parscalar-${ARCH}-qmt`
 clean_dir ${PREFIX}
 
 QMP_PREFIX=`make_prefix ${QMPDIR}/PREFIX ${QMPDIR}/VERSION ${ARCH}`
