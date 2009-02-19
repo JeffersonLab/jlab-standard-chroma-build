@@ -17,7 +17,8 @@ GMP_PREFIX=`make_prefix ${GMPDIR}/PREFIX ${GMPDIR}/VERSION ib`
 
 TOOLS=/share/home/00496/tg457586
 
-STUFF=/share/apps/intel10_1/acml/4.0.1/ifort64/lib
+#STUFF=/share/apps/intel10_1/acml/4.0.1/ifort64/lib
+STUFF=/opt/apps/intel10_1/acml/4.1.0/ifort64/lib
 
 ${CHROMADIR}/chroma/configure --prefix=${PREFIX} --with-qdp=${QDP_PREFIX} \
    CFLAGS="-O3 -funroll-all-loops -fpeel-loops -ftree-vectorize -fno-tree-vrp " CXXFLAGS="" LIBS="" \
