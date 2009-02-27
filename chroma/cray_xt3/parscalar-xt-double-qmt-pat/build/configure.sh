@@ -30,7 +30,7 @@ ${CHROMADIR}/chroma/configure --prefix=${PREFIX} \
 			     CFLAGS="-O3 -march=barcelona" CXXFLAGS="" LIBS="" \
 			     CC="cc" CXX="CC" \
 	 --enable-sse-wilson-dslash \
-	 --enable-sloppy \
+	 --enable-craypat \
 	 --without-gmp \
          --with-qmp=${QMP_PREFIX} \
 	 --with-qmt=${QMT_PREFIX} \
