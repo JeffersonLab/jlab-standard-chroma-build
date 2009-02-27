@@ -11,4 +11,4 @@ clean_dir ${PREFIX}
     --with-qmp-comms-libs="" \
      --prefix=${PREFIX} \
     CC="cc" \
-    CFLAGS="-O3 -msse -msse2 -march=barcelona" 
+    CFLAGS="-g -O3 -msse -msse2 -march=barcelona" 
