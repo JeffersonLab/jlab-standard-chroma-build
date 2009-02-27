@@ -22,12 +22,13 @@ QMT_PREFIX=`make_prefix ${QMTDIR}/PREFIX ${QMTDIR}/VERSION xt-barcelona-pat`
 echo $QDP_PREFIX
 echo $GMP_PREFIX
 
+pushd ${CHROMADIR}/chroma ; aclocal; automake; autoconf ; popd
 
 ${CHROMADIR}/chroma/configure --prefix=${PREFIX} \
 			     --host=x86_64-unknown-linux-gnu \
 			     --build=x86_64-suse-linux \
 			     --with-qdp=${QDP_PREFIX} \
-			     CFLAGS="-O3 -march=barcelona" CXXFLAGS="" LIBS="" \
+			     CFLAGS="-g -O3 -march=barcelona" CXXFLAGS="" LIBS="" \
 			     CC="cc" CXX="CC" \
 	 --enable-sse-wilson-dslash \
 	 --enable-craypat \

@@ -22,6 +22,7 @@ QMT_PREFIX=`make_prefix ${QMTDIR}/PREFIX ${QMTDIR}/VERSION xt-barcelona-pat`
 echo $QDP_PREFIX
 echo $GMP_PREFIX
 
+pushd ${CHROMADIR}/chroma ; aclocal; automake; autoconf; popd
 
 ${CHROMADIR}/chroma/configure --prefix=${PREFIX} \
 			     --host=x86_64-unknown-linux-gnu \
