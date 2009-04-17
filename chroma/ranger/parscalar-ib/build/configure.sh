@@ -25,7 +25,7 @@ ${CHROMADIR}/chroma/configure --prefix=${PREFIX} --with-qdp=${QDP_PREFIX} \
    --enable-sse-wilson-dslash --with-gmp=$GMP_PREFIX --enable-testcase-runner=6n_mpirun_rsh  \
    --with-qmp=${QMP_PREFIX} \
    --enable-opt-eigcg --enable-lapack=lapack LIBS="$STUFF/libacml.a -lgmp" \
-   LDFLAGS="-L$HOME/install/gmp/4.2.1/ib/lib" \
+   LDFLAGS="-L${GMP_PREFIX}/lib" \
    CXX="mpicxx -CC=$TOOLS/install/gcc-4.2.3/bin/g++" \
    CC="mpicc -cc=$TOOLS/install/gcc-4.2.3/bin/gcc"
 
