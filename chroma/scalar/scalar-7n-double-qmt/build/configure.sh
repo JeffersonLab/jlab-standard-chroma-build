@@ -13,10 +13,13 @@ clean_dir ${PREFIX}
 QDP_PREFIX=`make_prefix ${QDPDIR}/PREFIX ${QDPDIR}/VERSION ${ARCH}-qmt`
 QMT_PREFIX=`make_prefix ${QMTDIR}/PREFIX ${QMTDIR}/VERSION amd`
 ${CHROMADIR}/chroma/configure --prefix=${PREFIX} --with-qdp=${QDP_PREFIX} \
-	CFLAGS="-O3 -fargument-noalias-global -funroll-all-loops -fpeel-loops -march=opteron" \
+	CFLAGS="-O3 -fargument-noalias-global -funroll-all-loops -fpeel-loops -march=barcelona" \
 	CXXFLAGS="" \
-        --enable-sse-wilson-dslash --with-gmp=/usr CC=gcc CXX=g++  \
+        --with-gmp=/usr CC=/home/bjoo/install_gcc4.3.0/bin/gcc CXX=/home/bjoo/install_gcc4.3.0/bin/g++  \
 	--with-qmt=$QMT_PREFIX \
-	--enable-ssed-clover
+	--enable-ssed-clover \
+	--enable-cpp-wilson-dslash \
+	--enable-sse2 \
+	--enable-generic-scalarsite-bicgstab-kernels
 
 
