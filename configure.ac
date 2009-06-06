@@ -93,7 +93,7 @@ AC_SUBST(ADAT_VERSION, [${ac_adat_vers}])
 
 AC_ARG_ENABLE(libxml2-version,
 	AC_HELP_STRING([--enable-libxml2-version],
-	{Select version of libxml to use, default is 2.6.24"]),
+	["Select version of libxml to use, default is 2.6.24"]),
 	[ac_libxml2_vers=${enableval}],
 	[ac_libxml2_vers="2.6.24"]
 )
@@ -106,6 +106,14 @@ AC_ARG_ENABLE(install-root,
 	[ac_install_root="/dist/scidac"]
 )
 
+AC_ARG_ENABLE(git-root,
+	AC_HELP_STRING([--enable-git-root],
+	   [ Point to root of a git tree ]),
+	[ git_root=${enableval} ],
+        [ git_root="ssh://git.jlab.org/pub/lattice/git-testing" ]
+)
+
+AC_SUBST(GIT_ROOT, [${git_root}])
 
 AC_SUBST(SFW_INSTALL_ROOT,[${ac_install_root}])
 
@@ -180,5 +188,8 @@ AC_CONFIG_FILES(libxml2/VERSION)
 
 AC_CONFIG_FILES(build.sh)
 AC_CONFIG_COMMANDS(build,[chmod u+x ./build.sh])
+
+AC_CONFIG_FILES(build-git.sh)
+AC_CONFIG_COMMANDS(build-git,[chmod u+x ./build-git.sh])
 
 AC_OUTPUT

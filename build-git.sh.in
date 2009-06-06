@@ -1,5 +1,5 @@
 #!/bin/bash
-# $Id: build.sh.in,v 1.19 2009-06-06 17:49:43 bjoo Exp $
+# $Id: build-git.sh.in,v 1.1 2009-06-06 17:49:43 bjoo Exp $
 #
 #  Original author: Zbigniew Sroczynski
 #  See README_buildtest.sh for more information.
@@ -9,6 +9,7 @@
 make_args="@MAKE_ARGS@"
 mailto_list="@MAILTO@"
 build_name="@BUILDNAME@"
+git_root="@GIT_ROOT@"
 ##
 
 
@@ -137,6 +138,46 @@ EOF
     fi
 }
 
+# GIT GET
+#Usage:
+# 
+# git-get.sh <repo>
+#
+#
+gitget() {
+
+echo Cloning Repo: $repo
+
+git clone ${repo}
+pushd "$package"
+
+#Init submodules
+case "$package" in
+    qio|qio.git)
+	git submodule init
+	git submodule update
+	;;
+
+    qdp++|qdp++.git)
+	git submodule init
+	git submodule update
+	pushd other_libs/qio
+	git submodule init 
+	git submodule update
+	popd
+	;;
+
+    chroma|chroma.git)
+	git submodule init
+	git submodule update
+	;;
+    *)
+	;;
+esac
+aclocal; automake; autoconf
+popd
+}
+
 # Identify the subdirectories for the different types of build
 
 builddirs(){
@@ -167,6 +208,13 @@ perform_action(){
     gzip $logfile
     return $status 
 }
+
+
+
+##### BEGIN HERE
+
+
+
 
 for module in $modules
 do
@@ -246,19 +294,14 @@ EOF
 		;;
 
 	    *)
-		action="cvs -d :pserver:anonymous@cvs.jlab.org:/group/lattice/cvsroot checkout -P ${version_flag} ${package} "
-		action_name="checkout"
+		repo="${git_root}/${package}.git"
+		action="gitget"
+		action_name="git-clone"
 		;;
 	esac
 	perform_action
         [ $? -eq 0 ] || continue
     fi
-
-    # Run the autoconf chain
-    srcdir=$moduledir/$package
-    pushd $srcdir
-    aclocal; automake; autoconf
-    popd
     
     # Build the code
     # Configure

@@ -1,4 +1,3 @@
-
 function make_prefix() {
     PREFIX_FILE=$1
     VERSION_FILE=$2
