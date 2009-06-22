@@ -1,5 +1,5 @@
 #!/bin/bash
-# $Id: build.sh.in,v 1.19 2009-06-06 17:49:43 bjoo Exp $
+# $Id: build.sh.in,v 1.20 2009-06-22 16:35:45 edwards Exp $
 #
 #  Original author: Zbigniew Sroczynski
 #  See README_buildtest.sh for more information.
@@ -295,7 +295,8 @@ EOF
       # Need to generalise system to be able to launch mpi jobs
       # As regressions
 	case $arch in
-	    scalar|single|ib-7n)
+	    scalar|single)
+##	    scalar|single|ib-7n)
 	    action_name="xcheck"
 	    action="gmake -k xcheck"
 	    perform_action
