@@ -13,4 +13,4 @@ pushd ../../../qmp ; aclocal; automake; autoconf; popd
     --with-qmp-comms-libs="" \
      --prefix=${PREFIX} \
     CC="cc" \
-    CFLAGS="-g -O3 -msse -msse2 -march=barcelona" 
+    CFLAGS="-O3 -D_REENTRANT  -march=barcelona" 

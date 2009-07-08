@@ -7,7 +7,7 @@ clean_dir ${PREFIX}
 ../../../libxml2/configure --prefix=${PREFIX} -host=x86_64-unknown-linux \
     --build=x86_64-suse-linux \
     CC="cc" \
-    CFLAGS="-O2 -msse -msse2 -march=barcelona -g" \
+    CFLAGS="-O3 -D_REENTRANT -march=barcelona " \
     --disable-shared \
     --without-zlib \
     --without-python \

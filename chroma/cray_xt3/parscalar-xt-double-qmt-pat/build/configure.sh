@@ -28,11 +28,12 @@ ${CHROMADIR}/chroma/configure --prefix=${PREFIX} \
 			     --host=x86_64-unknown-linux-gnu \
 			     --build=x86_64-suse-linux \
 			     --with-qdp=${QDP_PREFIX} \
-			     CFLAGS="-g -O3 -march=barcelona" CXXFLAGS="" LIBS="" \
+			     CFLAGS="" CXXFLAGS="" LIBS="" \
 			     CC="cc" CXX="CC" \
-	 --enable-sse-wilson-dslash \
+	 --enable-cpp-wilson-dslash \
+	 --enable-sse2 \
 	 --enable-craypat \
 	 --without-gmp \
          --with-qmp=${QMP_PREFIX} \
 	 --with-qmt=${QMT_PREFIX} \
-	 --enable-ssed-clover
+	 --enable-sse-scalarsite-bicgstab-kernels
