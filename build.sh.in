@@ -1,5 +1,5 @@
 #!/bin/bash
-# $Id: build.sh.in,v 1.20 2009-06-22 16:35:45 edwards Exp $
+# $Id: build.sh.in,v 1.21 2009-07-08 19:20:00 bjoo Exp $
 #
 #  Original author: Zbigniew Sroczynski
 #  See README_buildtest.sh for more information.
@@ -256,10 +256,16 @@ EOF
 
     # Run the autoconf chain
     srcdir=$moduledir/$package
-    pushd $srcdir
-    aclocal; automake; autoconf
-    popd
-    
+    case $package in
+	libxml2) 
+	;;
+	*)
+          pushd $srcdir
+          aclocal; automake; autoconf
+          popd
+   	  ;;
+    esac
+ 
     # Build the code
     # Configure
     builddir=$moduledir/$arch/$build/build
