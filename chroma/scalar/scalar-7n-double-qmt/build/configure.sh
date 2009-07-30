@@ -17,9 +17,11 @@ ${CHROMADIR}/chroma/configure --prefix=${PREFIX} --with-qdp=${QDP_PREFIX} \
 	CXXFLAGS="" \
         --with-gmp=/usr CC=/home/bjoo/install_gcc4.3.0/bin/gcc CXX=/home/bjoo/install_gcc4.3.0/bin/g++  \
 	--with-qmt=$QMT_PREFIX \
-	--enable-ssed-clover \
 	--enable-cpp-wilson-dslash \
 	--enable-sse2 \
-	--enable-generic-scalarsite-bicgstab-kernels
+	--enable-sse-scalarsite-bicgstab-kernels \
+	--enable-lapack=lapack \
+	--enable-opt-eigcg \
+	LIBS="-llapack -lblas -lgfortran -lgmp"
 
 
