@@ -110,7 +110,7 @@ AC_ARG_ENABLE(git-root,
 	AC_HELP_STRING([--enable-git-root],
 	   [ Point to root of a git tree ]),
 	[ git_root=${enableval} ],
-        [ git_root="ssh://git.jlab.org/pub/lattice/git-testing" ]
+        [ git_root="git://git.jlab.org/pub/lattice/usqcd" ]
 )
 
 AC_SUBST(GIT_ROOT, [${git_root}])
