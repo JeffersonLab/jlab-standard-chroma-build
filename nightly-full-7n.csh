@@ -33,7 +33,7 @@ date
             ${install_root}/qdp++/HEAD \
             ${install_root}/chroma/HEAD
 
-./build.sh  \
+./build-git.sh  \
             adat/scalar/scalar \
             qmt/amd/barcelona \
             qmp/single/single \
