@@ -20,9 +20,9 @@ AC_SUBST(GMP_VERSION, [${ac_gmp_vers}])
 
 AC_ARG_ENABLE(qmt-version,
 	AC_HELP_STRING([--enable-qmt-version],
-	[Select version of QMT to use, default is HEAD]),
+	[Select version of QMT to use, default is master]),
 	[ac_qmt_vers=${enableval}],
-	[ac_qmt_vers="HEAD"]
+	[ac_qmt_vers="master"]
 )
 AC_SUBST(QMT_VERSION, [${ac_qmt_vers}])
 
@@ -37,17 +37,17 @@ AC_SUBST(QMP_VERSION, [${ac_qmp_vers}])
 
 AC_ARG_ENABLE(qdp-version,
 	AC_HELP_STRING([--enable-qdp-version],
-	[Select version of qdp++ to use, default is qdp1-28-0]),
+	[Select version of qdp++ to use, default is qdp1-35-0]),
 	[ac_qdp_vers=${enableval}],
-	[ac_qdp_vers="qdp1-28-0"]
+	[ac_qdp_vers="qdp1-35-0"]
 )
 AC_SUBST(QDP_VERSION, [${ac_qdp_vers}])
 
 AC_ARG_ENABLE(chroma-version,
 	AC_HELP_STRING([--enable-chroma-version],
-	[Select version of chroma to use, default is chroma3-30-2]),
+	[Select version of chroma to use, default is chroma3-36-2]),
 	[ac_chroma_vers=${enableval}],
-	[ac_chroma_vers="chroma3-30-2"]
+	[ac_chroma_vers="chroma3-36-2"]
 )
 AC_SUBST(CHROMA_VERSION, [${ac_chroma_vers}])
 
@@ -69,9 +69,9 @@ AC_SUBST(BAGEL_WILSON_DSLASH_VERSION, [${ac_bagel_wilson_dslash_vers}])
 
 AC_ARG_ENABLE(bagel-clover-version,
         AC_HELP_STRING([--enable-bagel-clover-version],
-        [Select version of bagel to use, default is HEAD]),
+        [Select version of bagel to use, default is master]),
         [ac_bagel_wilson_dslash_vers=${enableval}],
-        [ac_bagel_wilson_dslash_vers="HEAD"]
+        [ac_bagel_wilson_dslash_vers="master"]
 )
 AC_SUBST(BAGEL_CLOVER_VERSION, [${ac_bagel_wilson_dslash_vers}])
 

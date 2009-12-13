@@ -1244,17 +1244,17 @@ Optional Features:
                           Select version of qmp-mvia to use, default is
                           qmp-mvia-mesh-2-4
   --enable-gmp-version    Select version of GMP to use, default is gmp4.2.1
-  --enable-qmt-version    Select version of QMT to use, default is HEAD
+  --enable-qmt-version    Select version of QMT to use, default is master
   --enable-qmp-version    Select version of MPI qmp to use, default is
                           qmp2-1-6
-  --enable-qdp-version    Select version of qdp++ to use, default is qdp1-28-0
+  --enable-qdp-version    Select version of qdp++ to use, default is qdp1-35-0
   --enable-chroma-version Select version of chroma to use, default is
-                          chroma3-30-2
+                          chroma3-36-2
   --enable-bagel-version  Select version of bagel to use, default is 1.4.0
   --enable-bagel-wilson-dslash-version
                           Select version of bagel to use, default is 1.4.6
   --enable-bagel-clover-version
-                          Select version of bagel to use, default is HEAD
+                          Select version of bagel to use, default is master
   --enable-bagel-qdp-version
                           Select version of bagel to use, default is
                           bagel_qdp1-1-7
@@ -1727,7 +1727,7 @@ GMP_VERSION=${ac_gmp_vers}
 if test "${enable_qmt_version+set}" = set; then :
   enableval=$enable_qmt_version; ac_qmt_vers=${enableval}
 else
-  ac_qmt_vers="HEAD"
+  ac_qmt_vers="master"
 
 fi
 
@@ -1750,7 +1750,7 @@ QMP_VERSION=${ac_qmp_vers}
 if test "${enable_qdp_version+set}" = set; then :
   enableval=$enable_qdp_version; ac_qdp_vers=${enableval}
 else
-  ac_qdp_vers="qdp1-28-0"
+  ac_qdp_vers="qdp1-35-0"
 
 fi
 
@@ -1761,7 +1761,7 @@ QDP_VERSION=${ac_qdp_vers}
 if test "${enable_chroma_version+set}" = set; then :
   enableval=$enable_chroma_version; ac_chroma_vers=${enableval}
 else
-  ac_chroma_vers="chroma3-30-2"
+  ac_chroma_vers="chroma3-36-2"
 
 fi
 
@@ -1794,7 +1794,7 @@ BAGEL_WILSON_DSLASH_VERSION=${ac_bagel_wilson_dslash_vers}
 if test "${enable_bagel_clover_version+set}" = set; then :
   enableval=$enable_bagel_clover_version; ac_bagel_wilson_dslash_vers=${enableval}
 else
-  ac_bagel_wilson_dslash_vers="HEAD"
+  ac_bagel_wilson_dslash_vers="master"
 
 fi
 
