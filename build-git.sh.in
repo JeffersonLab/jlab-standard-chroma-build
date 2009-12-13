@@ -180,7 +180,6 @@ case "$package" in
 	;;
 esac
 echo Checking out version ${version_tag}
-
 if test "X${version_tag}X" != "master"; 
 then 
     git checkout -b ${version_tag} ${version_tag}
