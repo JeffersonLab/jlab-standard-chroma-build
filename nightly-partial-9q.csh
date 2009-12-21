@@ -2,8 +2,8 @@
 
 install_root="/dist/scidac"
 mailto_list="bjoo@jlab.org edwards@jlab.org"
-parallel_make=4
-build_name="4g Nightly Build"
+parallel_make=8
+build_name="9q Nightly Build"
 
 echo ""
 echo -n "Starting date: "
@@ -30,13 +30,9 @@ date
 
 # These builds assume the directories have been configured by a previous 7n build.
 ./build.sh  \
-            qmp-mvia-mesh/gigE/gigE \
-            qdp++/gigE/parscalar-gigE \
-	    qdp++/gigE/parscalar-gigE-double \
-            chroma/gigE/parscalar-gigE
-
-#            qdp++/single/parscalar-single-intel
-#            chroma/single/parscalar-single-intel
+            qmp/ib-9q/ib-9q \
+            qdp++/ib-9q/parscalar-ib-9q \
+            chroma/ib-9q/parscalar-ib-9q
 
 echo ""
 echo -n "Ending date: "
