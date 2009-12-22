@@ -10,7 +10,7 @@ ROOTDIR=../../../..
 CC=/home/bjoo/install_gcc4.3.0/bin/gcc
 CXX=/home/bjoo/install_gcc4.3.0/bin/g++
 
-PREFIX=`make_prefix ${ADATDIR}/PREFIX ${ADATDIR}/VERSION scalar`
+PREFIX=`make_prefix ${ADATDIR}/PREFIX ${ADATDIR}/VERSION scalar-7n`
 clean_dir ${PREFIX}
 
 ${ADATDIR}/adat/configure --prefix=${PREFIX} \
