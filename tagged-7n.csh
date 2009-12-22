@@ -14,7 +14,7 @@ date
   --enable-build-name="${build_name}"
 
 ./build.sh \
-            adat/scalar/scalar \
+            adat/scalar/scalar-7n \
             qmp/single/single \
             qmp/ib-7n/ib-7n \
             qdp++/scalar/scalar-7n \

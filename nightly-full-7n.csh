@@ -34,7 +34,7 @@ date
             ${install_root}/chroma/HEAD
 
 ./build-git.sh  \
-            adat/scalar/scalar \
+            adat/scalar/scalar-7n \
             qmt/amd/barcelona \
             qmp/single/single \
 	    qmp/ib-7n/ib-7n \
