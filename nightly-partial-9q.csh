@@ -29,7 +29,7 @@ date
 # directories.
 
 # These builds assume the directories have been configured by a previous 7n build.
-./build.sh  \
+./build-git.sh  \
             adat/scalar/scalar-9q \
             qmp/ib-9q/ib-9q \
             qdp++/ib-9q/parscalar-ib-9q \

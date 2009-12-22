@@ -1,6 +1,6 @@
 #!/bin/bash
 mailto_list="bjoo@jlab.org edwards@jlab.org"
-parallel_make=4
+parallel_make=8
 build_name="Site install"
 
 echo ""
@@ -13,7 +13,7 @@ date
   --enable-mailto="${mailto_list}" \
   --enable-build-name="${build_name}"
 
-./build.sh \
+./build-git.sh \
             adat/scalar/scalar-7n \
             qmp/single/single \
             qmp/ib-7n/ib-7n \
