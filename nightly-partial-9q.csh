@@ -31,7 +31,10 @@ date
 # These builds assume the directories have been configured by a previous 7n build.
 ./build-git.sh  \
             adat/scalar/scalar-9q \
+            qmt/intel/intel \
             qmp/ib-9q/ib-9q \
+            qdp++/scalar/scalar-9q \
+            qdp++/scalar/scalar-9q-qmt \
             qdp++/ib-9q/parscalar-ib-9q \
             chroma/ib-9q/parscalar-ib-9q
 

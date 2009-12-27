@@ -1,16 +1,15 @@
 #!/bin/bash
 
-ARCH=scalar-9q
 CHROMADIR=../../..
 ROOTDIR=../../../..
 QDPDIR=${ROOTDIR}/qdp++
 QMTDIR=${ROOTDIR}/qmt
 
 . ${ROOTDIR}/functions.sh
-PREFIX=`make_prefix ${CHROMADIR}/PREFIX ${CHROMADIR}/VERSION ${ARCH}-qmt`
+PREFIX=`make_prefix ${CHROMADIR}/PREFIX ${CHROMADIR}/VERSION scalar-9g-qmt`
 clean_dir ${PREFIX}
 
-QDP_PREFIX=`make_prefix ${QDPDIR}/PREFIX ${QDPDIR}/VERSION ${ARCH}-qmt`
+QDP_PREFIX=`make_prefix ${QDPDIR}/PREFIX ${QDPDIR}/VERSION scalar-9q-qmt`
 QMT_PREFIX=`make_prefix ${QMTDIR}/PREFIX ${QMTDIR}/VERSION intel`
 
 ${CHROMADIR}/chroma/configure --prefix=${PREFIX} --with-qdp=${QDP_PREFIX} \
@@ -21,6 +20,7 @@ ${CHROMADIR}/chroma/configure --prefix=${PREFIX} --with-qdp=${QDP_PREFIX} \
 	--with-gmp=/usr LIBS="-lgmp" \
 	--with-quda=/home/bjoo/Devel/QCD/quda-0.2 \
 	--enable-lapack=qdp
+
 #	--enable-lapack=lapack --enable-opt-eigcg LIBS="-llapack -lblas -lgfortran -lgmp" --with-gmp=/usr
 #       --with-quda=/lustre/scratch/bjoo/quda-0.1
 
