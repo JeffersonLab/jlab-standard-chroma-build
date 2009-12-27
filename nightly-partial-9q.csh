@@ -36,6 +36,7 @@ date
             qdp++/scalar/scalar-9q \
             qdp++/scalar/scalar-9q-qmt \
             qdp++/ib-9q/parscalar-ib-9q \
+            chroma/scalar/scalar-9g-qmt \
             chroma/ib-9q/parscalar-ib-9q
 
 echo ""
