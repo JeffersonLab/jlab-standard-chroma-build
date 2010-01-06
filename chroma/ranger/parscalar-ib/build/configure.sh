@@ -24,7 +24,7 @@ ${CHROMADIR}/chroma/configure --prefix=${PREFIX} --with-qdp=${QDP_PREFIX} \
    CFLAGS="-O3 -funroll-all-loops -fpeel-loops -ftree-vectorize -fno-tree-vrp " CXXFLAGS="" LIBS="" \
    --enable-sse-wilson-dslash --with-gmp=$GMP_PREFIX --enable-testcase-runner=6n_mpirun_rsh  \
    --with-qmp=${QMP_PREFIX} \
-   --enable-opt-eigcg --enable-lapack=lapack LIBS="$STUFF/libacml.a -lgmp" \
+   --enable-opt-eigcg --enable-lapack=lapack LIBS="-L$STUFF -lacml -lacml_mv -lgmp" \
    LDFLAGS="-L${GMP_PREFIX}/lib" \
    CXX="mpicxx -CC=$TOOLS/install/gcc-4.2.3/bin/g++" \
    CC="mpicc -cc=$TOOLS/install/gcc-4.2.3/bin/gcc"
