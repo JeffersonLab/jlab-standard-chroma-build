@@ -18,6 +18,7 @@ ${ADATDIR}/adat/configure --prefix=${PREFIX} \
    CFLAGS="-O3 -fargument-noalias-global -finline-limit=50000 -funroll-all-loops -fpeel-loops -march=opteron -fopenmp" \
    CXX=$CXX \
    CXXFLAGS="-O3 -fargument-noalias-global -finline-limit=50000 -funroll-all-loops -fpeel-loops -march=opteron -fopenmp -DUSE_OMP" \
-   LIBS="-lpthread" \
-   --enable-db-lite 
+   LIBS="-lpthread" 
+
+#   --enable-db-lite 
 
