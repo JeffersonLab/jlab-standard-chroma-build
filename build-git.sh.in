@@ -349,7 +349,8 @@ EOF
       # Need to generalise system to be able to launch mpi jobs
       # As regressions
 	case $arch in
-	    scalar|single|ib-7n)
+#	    scalar|single|ib-7n)
+	    scalar|single)
 	    action_name="xcheck"
 	    action="gmake -k xcheck"
 	    perform_action
