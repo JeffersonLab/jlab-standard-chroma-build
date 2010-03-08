@@ -21,7 +21,7 @@ MPCXX=/usr/local/mvapich-1.1/bin/mpiCC
 ${CHROMADIR}/chroma/configure --prefix=${PREFIX} --with-qdp=${QDP_PREFIX} \
    CFLAGS="-O3 -march=opteron -funroll-loops -fpeel-loops" CXXFLAGS="" \
    --enable-sse-wilson-dslash \
-   --enable-testcase-runner=6n_mpirun_rsh  \
+   --enable-testcase-runner=9q_mpirun_rsh  \
    --enable-cg-dwf=sse --with-qmp=${QMP_PREFIX} CC="${MPCC}"  CXX="${MPCXX}"
 
 #   LDFLAGS="-L/usr/mpi/gcc/mvapich-1.1.0/lib -L/usr/mpi/gcc/mvapich-1.1.0/lib/shared"

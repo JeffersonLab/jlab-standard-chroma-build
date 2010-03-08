@@ -18,7 +18,7 @@ CXX="mpiCC -cxx=g++"
 
 ${CHROMADIR}/chroma/configure --prefix=${PREFIX} --with-qdp=${QDP_PREFIX} \
    CFLAGS="-O3 -march=core2 -funroll-loops -fpeel-loops" CXXFLAGS="" \
-   --enable-sse-wilson-dslash  --with-gmp=/usr --enable-testcase-runner=6n_mpirun_rsh  \
+   --enable-sse-wilson-dslash  --with-gmp=/usr --enable-testcase-runner=9q_mpirun_rsh  \
    --with-qmt=${QMT_PREFIX} \
    --with-qmp=${QMP_PREFIX} CC="${CC}"  CXX="${CXX}" \
    --enable-opt-eigcg --enable-lapack=lapack LIBS="-llapack -lblas -lgfortran -lgmp" 
