@@ -350,7 +350,7 @@ EOF
       # As regressions
 	case $arch in
 #	    scalar|single|ib-7n)
-	    scalar|single)
+	    scalar|single|ib-9q)
 	    action_name="xcheck"
 	    action="gmake -k xcheck"
 	    perform_action
