@@ -16,6 +16,7 @@ ${CHROMADIR}/chroma/configure --prefix=${PREFIX} --with-qdp=${QDP_PREFIX} \
 	CXXFLAGS="" \
         --enable-cpp-wilson-dslash --enable-sse2 --with-gmp=/usr CC=gcc CXX=g++  \
 	--with-qmt=$QMT_PREFIX \
-        --enable-lapack=lapack --enable-opt-eigcg LIBS="-llapack -lblas -lgfortran -lgmp"
+        --enable-lapack=lapack --enable-opt-eigcg LIBS="-llapack -lblas -lgfortran -lgmp" \
+	--enable-sse-scalarsite-bicgstab-kernels
 
 
