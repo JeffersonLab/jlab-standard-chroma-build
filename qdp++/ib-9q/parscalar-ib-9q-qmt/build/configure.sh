@@ -13,7 +13,7 @@ QMT_PREFIX=`make_prefix ${ROOTDIR}/qmt/PREFIX ${ROOTDIR}/qmt/VERSION intel`
 
 MPI="/usr/mpi/gcc/mvapich2-1.2p1"
 MPCC="$MPI/bin/mpicc"
-MPCXX="$MPI/bin/mpiCC"
+MPCXX="$MPI/bin/mpicxx"
 
 ${QDPDIR}/qdp++/configure --prefix=${PREFIX} --with-qmp=${QMP_PREFIX} --enable-parallel-arch=parscalar \
 	--enable-sse2 --enable-db-lite \

@@ -12,7 +12,7 @@ QMP_PREFIX=`make_prefix ${ROOTDIR}/qmp/PREFIX ${ROOTDIR}/qmp/VERSION ${ARCH}`
 
 MPI="/usr/mpi/gcc/mvapich2-1.2p1"
 MPCC="$MPI/bin/mpicc"
-MPCXX="$MPI/bin/mpiCC"
+MPCXX="$MPI/bin/mpicxx"
 
 ${QDPDIR}/qdp++/configure --prefix=${PREFIX} --with-qmp=${QMP_PREFIX} --enable-parallel-arch=parscalar \
 	--enable-sse2 \

@@ -16,7 +16,7 @@ QMT_PREFIX=`make_prefix ${QMTDIR}/PREFIX ${QMTDIR}/VERSION intel`
 
 MPI="/usr/mpi/gcc/mvapich2-1.2p1"
 MPCC="$MPI/bin/mpicc"
-MPCXX="$MPI/bin/mpiCC"
+MPCXX="$MPI/bin/mpicxx"
 
 ${CHROMADIR}/chroma/configure --prefix=${PREFIX} --with-qdp=${QDP_PREFIX} \
    CFLAGS="-O3 -march=core2 -funroll-loops -fpeel-loops" CXXFLAGS="" \
