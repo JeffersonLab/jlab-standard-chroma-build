@@ -14,10 +14,8 @@ QMT_PREFIX=`make_prefix ${QMTDIR}/PREFIX ${QMTDIR}/VERSION intel`
 ${CHROMADIR}/chroma/configure --prefix=${PREFIX} --with-qdp=${QDP_PREFIX} \
 	CFLAGS="-O3 -fargument-noalias-global -funroll-all-loops -fpeel-loops -march=core2" \
 	CXXFLAGS="" \
-        --enable-sse-wilson-dslash --with-gmp=/usr CC=gcc CXX=g++  \
-	--with-qmt=$QMT_PREFIX
-
-
-#        --enable-lapack=lapack --enable-opt-eigcg LIBS="-llapack -lblas -lgfortran -lgmp"
+        --enable-cpp-wilson-dslash --enable-sse2 --with-gmp=/usr CC=gcc CXX=g++  \
+	--with-qmt=$QMT_PREFIX \
+        --enable-lapack=lapack --enable-opt-eigcg LIBS="-llapack -lblas -lgfortran -lgmp"
 
 
