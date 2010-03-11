@@ -4,10 +4,11 @@
 PREFIX=`make_prefix ../../../PREFIX ../../../VERSION ib-9q`
 clean_dir ${PREFIX}
 
+MPI="/usr/mpi/gcc/mvapich2-1.2p1"
+CC="$MPI/bin/mpicc" 
 
-CC="/usr/local/mvapich-1.1/bin/mpicc" 
-#CC="/usr/mpi/gcc/mvapich-1.1.0/bin/mpicc -cc=gcc" 
-#CC="/usr/mpi/gcc/mvapich-1.1.0/bin/mpicc" 
+#CC="$MPI/bin/mpicc -cc=gcc" 
+#CC="$MPI/bin/mpicc" 
 #CC=gcc
 #CFLAGS="-I/usr/local/mvapich-1.1/include"
 

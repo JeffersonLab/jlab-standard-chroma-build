@@ -13,8 +13,10 @@ clean_dir ${PREFIX}
 QDP_PREFIX=`make_prefix ${QDPDIR}/PREFIX ${QDPDIR}/VERSION ${ARCH}`
 QMP_PREFIX=`make_prefix ${QMPDIR}/PREFIX ${QMPDIR}/VERSION ib-9q`
 QMT_PREFIX=`make_prefix ${QMTDIR}/PREFIX ${QMTDIR}/VERSION intel`
-CC="mpicc -cc=gcc"
-CXX="mpiCC -cxx=g++"
+
+MPI="/usr/mpi/gcc/mvapich2-1.2p1"
+MPCC="$MPI/bin/mpicc"
+MPCXX="$MPI/bin/mpiCC"
 
 ${CHROMADIR}/chroma/configure --prefix=${PREFIX} --with-qdp=${QDP_PREFIX} \
    CFLAGS="-O3 -march=core2 -funroll-loops -fpeel-loops" CXXFLAGS="" \

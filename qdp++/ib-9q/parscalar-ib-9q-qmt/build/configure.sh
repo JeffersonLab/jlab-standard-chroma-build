@@ -10,8 +10,10 @@ clean_dir ${PREFIX}
 
 QMP_PREFIX=`make_prefix ${ROOTDIR}/qmp/PREFIX ${ROOTDIR}/qmp/VERSION ${ARCH}`
 QMT_PREFIX=`make_prefix ${ROOTDIR}/qmt/PREFIX ${ROOTDIR}/qmt/VERSION intel`
-CC="mpicc -cc=gcc"
-CXX="mpiCC -cxx=g++"
+
+MPI="/usr/mpi/gcc/mvapich2-1.2p1"
+MPCC="$MPI/bin/mpicc"
+MPCXX="$MPI/bin/mpiCC"
 
 ${QDPDIR}/qdp++/configure --prefix=${PREFIX} --with-qmp=${QMP_PREFIX} --enable-parallel-arch=parscalar \
 	--enable-sse2 --enable-db-lite \

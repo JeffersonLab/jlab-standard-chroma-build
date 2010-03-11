@@ -10,11 +10,9 @@ clean_dir ${PREFIX}
 
 QMP_PREFIX=`make_prefix ${ROOTDIR}/qmp/PREFIX ${ROOTDIR}/qmp/VERSION ${ARCH}`
 
-#MPCC="/usr/bin/mpicc -cc=gcc"
-#MPCXX="/usr/bin/mpiCC"
-
-MPCC=/usr/local/mvapich-1.1/bin/mpicc
-MPCXX=/usr/local/mvapich-1.1/bin/mpiCC
+MPI="/usr/mpi/gcc/mvapich2-1.2p1"
+MPCC="$MPI/bin/mpicc"
+MPCXX="$MPI/bin/mpiCC"
 
 ${QDPDIR}/qdp++/configure --prefix=${PREFIX} --with-qmp=${QMP_PREFIX} --enable-parallel-arch=parscalar \
 	--enable-sse2 \
@@ -22,6 +20,4 @@ ${QDPDIR}/qdp++/configure --prefix=${PREFIX} --with-qmp=${QMP_PREFIX} --enable-p
 	CFLAGS="-O3 -fargument-noalias-global -funroll-all-loops -fpeel-loops -march=core2" \
  	CXX="${MPCXX}" \
  	CC="${MPCC}"
-
-#        LDFLAGS="-L/usr/local/mvapich-1.1 -static"
 
