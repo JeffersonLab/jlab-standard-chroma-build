@@ -17,11 +17,12 @@ MPCC="$MPI/bin/mpicc"
 MPCXX="$MPI/bin/mpicxx"
 
 ${CHROMADIR}/chroma/configure --prefix=${PREFIX} --with-qdp=${QDP_PREFIX} \
-   CFLAGS="-O3 -march=core2 -farugment-noalias-global -funroll-loops -fpeel-loops" CXXFLAGS="" \
+   CFLAGS="-O3 -march=core2 -fargument-noalias-global -funroll-loops -fpeel-loops" CXXFLAGS="-O3 -march=core2 -fargument-noalias-global -funroll-loops -fpeel-loops" \
    --enable-cpp-wilson-dslash \
    --enable-sse2 \
    --enable-testcase-runner=9q_mpirun_rsh  \
-   --enable-cg-dwf=sse --with-qmp=${QMP_PREFIX} CC="${MPCC}"  CXX="${MPCXX}"
+   --enable-cg-dwf=sse --with-qmp=${QMP_PREFIX} CC="${MPCC}"  CXX="${MPCXX}" \
    --enable-opt-eigcg --enable-lapack=lapack LIBS="-llapack -lblas -lgfortran -lgmp" \
-   --with-gmp=/usr 
+   --with-gmp=/usr \
+   --enable-sse-scalarsite-bicgstab-kernels
 #   --enable-lapack=lapack LIBS="-llapack -lblas -lgfortran -lgmp"
