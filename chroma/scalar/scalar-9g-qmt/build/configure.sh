@@ -19,6 +19,7 @@ ${CHROMADIR}/chroma/configure --prefix=${PREFIX} --with-qdp=${QDP_PREFIX} \
 	--with-qmt=$QMT_PREFIX \
 	--with-gmp=/usr LIBS="-lgmp" \
 	--with-quda=/home/bjoo/Devel/QCD/quda-0.2 \
-	--enable-lapack=lapack --enable-opt-eigcg LIBS="-llapack -lblas -lgfortran -lgmp" --with-gmp=/usr
+	--enable-lapack=lapack --enable-opt-eigcg LIBS="-llapack -lblas -lgfortran -lgmp" --with-gmp=/usr \
+	--enable-sse-scalarsite-bicgstab-kernels
 #       --with-quda=/lustre/scratch/bjoo/quda-0.1
 
