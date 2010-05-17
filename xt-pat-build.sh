@@ -1,12 +1,12 @@
 #! /bin/bash
 
 #### Setup configure here
-./configure --enable-parallel-make=4 \
-            --enable-install-root=/ccs/proj/lgt003/Feb27-PAT \
-	    --enable-qdp-version=HEAD \
-	    --enable-chroma-version=HEAD
+./configure --enable-parallel-make=10 \
+            --enable-install-root=/ccs/proj/lgt003/May-17-2010/ \
+	    --enable-qdp-version=master \
+	    --enable-chroma-version=master
 
-./build.sh qmt/cray_xt/xt-barcelona-pat \ 
+./build.sh qmt/cray_xt/xt-barcelona-pat \
 	   libxml2/cray_xt3/xt-craypat \
 	   qmp/cray_xt3/xt-craypat \
 	   qdp++/cray_xt3/parscalar-xt-qmt-pat \
