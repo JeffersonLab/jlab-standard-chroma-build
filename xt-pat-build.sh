@@ -6,7 +6,7 @@
 	    --enable-qdp-version=master \
 	    --enable-chroma-version=master
 
-./build.sh qmt/cray_xt/xt-barcelona-pat \
+./build-git.sh qmt/cray_xt/xt-barcelona-pat \
 	   libxml2/cray_xt3/xt-craypat \
 	   qmp/cray_xt3/xt-craypat \
 	   qdp++/cray_xt3/parscalar-xt-qmt-pat \
