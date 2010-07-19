@@ -17,6 +17,8 @@ cd `dirname $0`
 checkdir=$PWD
 logdir=$checkdir/logs
 
+export PATH=/usr/bin:/usr/local/xmldiff_1.0:$PATH
+export LD_LIBRARY_PATH=/usr/lib64:/usr/lib:$LD_LIBRARY_PATH
 
 # Interpret arguments. $1 is the architecture
 # The remaining arguments are module names to build for this architecture
