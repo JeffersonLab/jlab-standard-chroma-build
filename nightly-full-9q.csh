@@ -2,7 +2,7 @@
 
 install_root="/dist/scidac"
 mailto_list="bjoo@jlab.org edwards@jlab.org"
-parallel_make=8
+parallel_make=16
 build_name="9q Nightly Build"
 
 echo ""
@@ -10,28 +10,26 @@ echo -n "Starting date: "
 date
 
 ./configure  \
-  --enable-qmp-mvia-version=HEAD \
-  --enable-qmp-version=HEAD \
-  --enable-qmt-version=HEAD \
-  --enable-qdp-version=HEAD \
-  --enable-chroma-version=HEAD \
-  --enable-bagel-qdp-version=HEAD \
-  --enable-adat-version=HEAD \
+  --enable-qmp-version=master \
+  --enable-qmt-version=master \
+  --enable-qdp-version=master \
+  --enable-chroma-version=master \
+  --enable-bagel-qdp-version=master \
+  --enable-adat-version=master \
   --enable-install-root=${install_root} \
   --enable-parallel-make="${parallel_make}" \
-  --enable-mailto="${mailto_list}" \
   --enable-build-name="${build_name}"
 
 #  --enable-bagel-version=1.4.0
 #  --enable-bagel-wilson-dslash-version=1.4.2
 
-/bin/rm -rf ${install_root}/adat/HEAD \
-            ${install_root}/bagel/HEAD \
-            ${install_root}/bagel_qdp/HEAD \
-            ${install_root}/qmp/HEAD \
-            ${install_root}/qmt/HEAD \
-            ${install_root}/qdp++/HEAD \
-            ${install_root}/chroma/HEAD
+/bin/rm -rf ${install_root}/adat/master \
+            ${install_root}/bagel/master \
+            ${install_root}/bagel_qdp/master \
+            ${install_root}/qmp/master \
+            ${install_root}/qmt/master \
+            ${install_root}/qdp++/master \
+            ${install_root}/chroma/master
 
 ./build-git.sh  \
             adat/scalar/scalar-9q \

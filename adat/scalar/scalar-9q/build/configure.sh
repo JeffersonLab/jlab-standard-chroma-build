@@ -4,16 +4,16 @@ ADATDIR=../../..
 ROOTDIR=../../../..
 . ${ROOTDIR}/functions.sh
 
-CC=gcc
-CXX=g++
-
 PREFIX=`make_prefix ${ADATDIR}/PREFIX ${ADATDIR}/VERSION scalar-9q`
 clean_dir ${PREFIX}
 
+MYCC=gcc
+MYCXX=g++
+
 ${ADATDIR}/adat/configure --prefix=${PREFIX} \
-   CC=$CC \
+   CC=${MYCC} \
    CFLAGS="-O3 -fargument-noalias-global -finline-limit=50000 -funroll-all-loops -fpeel-loops -march=core2 -fopenmp" \
-   CXX=$CXX \
+   CXX=${MYCXX} \
    CXXFLAGS="-O3 -fargument-noalias-global -finline-limit=50000 -funroll-all-loops -fpeel-loops -march=core2 -fopenmp -DUSE_OMP" \
    LIBS="-lpthread" 
 
