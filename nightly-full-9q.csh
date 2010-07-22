@@ -18,7 +18,8 @@ date
   --enable-adat-version=master \
   --enable-install-root=${install_root} \
   --enable-parallel-make="${parallel_make}" \
-  --enable-build-name="${build_name}"
+  --enable-build-name="${build_name}" \
+  --enable-mailto="${mailto_list}"
 
 #  --enable-bagel-version=1.4.0
 #  --enable-bagel-wilson-dslash-version=1.4.2
