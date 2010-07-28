@@ -7,7 +7,7 @@ clean_dir ${PREFIX}
 
 CC=mpicc
 
-../../../qmp/configure --prefix=${PREFIX} --with-qmp-comms-type=MPI --with-qmp-comms-cflags="" --with-qmp-comms-ldflags="" --with-qmp-comms-libs="" CC="${CC}" CFLAGS="-D_REENTRANT -O3 -march=core2"  --host=x86_64-linux-gnu --build=none
+../../../qmp/configure --prefix=${PREFIX} --with-qmp-comms-type=MPI --with-qmp-comms-cflags="" --with-qmp-comms-ldflags="" --with-qmp-comms-libs="" CC="${CC}" CFLAGS="-fopenmp -D_REENTRANT -O3 -march=core2"  --host=x86_64-apple-darwin --build=none
 
 #LDFLAGS="-L/usr/local/mvapich-1.1/lib" LIBS="-lmpich -lpmpich -lpthread"
 
