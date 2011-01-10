@@ -32,7 +32,6 @@ ${CHROMADIR}/chroma/configure --prefix=${PREFIX} \
 			     CC="cc" CXX="CC" \
 	 --enable-cpp-wilson-dslash \
 	 --enable-sse2 \
-	 --enable-craypat \
 	 --without-gmp \
          --with-qmp=${QMP_PREFIX} \
 	 --with-qmt=${QMT_PREFIX} \
