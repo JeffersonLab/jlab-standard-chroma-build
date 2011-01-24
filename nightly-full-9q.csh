@@ -16,6 +16,7 @@ date
   --enable-chroma-version=master \
   --enable-bagel-qdp-version=master \
   --enable-adat-version=master \
+  --enable-colorvec-version=master \
   --enable-install-root=${install_root} \
   --enable-parallel-make="${parallel_make}" \
   --enable-build-name="${build_name}" \
