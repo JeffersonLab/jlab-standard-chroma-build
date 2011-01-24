@@ -85,9 +85,9 @@ AC_SUBST(BAGEL_QDP_VERSION, [${ac_bagel_qdp_vers}])
 
 AC_ARG_ENABLE(adat-version,
 	AC_HELP_STRING([--enable-adat-version],
-	[Select version of adat to use, default is adat1-34-0]),
+	[Select version of adat to use, default is adat2-27-0]),
 	[ac_adat_vers=${enableval}],
-	[ac_adat_vers="adat1-34-0"]
+	[ac_adat_vers="adat2-27-0"]
 )
 AC_SUBST(ADAT_VERSION, [${ac_adat_vers}])
 
