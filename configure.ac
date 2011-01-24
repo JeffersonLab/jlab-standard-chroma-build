@@ -91,6 +91,14 @@ AC_ARG_ENABLE(adat-version,
 )
 AC_SUBST(ADAT_VERSION, [${ac_adat_vers}])
 
+AC_ARG_ENABLE(colorvec-version,
+	AC_HELP_STRING([--enable-colorvec-version],
+	[Select version of colorvec to use, default is colorvec1-0-0]),
+	[ac_adat_vers=${enableval}],
+	[ac_adat_vers="colorvec1-0-0"]
+)
+AC_SUBST(COLORVEC_VERSION, [${ac_colorvec_vers}])
+
 AC_ARG_ENABLE(libxml2-version,
 	AC_HELP_STRING([--enable-libxml2-version],
 	["Select version of libxml to use, default is 2.6.24"]),
