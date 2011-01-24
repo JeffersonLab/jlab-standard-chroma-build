@@ -17,6 +17,8 @@ date
   --enable-bagel-qdp-version=master \
   --enable-adat-version=master \
   --enable-colorvec-version=master \
+  --enable-sfpcac-version=master \
+  --enable-redstar-version=master \
   --enable-install-root=${install_root} \
   --enable-parallel-make="${parallel_make}" \
   --enable-build-name="${build_name}" \
@@ -27,6 +29,8 @@ date
 
 /bin/rm -rf ${install_root}/adat/master \
             ${install_root}/colorvec/master \
+            ${install_root}/sfpcac/master \
+            ${install_root}/redstar/master \
             ${install_root}/bagel/master \
             ${install_root}/bagel_qdp/master \
             ${install_root}/qmp/master \

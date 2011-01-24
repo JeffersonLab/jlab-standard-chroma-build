@@ -99,6 +99,22 @@ AC_ARG_ENABLE(colorvec-version,
 )
 AC_SUBST(COLORVEC_VERSION, [${ac_colorvec_vers}])
 
+AC_ARG_ENABLE(sfpcac-version,
+	AC_HELP_STRING([--enable-sfpcac-version],
+	[Select version of sfpcac to use, default is sfpcac-0-0]),
+	[ac_adat_vers=${enableval}],
+	[ac_adat_vers="sfpcac1-0-0"]
+)
+AC_SUBST(SFPCAC_VERSION, [${ac_sfpcac}])
+
+AC_ARG_ENABLE(redstar-version,
+	AC_HELP_STRING([--enable-redstar-version],
+	[Select version of redstar to use, default is redstar1-0-0]),
+	[ac_adat_vers=${enableval}],
+	[ac_adat_vers="redstar1-0-0"]
+)
+AC_SUBST(REDSTAR_VERSION, [${ac_redstar_vers}])
+
 AC_ARG_ENABLE(libxml2-version,
 	AC_HELP_STRING([--enable-libxml2-version],
 	["Select version of libxml to use, default is 2.6.24"]),

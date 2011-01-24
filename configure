@@ -272,7 +272,7 @@ PACKAGE_STRING=
 PACKAGE_BUGREPORT=
 
 ac_unique_file="build.sh.in"
-ac_subst_vars='SHELL PATH_SEPARATOR PACKAGE_NAME PACKAGE_TARNAME PACKAGE_VERSION PACKAGE_STRING PACKAGE_BUGREPORT exec_prefix prefix program_transform_name bindir sbindir libexecdir datadir sysconfdir sharedstatedir localstatedir libdir includedir oldincludedir infodir mandir build_alias host_alias target_alias DEFS ECHO_C ECHO_N ECHO_T LIBS QMP_MVIA_VERSION GMP_VERSION QMT_VERSION QMP_VERSION QDP_VERSION CHROMA_VERSION BAGEL_VERSION BAGEL_WILSON_DSLASH_VERSION BAGEL_CLOVER_VERSION BAGEL_QDP_VERSION ADAT_VERSION COLORVEC_VERSION LIBXML2_VERSION GIT_ROOT SFW_INSTALL_ROOT MAKE_ARGS MAILTO BUILDNAME LIBOBJS LTLIBOBJS'
+ac_subst_vars='SHELL PATH_SEPARATOR PACKAGE_NAME PACKAGE_TARNAME PACKAGE_VERSION PACKAGE_STRING PACKAGE_BUGREPORT exec_prefix prefix program_transform_name bindir sbindir libexecdir datadir sysconfdir sharedstatedir localstatedir libdir includedir oldincludedir infodir mandir build_alias host_alias target_alias DEFS ECHO_C ECHO_N ECHO_T LIBS QMP_MVIA_VERSION GMP_VERSION QMT_VERSION QMP_VERSION QDP_VERSION CHROMA_VERSION BAGEL_VERSION BAGEL_WILSON_DSLASH_VERSION BAGEL_CLOVER_VERSION BAGEL_QDP_VERSION ADAT_VERSION COLORVEC_VERSION SFPCAC_VERSION REDSTAR_VERSION LIBXML2_VERSION GIT_ROOT SFW_INSTALL_ROOT MAKE_ARGS MAILTO BUILDNAME LIBOBJS LTLIBOBJS'
 ac_subst_files=''
 
 # Initialize some variables set by options.
@@ -805,6 +805,11 @@ Optional Features:
   --enable-colorvec-version
                           Select version of colorvec to use, default is
                           colorvec1-0-0
+  --enable-sfpcac-version Select version of sfpcac to use, default is
+                          sfpcac-0-0
+  --enable-redstar-version
+                          Select version of redstar to use, default is
+                          redstar1-0-0
   --enable-libxml2-version
                           "Select version of libxml to use, default is 2.6.24"
   --enable-install-root   Select a root directory to install all the packages
@@ -1386,6 +1391,28 @@ else
 
 fi;
 COLORVEC_VERSION=${ac_colorvec_vers}
+
+
+# Check whether --enable-sfpcac-version or --disable-sfpcac-version was given.
+if test "${enable_sfpcac_version+set}" = set; then
+  enableval="$enable_sfpcac_version"
+  ac_adat_vers=${enableval}
+else
+  ac_adat_vers="sfpcac1-0-0"
+
+fi;
+SFPCAC_VERSION=${ac_sfpcac}
+
+
+# Check whether --enable-redstar-version or --disable-redstar-version was given.
+if test "${enable_redstar_version+set}" = set; then
+  enableval="$enable_redstar_version"
+  ac_adat_vers=${enableval}
+else
+  ac_adat_vers="redstar1-0-0"
+
+fi;
+REDSTAR_VERSION=${ac_redstar_vers}
 
 
 # Check whether --enable-libxml2-version or --disable-libxml2-version was given.
@@ -2212,6 +2239,8 @@ s,@BAGEL_CLOVER_VERSION@,$BAGEL_CLOVER_VERSION,;t t
 s,@BAGEL_QDP_VERSION@,$BAGEL_QDP_VERSION,;t t
 s,@ADAT_VERSION@,$ADAT_VERSION,;t t
 s,@COLORVEC_VERSION@,$COLORVEC_VERSION,;t t
+s,@SFPCAC_VERSION@,$SFPCAC_VERSION,;t t
+s,@REDSTAR_VERSION@,$REDSTAR_VERSION,;t t
 s,@LIBXML2_VERSION@,$LIBXML2_VERSION,;t t
 s,@GIT_ROOT@,$GIT_ROOT,;t t
 s,@SFW_INSTALL_ROOT@,$SFW_INSTALL_ROOT,;t t
