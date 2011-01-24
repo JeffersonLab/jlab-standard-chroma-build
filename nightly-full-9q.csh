@@ -41,6 +41,7 @@ date
 ./build-git.sh  \
             adat/scalar/scalar-9q \
             colorvec/scalar/scalar-9q \
+            sfpcac/scalar/scalar-9q \
             qmt/intel/intel \
             qmt/amd/barcelona \
             qmp/single/single \
