@@ -25,6 +25,7 @@ date
 #  --enable-bagel-wilson-dslash-version=1.4.2
 
 /bin/rm -rf ${install_root}/adat/master \
+            ${install_root}/colorvec/master \
             ${install_root}/bagel/master \
             ${install_root}/bagel_qdp/master \
             ${install_root}/qmp/master \
@@ -34,6 +35,7 @@ date
 
 ./build-git.sh  \
             adat/scalar/scalar-9q \
+            colorvec/scalar/scalar-9q \
             qmt/intel/intel \
             qmt/amd/barcelona \
             qmp/single/single \
