@@ -6,7 +6,7 @@ ROOTDIR=../../../..
 ADATDIR=${ROOTDIR}/adat
 
 . ${ROOTDIR}/functions.sh
-PREFIX=`make_prefix ${SFPCACDIR}/PREFIX ${SFPCACDIR}/VERSION ${ARCH}
+PREFIX=`make_prefix ${SFPCACDIR}/PREFIX ${SFPCACDIR}/VERSION ${ARCH}`
 clean_dir ${PREFIX}
 
 ADAT_PREFIX=`make_prefix ${ADATDIR}/PREFIX ${ADATDIR}/VERSION ${ARCH}`
