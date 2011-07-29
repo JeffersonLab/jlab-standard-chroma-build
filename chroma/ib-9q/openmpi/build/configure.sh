@@ -12,8 +12,8 @@ clean_dir ${PREFIX}
 QDP_PREFIX=`make_prefix ${QDPDIR}/PREFIX ${QDPDIR}/VERSION parscalar-${ARCH}`
 QMP_PREFIX=`make_prefix ${QMPDIR}/PREFIX ${QMPDIR}/VERSION openmpi`
 
-MPCC=/usr/mpi/gcc/openmpi-1.3.2/bin/mpicc
-MPCXX=/usr/mpi/gcc/openmpi-1.3.2/bin/mpiCC
+MPCC=/usr/mpi/gcc/openmpi-1.4.2/bin/mpicc
+MPCXX=/usr/mpi/gcc/openmpi-1.4.2/bin/mpiCC
 
 ${CHROMADIR}/chroma/configure --prefix=${PREFIX} --with-qdp=${QDP_PREFIX} \
    CFLAGS="-O3 -fargument-noalias-global -fopenmp -march=core2 -funroll-loops -fpeel-loops" CXXFLAGS="-fopenmp" \

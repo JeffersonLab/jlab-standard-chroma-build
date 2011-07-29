@@ -14,7 +14,7 @@ QDP_PREFIX=`make_prefix ${QDPDIR}/PREFIX ${QDPDIR}/VERSION ${ARCH}`
 QMP_PREFIX=`make_prefix ${QMPDIR}/PREFIX ${QMPDIR}/VERSION ib-9q`
 QMT_PREFIX=`make_prefix ${QMTDIR}/PREFIX ${QMTDIR}/VERSION intel`
 
-MPI="/usr/mpi/gcc/mvapich2-1.2p1"
+MPI="/usr/mpi/gcc/mvapich2-1.6"
 MPCC="$MPI/bin/mpicc"
 MPCXX="$MPI/bin/mpicxx"
 

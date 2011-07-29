@@ -11,7 +11,7 @@ clean_dir ${PREFIX}
 QMP_PREFIX=`make_prefix ${ROOTDIR}/qmp/PREFIX ${ROOTDIR}/qmp/VERSION ${ARCH}`
 QMT_PREFIX=`make_prefix ${ROOTDIR}/qmt/PREFIX ${ROOTDIR}/qmt/VERSION intel`
 
-MPI="/usr/mpi/gcc/mvapich2-1.2p1"
+MPI="/usr/mpi/gcc/mvapich2-1.6"
 MPCC="$MPI/bin/mpicc"
 MPCXX="$MPI/bin/mpicxx"
 
