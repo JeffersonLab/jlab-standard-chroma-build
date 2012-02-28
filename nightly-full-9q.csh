@@ -46,6 +46,7 @@ date
             qmt/amd/barcelona \
             qmp/single/single \
 	    qmp/ib-9q/ib-9q \
+	    qmp/ib-9q/openmpi \
             bagel/native/bagel \
             bagel_qdp/noarch/noarch-double \
             qdp++/scalar/scalar-9q \
