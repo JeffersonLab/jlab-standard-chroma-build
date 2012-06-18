@@ -23,5 +23,5 @@ ${QDPDIR}/qdp++/configure \
    --disable-qmp-route \
    --enable-slow-route \
    CXXFLAGS="-O2 -finline-limit=50000 -msse -msse2" \
-   CFLAGS="-O3 -msse -msse2" \
+   CFLAGS="-O3 -msse -msse2 -std=c99" \
    CXX=${CXX} CC=${CC}

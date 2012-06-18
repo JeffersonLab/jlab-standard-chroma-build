@@ -17,7 +17,7 @@ MPCXX="$MPI/bin/mpicxx"
 ${QDPDIR}/qdp++/configure --prefix=${PREFIX} --with-qmp=${QMP_PREFIX} --enable-parallel-arch=parscalar \
 	--enable-sse2 \
 	CXXFLAGS="-O3 -fargument-noalias-global -finline-limit=50000 -march=core2 -funroll-all-loops -fpeel-loops" \
-	CFLAGS="-O3 -fargument-noalias-global -funroll-all-loops -fpeel-loops -march=core2" \
+	CFLAGS="-O3 -fargument-noalias-global -funroll-all-loops -fpeel-loops -march=core2 -std=c99" \
  	CXX="${MPCXX}" \
  	CC="${MPCC}"
 

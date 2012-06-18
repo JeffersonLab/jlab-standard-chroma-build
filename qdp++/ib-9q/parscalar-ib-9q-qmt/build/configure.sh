@@ -19,6 +19,6 @@ ${QDPDIR}/qdp++/configure --prefix=${PREFIX} --with-qmp=${QMP_PREFIX} --enable-p
 	--enable-sse2 --enable-db-lite \
 	--with-qmt=${QMT_PREFIX} \
 	CXXFLAGS="-O3 -fargument-noalias-global -finline-limit=50000 -march=core2 -funroll-all-loops -fpeel-loops" \
-	CFLAGS="-O3 -fargument-noalias-global -funroll-all-loops -fpeel-loops -march=core2"  \
+	CFLAGS="-std=c99 -O3 -fargument-noalias-global -funroll-all-loops -fpeel-loops -march=core2"  \
 	CXX="${CXX}" \
 	CC="${CC}"

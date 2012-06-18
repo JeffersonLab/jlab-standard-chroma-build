@@ -27,4 +27,4 @@ ${QDPDIR}/qdp++/configure --prefix=${PREFIX} \
 			  --disable-qmp-route \
 			  --enable-slow-route \
 			   CXXFLAGS="-O2 -finline-limit=50000" \
-			   CFLAGS="-O2"
+			   CFLAGS="-O2 -std=c99"

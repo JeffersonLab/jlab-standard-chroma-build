@@ -19,6 +19,6 @@ CXX=/opt/intel/cce/10.0.023/bin/icpc
 ${QDPDIR}/qdp++/configure --prefix=${PREFIX} --with-qmp=${QMP_PREFIX} \
    --enable-parallel-arch=parscalar \
    CXXFLAGS="-O2 -finline-limit=50000  -fargument-noalias-global -march=pentium4" \
-   CFLAGS="-O2 -march=pentium4" \
+   CFLAGS="-O2 -march=pentium4 -std=c99" \
    LIBS="" \
    CXX=${CXX} CC=${CC}

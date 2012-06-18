@@ -9,6 +9,6 @@ clean_dir ${PREFIX}
 
 ${QDPDIR}/qdp++/configure --prefix=${PREFIX} --enable-parallel-arch=scalar --enable-sse2 --enable-db-lite \
 	CXXFLAGS="-fargument-noalias-global -O3 -finline-limit=50000 -march=opteron -funroll-all-loops -fpeel-loops" \
-	CFLAGS="-fargument-noalias-global -O3 -march=opteron -funroll-all-loops -fpeel-loops" \
+	CFLAGS="-std=c99 -fargument-noalias-global -O3 -march=opteron -funroll-all-loops -fpeel-loops" \
 	CXX=g++ CC=gcc \
         --enable-precision=double
