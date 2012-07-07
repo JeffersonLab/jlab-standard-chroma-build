@@ -4,7 +4,7 @@
 PREFIX=`make_prefix ../../../PREFIX ../../../VERSION ib-9q`
 clean_dir ${PREFIX}
 
-MPI="/usr/mpi/gcc/mvapich2-1.6"
+MPI="/usr/mpi/gcc/mvapich2-1.8/"
 CC="$MPI/bin/mpicc" 
 
 #CC="$MPI/bin/mpicc -cc=gcc" 
