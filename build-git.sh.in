@@ -281,7 +281,7 @@ do
 
 		case "${package}" in
 		    bagel|bagel_wilson_dslash)
-		       download_root="http://www.ph.ed.ac.uk/~paboyle/bagel"
+		       download_root="http://www2.ph.ed.ac.uk/~paboyle/bagel"
 		       ;;
 		    libxml2)
 		       download_root="ftp://ftp.gnome.org/pub/GNOME/sources/libxml2/2.6"

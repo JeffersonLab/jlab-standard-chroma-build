@@ -10,7 +10,7 @@ clean_dir ${PREFIX}
 
 QMP_PREFIX=`make_prefix ${ROOTDIR}/qmp/PREFIX ${ROOTDIR}/qmp/VERSION ${ARCH}`
 
-MPI="/usr/mpi/gcc/mvapich2-1.6"
+MPI="/usr/mpi/gcc/mvapich2-1.8"
 MPCC="$MPI/bin/mpicc"
 MPCXX="$MPI/bin/mpicxx"
 
