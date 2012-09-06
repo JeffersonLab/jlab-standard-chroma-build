@@ -99,6 +99,7 @@ date
 
 ./build-git.sh \
     colorvec/scalar/scalar-9q \
+    redstar/scalar/scalar-9q \
     sfpcac/scalar/scalar-9q 
 
 echo ""
