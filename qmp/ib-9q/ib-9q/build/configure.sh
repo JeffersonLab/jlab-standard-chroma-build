@@ -12,7 +12,7 @@ CC="$MPI/bin/mpicc"
 #CC=gcc
 #CFLAGS="-I/usr/local/mvapich-1.1/include"
 
-../../../qmp/configure --prefix=${PREFIX} --with-qmp-comms-type=MPI --with-qmp-comms-cflags="" --with-qmp-comms-ldflags="" --with-qmp-comms-libs="" CC="${CC}" CFLAGS="-O3 -D_REENTRANT -march=core2" 
+../../../qmp/configure --prefix=${PREFIX} --with-qmp-comms-type=MPI --with-qmp-comms-cflags="" --with-qmp-comms-ldflags="" --with-qmp-comms-libs="" CC="${CC}" CFLAGS="-O3 -D_REENTRANT -march=core2 -std=c99" 
 
 #LDFLAGS="-L/usr/local/mvapich-1.1/lib" LIBS="-lmpich -lpmpich -lpthread"
 
