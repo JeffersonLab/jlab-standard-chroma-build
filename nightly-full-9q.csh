@@ -1,6 +1,5 @@
 
 #!/bin/bash -x
-
 install_root="/dist/scidac"
 mailto_list="bjoo@jlab.org edwards@jlab.org"
 parallel_make=16
@@ -41,45 +40,23 @@ date
 
 ./build-git.sh  \
     adat/scalar/scalar-9q \
-    qmt/intel/intel \
-    qmt/amd/barcelona \
     qmp/single/single \
     qmp/ib-9q/ib-9q \
     qmp/ib-9q/openmpi \
     qdp++/scalar/scalar-9q \
-    qdp++/scalar/scalar-9q-qmt \
     qdp++/single/parscalar-single \
     qdp++/single/parscalar-single-double \
     qdp++/ib-9q/parscalar-ib-9q \
     qdp++/ib-9q/parscalar-ib-9q-double \
+    qdp++/ib-9q/openmpi \
+    qdp++/ib-9q/openmpi-double \
     chroma/scalar/scalar-9q \
-    chroma/scalar/scalar-9q-qmt \
     chroma/single/parscalar-single \
     chroma/single/parscalar-single-double \
     chroma/ib-9q/parscalar-ib-9q \
-    chroma/ib-9q/parscalar-ib-9q-double
-
-
-
-
-# We don't have an intel compiler on 9q?
-#            qmp/single/single-intel
-#            qdp++/single/parscalar-single-intel
-#            chroma/single/parscalar-single-intel
-
-# We cant make outgoing connections on the interactive QCD Nodes
-# either we put bagel somewhere local or we don't nightly test it.
-# Peter can lete us check it into out git maybe then we can test it.
-
-#           bagel_qdp/noarch/noarch-double
-#           bagel/native/bagel
-#           bagel_wilson_dslash/single/parscalar-single-double
-#           chroma/single/parscalar-single-double-bageldslash
-
-#
-# Jlab local packages under different ./git root. You need a 
-# passphrase free ssh-agent running to build these.
-#
+    chroma/ib-9q/parscalar-ib-9q-double \
+    chroma/ib-9q/openmpi \
+    chroma/ib-9q/openmpi-double
 
 ./configure  \
     --enable-qmp-version=master \

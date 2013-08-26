@@ -17,7 +17,7 @@ MPCC="${MPI}/bin/mpicc"
 MPCXX="${MPI}/bin/mpicxx"
 
 ${CHROMADIR}/chroma/configure --prefix=${PREFIX} --with-qdp=${QDP_PREFIX} \
-   CFLAGS="-O3 -march=opteron -funroll-loops -fpeel-loops" CXXFLAGS="" \
+   CFLAGS="-O2 -march=core2 -funroll-loops -fpeel-loops" CXXFLAGS="" \
    --enable-cpp-wilson-dslash  --enable-sse2 \
    --enable-testcase-runner=9q_mpirun_rsh  \
   --with-gmp=/usr  \
