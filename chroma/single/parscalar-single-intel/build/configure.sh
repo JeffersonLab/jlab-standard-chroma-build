@@ -4,16 +4,27 @@ ARCH=parscalar-single-intel
 CHROMADIR=../../..
 ROOTDIR=../../../..
 QDPDIR=${ROOTDIR}/qdp++
+QMPDIR=${ROOTDIR}/qmp
 
 . ${ROOTDIR}/functions.sh
 PREFIX=`make_prefix ${CHROMADIR}/PREFIX ${CHROMADIR}/VERSION ${ARCH}`
 clean_dir ${PREFIX}
 
 QDP_PREFIX=`make_prefix ${QDPDIR}/PREFIX ${QDPDIR}/VERSION ${ARCH}`
-CC=/opt/intel/cc/9.1.043/bin/icc
+QMP_PREFIX=`make_prefix ${QMPDIR}/PREFIX ${QMPDIR}/VERSION single-intel`
+echo QMP_PREFIX IS $QMP_PREFIX
+CC=icc
+CXX=icpc
 
-${CHROMADIR}/chroma/configure --prefix=${PREFIX} --with-qdp=${QDP_PREFIX} \
-  CFLAGS="-O2 -fast -msse -msse2 -march=pentium4"  \
-  CXXFLAGS="" LIBS="-lgmp" --with-gmp=/usr  --enable-testcase-runner=trivial_runner  \
-  LIBS="-static" \
-  CC=${CC} CXX=${CC} 
+${CHROMADIR}/chroma/configure --prefix=${PREFIX} --with-qdp=${QDP_PREFIX}  \
+	--enable-cpp-wilson-dslash --enable-sse2 --enable-sse3 \
+	--with-qmp=${QMP_PREFIX} \
+        --enable-sse-scalarsite-bicgstab-kernels \
+	--enable-openmp \
+	CXXFLAGS="" \
+  	CFLAGS="" \
+      --enable-testcase-runner=trivial_runner  \
+	  CC=${CC} CXX=${CC} \
+	--with-gmp=/usr \
+        --enable-lapack=lapack --enable-opt-eigcg LIBS="-llapack -lblas -lgfortran -lgmp"
+

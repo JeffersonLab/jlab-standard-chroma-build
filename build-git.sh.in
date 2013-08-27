@@ -226,6 +226,9 @@ perform_action(){
 
 ##### BEGIN HERE
 
+## BEASTLY HACK... Really somehow this needs to be selected
+## This nightly scheme needs to be reworked.
+source /opt/intel/composerxe/bin/compilervars.sh intel64
 
 
 

@@ -4,6 +4,7 @@
 PREFIX=`make_prefix ../../../PREFIX ../../../VERSION single-intel`
 clean_dir ${PREFIX}
 
-CC=/opt/intel/cc/9.1.043/bin/icc
+source /opt/intel/composerxe/bin/compilervars.sh intel64
+CC=icc
 
-../../../qmp/configure --prefix=${PREFIX} --with-qmp-comms-type=SINGLE CC=${CC} CFLAGS="-O2 -march=pentium4"
+../../../qmp/configure --prefix=${PREFIX} --with-qmp-comms-type=SINGLE CC=${CC} CFLAGS="-O2 -xhost -std=gnu99"
