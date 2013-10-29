@@ -41,14 +41,11 @@ date
 ./build-git.sh  \
     adat/scalar/scalar-9q \
     qmp/single/single \
-    qmp/single/single-intel \
     qmp/ib-9q/ib-9q \
     qmp/ib-9q/openmpi \
     qdp++/scalar/scalar-9q \
     qdp++/single/parscalar-single \
     qdp++/single/parscalar-single-double \
-    qdp++/single/parscalar-single-intel \
-    qdp++/single/parscalar-single-intel-double \
     qdp++/ib-9q/parscalar-ib-9q \
     qdp++/ib-9q/parscalar-ib-9q-double \
     qdp++/ib-9q/openmpi \
@@ -56,12 +53,17 @@ date
     chroma/scalar/scalar-9q \
     chroma/single/parscalar-single \
     chroma/single/parscalar-single-double \
-    chroma/single/parscalar-single-intel \
-    chroma/single/parscalar-single-intel-double \
     chroma/ib-9q/parscalar-ib-9q \
     chroma/ib-9q/parscalar-ib-9q-double \
     chroma/ib-9q/openmpi \
     chroma/ib-9q/openmpi-double
+
+# Not a public intel compiler
+#    qmp/single/single-intel
+#    qdp++/single/parscalar-single-intel 
+#    qdp++/single/parscalar-single-intel-double 
+#    chroma/single/parscalar-single-intel 
+#    chroma/single/parscalar-single-intel-double 
 
 ./configure  \
     --enable-qmp-version=master \
