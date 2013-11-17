@@ -14,7 +14,7 @@ ${ADATDIR}/adat/configure --prefix=${PREFIX} \
    CC=${MYCC} \
    CFLAGS="-O3 -fargument-noalias-global -finline-limit=50000 -funroll-all-loops -fpeel-loops -march=core2 -fopenmp" \
    CXX=${MYCXX} \
-   CXXFLAGS="-O3 -fargument-noalias-global -finline-limit=50000 -funroll-all-loops -fpeel-loops -march=core2 -fopenmp -DUSE_OMP" \
+   CXXFLAGS="-O3 -fargument-noalias-global -finline-limit=50000 -funroll-all-loops -fpeel-loops -march=core2 -fopenmp -DUSE_OMP -std=c++0x" \
    LIBS="-lpthread" 
 
 #   --enable-db-lite 
