@@ -1,7 +1,6 @@
-
 #!/bin/bash -x
 install_root="/dist/scidac"
-mailto_list="bjoo@jlab.org edwards@jlab.org"
+mailto_list="bjoo@jlab.org edwards@jlab.org fwinter@jlab.org"
 parallel_make=16
 build_name="9q Nightly Build"
 
