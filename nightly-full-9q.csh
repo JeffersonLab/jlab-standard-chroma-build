@@ -20,19 +20,20 @@ date
     ${install_root}/chroma/master
 
 ./configure  \
-  --enable-qmp-version=master \
-  --enable-qmt-version=master \
-  --enable-qdp-version=master \
-  --enable-chroma-version=master \
-  --enable-bagel-qdp-version=master \
-  --enable-adat-version=master \
-  --enable-colorvec-version=master \
-  --enable-sfpcac-version=master \
-  --enable-redstar-version=master \
-  --enable-install-root=${install_root} \
-  --enable-parallel-make="${parallel_make}" \
-  --enable-build-name="${build_name}" \
-  --enable-mailto="${mailto_list}" 
+    --enable-qmp-version=master \
+    --enable-qmt-version=master \
+    --enable-qdp-version=master \
+    --enable-chroma-version=master \
+    --enable-bagel-qdp-version=master \
+    --enable-adat-version=master \
+    --enable-colorvec-version=master \
+    --enable-sfpcac-version=master \
+    --enable-redstar-version=master \
+    --enable-install-root=${install_root} \
+    --enable-parallel-make="${parallel_make}" \
+    --enable-build-name="${build_name}" \
+    --enable-mailto="${mailto_list}" 
+    --enable-git-root="git@github.com:usqcd-software"
 
 #  --enable-bagel-version=1.4.0
 #  --enable-bagel-wilson-dslash-version=1.4.2
@@ -50,6 +51,11 @@ date
     qdp++/ib-9q/openmpi \
     qdp++/ib-9q/openmpi-double
 
+# Not a public intel compiler
+#    qmp/single/single-intel
+#    qdp++/single/parscalar-single-intel 
+#    qdp++/single/parscalar-single-intel-double 
+
 ./configure  \
     --enable-qmp-version=master \
     --enable-qmt-version=master \
@@ -64,7 +70,7 @@ date
     --enable-parallel-make="${parallel_make}" \
     --enable-build-name="${build_name}" \
     --enable-mailto="${mailto_list}" \
-    --enable-git-root="	git@github.com:JeffersonLab"
+    --enable-git-root="git://git.jlab.org/pub/lattice/usqcd"
 
 ./build-git.sh  \
     chroma/scalar/scalar-9q \
@@ -73,13 +79,9 @@ date
     chroma/ib-9q/parscalar-ib-9q \
     chroma/ib-9q/parscalar-ib-9q-double \
     chroma/ib-9q/openmpi \
-    chroma/ib-9q/openmpi-double \
-    --enable-git-root="git://git.jlab.org/pub/lattice/usqcd"
+    chroma/ib-9q/openmpi-double
 
 # Not a public intel compiler
-#    qmp/single/single-intel
-#    qdp++/single/parscalar-single-intel 
-#    qdp++/single/parscalar-single-intel-double 
 #    chroma/single/parscalar-single-intel 
 #    chroma/single/parscalar-single-intel-double 
 
@@ -97,7 +99,7 @@ date
     --enable-parallel-make="${parallel_make}" \
     --enable-build-name="${build_name}" \
     --enable-mailto="${mailto_list}" \
-    --enable-git-root="	git@github.com:JeffersonLab"
+    --enable-git-root="git@github.com:JeffersonLab"
 
 ./build-git.sh \
     colorvec/scalar/scalar-9q \
