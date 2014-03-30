@@ -15,7 +15,7 @@ CC=${MPI}/bin/mpicc
 CXX=${MPI}/bin/mpicxx
 
 ${QDPDIR}/qdp++/configure --prefix=${PREFIX} --with-qmp=${QMP_PREFIX} --enable-parallel-arch=parscalar \
-	--enable-openmp --enable-sse2 --enable-db-lite \
+	--enable-openmp --enable-sse2 \
 	CXXFLAGS="-O2 -fopenmp -fargument-noalias-global -finline-limit=50000 -march=core2 -funroll-all-loops -fpeel-loops -std=c++0x" \
 	CFLAGS="-std=gnu99 -O2 -fopenmp -fargument-noalias-global -funroll-all-loops -fpeel-loops -march=core2"  \
 	CXX="${CXX}" \

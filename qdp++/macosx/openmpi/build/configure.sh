@@ -13,7 +13,7 @@ CC="mpicc"
 CXX="mpicxx"
 
 ${QDPDIR}/qdp++/configure --prefix=${PREFIX} --with-qmp=${QMP_PREFIX} --enable-parallel-arch=parscalar \
-	--enable-openmp --enable-sse2 --enable-db-lite \
+	--enable-openmp --enable-sse2 \
 	CXXFLAGS="-O3 -fopenmp -fargument-noalias-global -finline-limit=50000 -march=core2" \
 	CFLAGS="-std=c99 -O3 -fopenmp -fargument-noalias-global -march=core2"  \
 	CXX="${CXX}" \

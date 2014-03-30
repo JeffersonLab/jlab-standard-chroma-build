@@ -13,7 +13,7 @@ clean_dir ${PREFIX}
 QMP_PREFIX=`make_prefix ${QMPDIR}/PREFIX ${QMPDIR}/VERSION ${ARCH}`
 
 ${QDPDIR}/qdp++/configure --prefix=${PREFIX} --with-qmp=${QMP_PREFIX} --enable-precision=double \
-        --enable-parallel-arch=parscalar --enable-sse2 --enable-largefile --enable-db-lite \
+        --enable-parallel-arch=parscalar --enable-sse2 --enable-largefile \
         CXXFLAGS="-O2 -finline-limit=50000 -msse -msse2" \
         CFLAGS="-O3 -msse -msse2 -std=c99" \
 	--with-qmt=${QMT_PREFIX}
