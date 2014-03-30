@@ -32,7 +32,7 @@ date
     --enable-install-root=${install_root} \
     --enable-parallel-make="${parallel_make}" \
     --enable-build-name="${build_name}" \
-    --enable-mailto="${mailto_list}" 
+    --enable-mailto="${mailto_list}" \
     --enable-git-root="git@github.com:usqcd-software"
 
 #  --enable-bagel-version=1.4.0
