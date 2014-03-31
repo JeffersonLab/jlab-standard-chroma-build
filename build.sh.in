@@ -44,8 +44,8 @@ then
 	gigE)
 	  modules="\
 	      qmp-mvia-mesh/${arch}/gigE \
-	      qdp++/${arch}/parscalar-gigE \
-	      qdp++/${arch}/parscalar-gigE-double \
+	      qdpxx/${arch}/parscalar-gigE \
+	      qdpxx/${arch}/parscalar-gigE-double \
 	      chroma/${arch}/parscalar-gigE \
 	      chroma/${arch}/parscalar-gigE-double \
 	      chroma/${arch}/parscalar-gigE-noavp"
@@ -57,9 +57,9 @@ then
 	      qmp/ibg2-mpi/ibg2-mpi \
 	      bagel_wilson_dslash/ibg2-mpi/parscalar-ibg2-mpi \
 	      bagel_wilson_dslash/ibg2-mpi/parscalar-ibg2-mpi-double \
-	      qdp++/${arch}/parscalar-ibg2-mpi \
-	      qdp++/${arch}/parscalar-ibg2-mpi-double \
-	      qdp++/${arch}/parscalar-ibg2-mpi-double-bagelqdp \
+	      qdpxx/${arch}/parscalar-ibg2-mpi \
+	      qdpxx/${arch}/parscalar-ibg2-mpi-double \
+	      qdpxx/${arch}/parscalar-ibg2-mpi-double-bagelqdp \
 	      chroma/${arch}/parscalar-ibg2-mpi \
 	      chroma/${arch}/parscalar-ibg2-mpi-double \
 	      chroma/${arch}/parscalar-ibg2-mpi-noavp \
@@ -68,8 +68,8 @@ then
 	ib-mpi)
 	  modules="\
 	      qmp/ib-mpi/ib-mpi \
-	      qdp++/${arch}/parscalar-ib-mpi \
-	      qdp++/${arch}/parscalar-ib-mpi-double \
+	      qdpxx/${arch}/parscalar-ib-mpi \
+	      qdpxx/${arch}/parscalar-ib-mpi-double \
 	      chroma/${arch}/parscalar-ib-mpi \
 	      chroma/${arch}/parscalar-ib-mpi-double \
 	      chroma/${arch}/parscalar-ib-mpi-noavp"
@@ -77,8 +77,8 @@ then
         gm)
   	  modules="\
 	      qmp/gm/gm \
-	      qdp++/${arch}/parscalar-gm \
-	      qdp++/${arch}/parscalar-gm-double \
+	      qdpxx/${arch}/parscalar-gm \
+	      qdpxx/${arch}/parscalar-gm-double \
 	      chroma/${arch}/parscalar-gm \
 	      chroma/${arch}/parscalar-gm-double \
 	      chroma/${arch}/parscalar-gm-noavp"
@@ -86,16 +86,16 @@ then
 	single)
 	  modules="\
 	      qmp/single/single \
-	      qdp++/${arch}/parscalar-single \
-	      qdp++/${arch}/parscalar-single-double \
+	      qdpxx/${arch}/parscalar-single \
+	      qdpxx/${arch}/parscalar-single-double \
 	      chroma/${arch}/parscalar-single \
 	      chroma/${arch}/parscalar-single-double \
 	      chroma/${arch}/parscalar-single-noavp"
 	  ;;
 	scalar)
 	  modules="\
-	      qdp++/${arch}/scalar \
-	      qdp++/${arch}/scalar-double \
+	      qdpxx/${arch}/scalar \
+	      qdpxx/${arch}/scalar-double \
 	      chroma/${arch}/scalar \
 	      chroma/${arch}/scalar-double"
 	  ;;

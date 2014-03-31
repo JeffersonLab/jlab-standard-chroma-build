@@ -37,7 +37,7 @@ AC_SUBST(QMP_VERSION, [${ac_qmp_vers}])
 
 AC_ARG_ENABLE(qdp-version,
 	AC_HELP_STRING([--enable-qdp-version],
-	[Select version of qdp++ to use, default is qdp1-35-0]),
+	[Select version of qdpxx to use, default is qdp1-35-0]),
 	[ac_qdp_vers=${enableval}],
 	[ac_qdp_vers="qdp1-35-0"]
 )
@@ -198,8 +198,8 @@ AC_CONFIG_FILES(qmt/VERSION)
 AC_CONFIG_FILES(qmp/PREFIX)
 AC_CONFIG_FILES(qmp/VERSION)
 
-AC_CONFIG_FILES(qdp++/PREFIX)
-AC_CONFIG_FILES(qdp++/VERSION)
+AC_CONFIG_FILES(qdpxx/PREFIX)
+AC_CONFIG_FILES(qdpxx/VERSION)
 
 AC_CONFIG_FILES(chroma/PREFIX)
 AC_CONFIG_FILES(chroma/VERSION)

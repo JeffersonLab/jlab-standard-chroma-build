@@ -12,7 +12,7 @@ How Does it work
 ================
 
 In this directory are subdirectories for the modules to build:
-	qmp, qdp++ and chroma
+	qmp, qdpxx and chroma
 
 In each subdirectory is a set of directories corresponding to various
 targets eg:
@@ -75,7 +75,7 @@ Logs are placed in the logs/ subdirectory using the scheme
 
 	logs/module/target/action_date.gz
 
-where module is the module name (qmp,qdp++,chroma)
+where module is the module name (qmp,qdpxx,chroma)
 target is one of the build target names
 action is one of the actions (checkout, configure, build, install, link, check, xcheck)
 date is the date string created at the time of the build
@@ -141,45 +141,45 @@ Install location: /usr/local/qmp/ib-mpi
 QDP++ Targets:
 ==============
 
-Module: qdp++/
+Module: qdpxx/
 
 Target: scalar
 Description: 		Scalar Single Precision SSE version
-Install Location:	/usr/local/qdp++/scalar
+Install Location:	/usr/local/qdpxx/scalar
 
 Target: scalar-double
 Description: 		Scalar Double Precision SSE version
-Install Location:	/usr/local/qdp++/scalar-double
+Install Location:	/usr/local/qdpxx/scalar-double
 
 Target: parscalar-single
 Description: 		Parscalar, Single Node QMP, 
 			Single Precision SSE version
-Install Location:	/usr/local/qdp++/parscalar-single
+Install Location:	/usr/local/qdpxx/parscalar-single
 
 Target: parscalar-single-double
 Description: 		Parscalar, Single Node QMP,
 			Double Precision SSE version
-Install Location:	/usr/local/qdp++/parscalar-single-double
+Install Location:	/usr/local/qdpxx/parscalar-single-double
 
 Target: parscalar-gigE
 Description: 		Parscalar, MVIA - Mesh QMP 
 			Single Precision SSE version
-Install Location:	/usr/local/qdp++/parscalar-gigE
+Install Location:	/usr/local/qdpxx/parscalar-gigE
 
 Target: parscalar-gigE-double
 Description: 		Parscalar, MVIA - Mesh QMP,
 			Double Precision SSE version
-Install Location:	/usr/local/qdp++/parscalar-gigE-double
+Install Location:	/usr/local/qdpxx/parscalar-gigE-double
 
 Target: parscalar-ib-mpi
 Description: 		Parscalar, MPI QMP over Infiniband, 
 			Single Precision SSE version
-Install Location:	/usr/local/qdp++/parscalar-ib-mpi
+Install Location:	/usr/local/qdpxx/parscalar-ib-mpi
 
 Target: parscalar-ib-mpi-double
 Description: 		Parscalar, MPI QMP over Infiniband,
 			Double Precision SSE version
-Install Location:	/usr/local/qdp++/parscalar-ib-mpi-double
+Install Location:	/usr/local/qdpxx/parscalar-ib-mpi-double
 
 Chroma Targets:
 ==============
