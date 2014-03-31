@@ -150,37 +150,9 @@ gitget() {
 
 echo Cloning Repo: $repo
 
-git clone ${repo}
+git clone --recursive ${repo}
+
 pushd "$package"
-
-#Init submodules
-case "$package" in
-    adat|adat.git) 
-	git submodule init
-	git submodule update
-	;;
-
-    qio|qio.git)
-	git submodule init
-	git submodule update
-	;;
-
-    qdp++|qdp++.git)
-	git submodule init
-	git submodule update
-	pushd other_libs/qio
-	git submodule init 
-	git submodule update
-	popd
-	;;
-
-    chroma|chroma.git)
-	git submodule init
-	git submodule update
-	;;
-    *)
-	;;
-esac
 echo Checking out version ${version_tag}
 if test "X${version_tag}X" != "master"; 
 then 
