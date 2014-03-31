@@ -12,5 +12,5 @@ build_name="Bagel test"
 	bagel_qdp/noarch/noarch-double \
 	bagel_wilson_dslash/single/parscalar-single-double \
 	qmp/single/single \
-	qdp++/single/parscalar-single-double-bagelqdp \
+	qdpxx/single/parscalar-single-double-bagelqdp \
 	chroma/single/parscalar-single-double-bagel

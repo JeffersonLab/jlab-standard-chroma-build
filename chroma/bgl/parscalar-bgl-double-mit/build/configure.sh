@@ -7,7 +7,7 @@ GMPARCH=bgl
 QMPARCH=bgl
 CHROMADIR=../../..
 ROOTDIR=../../../..
-QDPDIR=${ROOTDIR}/qdp++
+QDPDIR=${ROOTDIR}/qdpxx
 BWDDIR=${ROOTDIR}/bagel_wilson_dslash
 
 . ${ROOTDIR}/functions.sh

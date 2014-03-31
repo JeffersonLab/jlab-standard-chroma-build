@@ -3,7 +3,7 @@
 ARCH=parscalar-ib-7n
 CHROMADIR=../../..
 ROOTDIR=../../../..
-QDPDIR=${ROOTDIR}/qdp++
+QDPDIR=${ROOTDIR}/qdpxx
 QMPDIR=${ROOTDIR}/qmp
 . ${ROOTDIR}/functions.sh
 PREFIX=`make_prefix ${CHROMADIR}/PREFIX ${CHROMADIR}/VERSION ${ARCH}`

@@ -2,7 +2,7 @@
 
 CHROMADIR=../../..
 ROOTDIR=../../../..
-QDPDIR=${ROOTDIR}/qdp++
+QDPDIR=${ROOTDIR}/qdpxx
 QMTDIR=${ROOTDIR}/qmt
 
 . ${ROOTDIR}/functions.sh

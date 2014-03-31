@@ -13,7 +13,7 @@ QMP_PREFIX=`make_prefix ${ROOTDIR}/qmp/PREFIX ${ROOTDIR}/qmp/VERSION ${ARCH}`
 CC=/dist/gcc-4.1.1/bin/gcc
 CXX=/dist/gcc-4.1.1/bin/g++
 
-${QDPDIR}/qdp++/configure \
+${QDPDIR}/qdpxx/configure \
    --prefix=${PREFIX} \
    --with-qmp=${QMP_PREFIX} \
    --enable-parallel-arch=parscalar \

@@ -16,7 +16,7 @@ date
     ${install_root}/bagel_qdp/master \
     ${install_root}/qmp/master \
     ${install_root}/qmt/master \
-    ${install_root}/qdp++/master \
+    ${install_root}/qdpxx/master \
     ${install_root}/chroma/master
 
 ./configure  \
@@ -42,18 +42,18 @@ date
     qmp/single/single \
     qmp/ib-9q/ib-9q \
     qmp/ib-9q/openmpi \
-    qdp++/scalar/scalar-9q \
-    qdp++/single/parscalar-single \
-    qdp++/single/parscalar-single-double \
-    qdp++/ib-9q/parscalar-ib-9q \
-    qdp++/ib-9q/parscalar-ib-9q-double \
-    qdp++/ib-9q/openmpi \
-    qdp++/ib-9q/openmpi-double
+    qdpxx/scalar/scalar-9q \
+    qdpxx/single/parscalar-single \
+    qdpxx/single/parscalar-single-double \
+    qdpxx/ib-9q/parscalar-ib-9q \
+    qdpxx/ib-9q/parscalar-ib-9q-double \
+    qdpxx/ib-9q/openmpi \
+    qdpxx/ib-9q/openmpi-double
 
 # Not a public intel compiler
 #    qmp/single/single-intel
-#    qdp++/single/parscalar-single-intel 
-#    qdp++/single/parscalar-single-intel-double 
+#    qdpxx/single/parscalar-single-intel 
+#    qdpxx/single/parscalar-single-intel-double 
 
 ./configure  \
     --enable-qmp-version=master \

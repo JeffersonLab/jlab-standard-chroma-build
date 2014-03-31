@@ -7,5 +7,5 @@
 ./build.sh libxml2/cray_xt3/psc \
 	   gmp/cray_xt3/psc \
 	   qmp/cray_xt3/psc \
-	   qdp++/cray_xt3/parscalar-xt3 \
+	   qdpxx/cray_xt3/parscalar-xt3 \
 	   chroma/cray_xt3/parscalar-xt3

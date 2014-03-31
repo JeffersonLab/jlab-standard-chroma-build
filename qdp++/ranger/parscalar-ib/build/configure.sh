@@ -15,7 +15,7 @@ QMP_PREFIX=`make_prefix ${ROOTDIR}/qmp/PREFIX ${ROOTDIR}/qmp/VERSION ${ARCH}`
 TOOLS=/share/home/00496/tg457586
 
 
-${QDPDIR}/qdp++/configure --prefix=${PREFIX} --with-qmp=${QMP_PREFIX} --enable-parallel-arch=parscalar \
+${QDPDIR}/qdpxx/configure --prefix=${PREFIX} --with-qmp=${QMP_PREFIX} --enable-parallel-arch=parscalar \
 	--enable-sse2 -host=x86_64-linux-gnu --build=any \
 	CXXFLAGS="-O3 -fargument-noalias-global -finline-limit=50000 -funroll-all-loops -fpeel-loops -ftree-vectorize -fno-tree-vrp -march=opteron" \
 	CFLAGS="-std=c99 -O3 -fargument-noalias-global -funroll-all-loops -fpeel-loops -ftree-vectorize -fno-tree-vrp -march=opteron"  \

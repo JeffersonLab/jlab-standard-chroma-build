@@ -3,7 +3,7 @@
 ARCH=parscalar-single-double
 CHROMADIR=../../..
 ROOTDIR=../../../..
-QDPDIR=${ROOTDIR}/qdp++
+QDPDIR=${ROOTDIR}/qdpxx
 QMPDIR=${ROOTDIR}/qmp
 
 CC=/dist/gcc-4.1.1/bin/gcc

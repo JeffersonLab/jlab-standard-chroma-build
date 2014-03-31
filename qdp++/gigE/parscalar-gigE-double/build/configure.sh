@@ -11,7 +11,7 @@ CXX=/dist/gcc-4.1.1/bin/g++
 PREFIX=`make_prefix ${QDPDIR}/PREFIX ${QDPDIR}/VERSION ${ARCH}`
 clean_dir ${PREFIX}
 
-${QDPDIR}/qdp++/configure \
+${QDPDIR}/qdpxx/configure \
    --prefix=${PREFIX} \
    --with-qmp=/usr/local/qmp/mvia \
    --enable-precision=double \

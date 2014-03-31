@@ -3,7 +3,7 @@
 ARCH=parscalar-single
 CHROMADIR=../../..
 ROOTDIR=../../../..
-QDPDIR=${ROOTDIR}/qdp++
+QDPDIR=${ROOTDIR}/qdpxx
 
 CC=/dist/gcc-4.1.1/bin/gcc
 CXX=/dist/gcc-4.1.1/bin/g++

@@ -6,7 +6,7 @@ GMPARCH=xt-pat
 
 CHROMADIR=../../..
 ROOTDIR=../../../..
-QDPDIR=${ROOTDIR}/qdp++
+QDPDIR=${ROOTDIR}/qdpxx
 GMPDIR=${ROOTDIR}/gmp
 QMPDIR=${ROOTDIR}/qmp
 QMTDIR=${ROOTDIR}/qmt

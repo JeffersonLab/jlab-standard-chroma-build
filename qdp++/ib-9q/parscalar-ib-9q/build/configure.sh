@@ -16,7 +16,7 @@ MPI="/usr/mpi/gcc/mvapich2-1.8"
 MPCC="$MPI/bin/mpicc"
 MPCXX="$MPI/bin/mpicxx"
 
-${QDPDIR}/qdp++/configure --prefix=${PREFIX} --with-qmp=${QMP_PREFIX} --enable-parallel-arch=parscalar \
+${QDPDIR}/qdpxx/configure --prefix=${PREFIX} --with-qmp=${QMP_PREFIX} --enable-parallel-arch=parscalar \
 	--enable-sse2 \
 	CXXFLAGS="-O2 -fargument-noalias-global -finline-limit=50000 -march=core2 -funroll-all-loops -fpeel-loops -std=c++0x" \
 	CFLAGS="-O2 -fargument-noalias-global -funroll-all-loops -fpeel-loops -march=core2 -std=gnu99" \

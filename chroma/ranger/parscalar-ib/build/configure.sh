@@ -3,7 +3,7 @@
 ARCH=parscalar-ib-7n
 CHROMADIR=../../..
 ROOTDIR=../../../..
-QDPDIR=${ROOTDIR}/qdp++
+QDPDIR=${ROOTDIR}/qdpxx
 QMPDIR=${ROOTDIR}/qmp
 GMPDIR=${ROOTDIR}/gmp
 

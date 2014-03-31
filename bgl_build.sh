@@ -12,7 +12,7 @@
            bagel/native/bagel \
 	   bagel_qdp/bgl/bgl-double \
 	   qmp/bgl/bgl \
-	   qdp++/bgl/parscalar-bgl-double   \
+	   qdpxx/bgl/parscalar-bgl-double   \
            bagel_wilson_dslash/bgl/parscalar-bgl-double \
 	   bagel_clover/bgl/bgl-double \
 	   chroma/bgl/parscalar-bgl-double

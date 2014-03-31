@@ -8,8 +8,8 @@ pushd qmp
 rm -rf qmp
 popd
 
-pushd qdp++
-rm -rf qdp++
+pushd qdpxx
+rm -rf qdpxx
 popd
 
 pushd chroma

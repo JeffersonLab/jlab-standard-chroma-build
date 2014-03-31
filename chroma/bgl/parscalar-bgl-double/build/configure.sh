@@ -8,7 +8,7 @@ CLOVARCH=bgl-double
 
 CHROMADIR=../../..
 ROOTDIR=../../../..
-QDPDIR=${ROOTDIR}/qdp++
+QDPDIR=${ROOTDIR}/qdpxx
 BWDDIR=${ROOTDIR}/bagel_wilson_dslash
 GMPDIR=${ROOTDIR}/gmp
 CLOVDIR=${ROOTDIR}/bagel_clover

@@ -16,7 +16,7 @@ MPI=/usr/mpi/gcc/openmpi-1.6.3
 CC="$MPI/bin/mpicc"
 CXX="$MPI/bin/mpiCC"
 
-${QDPDIR}/qdp++/configure --prefix=${PREFIX} --with-qmp=${QMP_PREFIX} --enable-parallel-arch=parscalar \
+${QDPDIR}/qdpxx/configure --prefix=${PREFIX} --with-qmp=${QMP_PREFIX} --enable-parallel-arch=parscalar \
 	--enable-openmp --enable-sse2 \
 	CXXFLAGS="-O2 -fopenmp -fargument-noalias-global -finline-limit=50000 -march=core2 -funroll-all-loops -fpeel-loops -std=c++0x " \
 	CFLAGS="-std=gnu99 -O2 -fopenmp -fargument-noalias-global -funroll-all-loops -fpeel-loops -march=core2"  \

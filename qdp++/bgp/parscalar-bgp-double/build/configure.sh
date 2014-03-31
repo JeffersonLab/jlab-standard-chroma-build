@@ -14,7 +14,7 @@ LIBXML2_PREFIX=`make_prefix ${ROOTDIR}/libxml2/PREFIX ${ROOTDIR}/libxml2/VERSION
 
 echo $LIBXML2_PREFIX
 
-${QDPDIR}/qdp++/configure --prefix=${PREFIX} \
+${QDPDIR}/qdpxx/configure --prefix=${PREFIX} \
 			  --host=powerpc-bgp-linux \
 			  --build=none \
 			  --with-libxml2=${LIBXML2_PREFIX} \

@@ -25,7 +25,7 @@ date
 ./build.sh libxml2/ranger/ranger \
 	   gmp/ranger/ranger \
 	   qmp/ranger/ranger \
-	   qdp++/ranger/parscalar-ib \
+	   qdpxx/ranger/parscalar-ib \
 	   chroma/ranger/parscalar-ib
 
 echo ""

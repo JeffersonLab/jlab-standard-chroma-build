@@ -17,11 +17,11 @@ date
             adat/scalar/scalar-7n \
             qmp/single/single \
             qmp/ib-7n/ib-7n \
-            qdp++/scalar/scalar-7n \
-            qdp++/single/parscalar-single \
-            qdp++/single/parscalar-single-double \
-            qdp++/ib-7n/parscalar-ib-7n \
-            qdp++/ib-7n/parscalar-ib-7n-double \
+            qdpxx/scalar/scalar-7n \
+            qdpxx/single/parscalar-single \
+            qdpxx/single/parscalar-single-double \
+            qdpxx/ib-7n/parscalar-ib-7n \
+            qdpxx/ib-7n/parscalar-ib-7n-double \
             chroma/scalar/scalar-7n \
             chroma/single/parscalar-single \
             chroma/ib-7n/parscalar-ib-7n \

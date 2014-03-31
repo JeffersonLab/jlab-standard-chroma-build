@@ -8,7 +8,7 @@ then
     exit 1
 fi
 
-module=qdp++
+module=qdpxx
 srcdir=$1
 builddir=$2
 

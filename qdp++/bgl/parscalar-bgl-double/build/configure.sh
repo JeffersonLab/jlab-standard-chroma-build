@@ -15,7 +15,7 @@ LIBXML2_PREFIX=`make_prefix ${ROOTDIR}/libxml2/PREFIX ${ROOTDIR}/libxml2/VERSION
 echo $LIBXML2_PREFIX
 export PATH=/bgl/BlueLight/ppcfloor/blrts-gnu/bin:$PATH
 
-${QDPDIR}/qdp++/configure --prefix=${PREFIX} \
+${QDPDIR}/qdpxx/configure --prefix=${PREFIX} \
 			  --host=powerpc-bgl-blrts-gnu \
 			  --build=none \
 			  --with-libxml2=${LIBXML2_PREFIX} \

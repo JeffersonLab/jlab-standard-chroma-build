@@ -12,7 +12,7 @@ QMP_PREFIX=`make_prefix ${ROOTDIR}/qmp/PREFIX ${ROOTDIR}/qmp/VERSION ${ARCH}`
 CC="mpicc"
 CXX="mpicxx"
 
-${QDPDIR}/qdp++/configure --prefix=${PREFIX} --with-qmp=${QMP_PREFIX} --enable-parallel-arch=parscalar \
+${QDPDIR}/qdpxx/configure --prefix=${PREFIX} --with-qmp=${QMP_PREFIX} --enable-parallel-arch=parscalar \
 	--enable-openmp --enable-sse2 \
 	CXXFLAGS="-O3 -fopenmp -fargument-noalias-global -finline-limit=50000 -march=core2" \
 	CFLAGS="-std=c99 -O3 -fopenmp -fargument-noalias-global -march=core2"  \

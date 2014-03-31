@@ -9,7 +9,7 @@
 ./build-git.sh qmt/cray_xt/xt-barcelona-pat \
 	   libxml2/cray_xt3/xt-craypat \
 	   qmp/cray_xt3/xt-craypat \
-	   qdp++/cray_xt3/parscalar-xt-qmt-pat \
-	   qdp++/cray_xt3/parscalar-xt-double-qmt-pat \
+	   qdpxx/cray_xt3/parscalar-xt-qmt-pat \
+	   qdpxx/cray_xt3/parscalar-xt-double-qmt-pat \
 	   chroma/cray_xt3/parscalar-xt-qmt-pat \
 	   chroma/cray_xt3/parscalar-xt-double-qmt-pat

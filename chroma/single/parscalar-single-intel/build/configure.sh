@@ -3,7 +3,7 @@
 ARCH=parscalar-single-intel
 CHROMADIR=../../..
 ROOTDIR=../../../..
-QDPDIR=${ROOTDIR}/qdp++
+QDPDIR=${ROOTDIR}/qdpxx
 QMPDIR=${ROOTDIR}/qmp
 
 . ${ROOTDIR}/functions.sh

@@ -16,7 +16,7 @@ CXX=icpc
 
 #export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/intel/cc/9.1.043/lib
 
-${QDPDIR}/qdp++/configure --prefix=${PREFIX} --with-qmp=${QMP_PREFIX} \
+${QDPDIR}/qdpxx/configure --prefix=${PREFIX} --with-qmp=${QMP_PREFIX} \
    --enable-parallel-arch=parscalar \
    --enable-sse2 --enable-sse3 \
    --enable-openmp \

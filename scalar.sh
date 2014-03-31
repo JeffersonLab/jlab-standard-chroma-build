@@ -25,12 +25,12 @@ date
   --enable-mailto="${mailto_list}" 
 
 /bin/rm -rf \
-    ${install_root}/qdp++/master \
+    ${install_root}/qdpxx/master \
     ${install_root}/chroma/master
 
 ./build-git.sh  \
-    qdp++/scalar/scalar-9q \
-    qdp++/ib-9q/parscalar-ib-9q \
+    qdpxx/scalar/scalar-9q \
+    qdpxx/ib-9q/parscalar-ib-9q \
     chroma/scalar/scalar-9q \
     chroma/ib-9q/parscalar-ib-9q 
 
