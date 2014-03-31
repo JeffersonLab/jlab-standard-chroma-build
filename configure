@@ -1311,7 +1311,7 @@ Optional Features:
   --enable-qmt-version    Select version of QMT to use, default is master
   --enable-qmp-version    Select version of MPI qmp to use, default is
                           qmp2-1-6
-  --enable-qdp-version    Select version of qdp++ to use, default is qdp1-35-0
+  --enable-qdp-version    Select version of qdpxx to use, default is qdp1-35-0
   --enable-chroma-version Select version of chroma to use, default is
                           chroma3-36-2
   --enable-bagel-version  Select version of bagel to use, default is 1.4.0
@@ -2054,9 +2054,9 @@ ac_config_files="$ac_config_files qmp/PREFIX"
 ac_config_files="$ac_config_files qmp/VERSION"
 
 
-ac_config_files="$ac_config_files qdp++/PREFIX"
+ac_config_files="$ac_config_files qdpxx/PREFIX"
 
-ac_config_files="$ac_config_files qdp++/VERSION"
+ac_config_files="$ac_config_files qdpxx/VERSION"
 
 
 ac_config_files="$ac_config_files chroma/PREFIX"
@@ -2727,8 +2727,8 @@ do
     "qmt/VERSION") CONFIG_FILES="$CONFIG_FILES qmt/VERSION" ;;
     "qmp/PREFIX") CONFIG_FILES="$CONFIG_FILES qmp/PREFIX" ;;
     "qmp/VERSION") CONFIG_FILES="$CONFIG_FILES qmp/VERSION" ;;
-    "qdp++/PREFIX") CONFIG_FILES="$CONFIG_FILES qdp++/PREFIX" ;;
-    "qdp++/VERSION") CONFIG_FILES="$CONFIG_FILES qdp++/VERSION" ;;
+    "qdpxx/PREFIX") CONFIG_FILES="$CONFIG_FILES qdpxx/PREFIX" ;;
+    "qdpxx/VERSION") CONFIG_FILES="$CONFIG_FILES qdpxx/VERSION" ;;
     "chroma/PREFIX") CONFIG_FILES="$CONFIG_FILES chroma/PREFIX" ;;
     "chroma/VERSION") CONFIG_FILES="$CONFIG_FILES chroma/VERSION" ;;
     "adat/PREFIX") CONFIG_FILES="$CONFIG_FILES adat/PREFIX" ;;
