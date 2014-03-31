@@ -39,7 +39,6 @@ date
 #  --enable-bagel-wilson-dslash-version=1.4.2
 
 ./build-git.sh  \
-    adat/scalar/scalar-9q \
     qmp/single/single \
     qmp/ib-9q/ib-9q \
     qmp/ib-9q/openmpi \
@@ -102,6 +101,7 @@ date
     --enable-git-root="git@github.com:JeffersonLab"
 
 ./build-git.sh \
+    adat/scalar/scalar-9q \
     colorvec/scalar/scalar-9q \
     redstar/scalar/scalar-9q
 
