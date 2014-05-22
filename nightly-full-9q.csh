@@ -69,7 +69,7 @@ date
     --enable-parallel-make="${parallel_make}" \
     --enable-build-name="${build_name}" \
     --enable-mailto="${mailto_list}" \
-    --enable-git-root="git://git.jlab.org/pub/lattice/usqcd"
+    --enable-git-root="https://github.com/JeffersonLab"
 
 ./build-git.sh  \
     chroma/scalar/scalar-9q \
