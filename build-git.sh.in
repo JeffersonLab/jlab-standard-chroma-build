@@ -159,7 +159,7 @@ then
     git checkout -b ${version_tag} ${version_tag}
 fi
 
-aclocal; automake; autoconf
+autoreconf
 popd
 }
 
