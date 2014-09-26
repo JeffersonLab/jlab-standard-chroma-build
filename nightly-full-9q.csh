@@ -62,6 +62,8 @@ date
     --enable-chroma-version=master \
     --enable-bagel-qdp-version=master \
     --enable-adat-version=master \
+    --enable-tensor-version=master \
+    --enable-hadron-version=master \
     --enable-colorvec-version=master \
     --enable-sfpcac-version=master \
     --enable-redstar-version=master \
@@ -91,6 +93,8 @@ date
     --enable-chroma-version=master \
     --enable-bagel-qdp-version=master \
     --enable-adat-version=master \
+    --enable-tensor-version=master \
+    --enable-hadron-version=master \
     --enable-colorvec-version=master \
     --enable-sfpcac-version=master \
     --enable-redstar-version=master \
@@ -102,6 +106,8 @@ date
 
 ./build-git.sh \
     adat/scalar/scalar-9q \
+    tensor/scalar/scalar-9q \
+    hadron/scalar/scalar-9q \
     colorvec/scalar/scalar-9q \
     redstar/scalar/scalar-9q
 

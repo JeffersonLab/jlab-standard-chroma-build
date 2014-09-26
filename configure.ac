@@ -91,6 +91,22 @@ AC_ARG_ENABLE(adat-version,
 )
 AC_SUBST(ADAT_VERSION, [${ac_adat_vers}])
 
+AC_ARG_ENABLE(tensor-version,
+	AC_HELP_STRING([--enable-tensor-version],
+	[Select version of tensor to use, default is tensor1-0-0]),
+	[ac_adat_vers=${enableval}],
+	[ac_adat_vers="tensor1-0-0"]
+)
+AC_SUBST(TENSOR_VERSION, [${ac_tensor_vers}])
+
+AC_ARG_ENABLE(hadron-version,
+	AC_HELP_STRING([--enable-hadron-version],
+	[Select version of hadron to use, default is hadron1-0-0]),
+	[ac_adat_vers=${enableval}],
+	[ac_adat_vers="hadron1-0-0"]
+)
+AC_SUBST(HADRON_VERSION, [${ac_hadron_vers}])
+
 AC_ARG_ENABLE(colorvec-version,
 	AC_HELP_STRING([--enable-colorvec-version],
 	[Select version of colorvec to use, default is colorvec1-0-0]),
@@ -206,6 +222,12 @@ AC_CONFIG_FILES(chroma/VERSION)
 
 AC_CONFIG_FILES(adat/PREFIX)
 AC_CONFIG_FILES(adat/VERSION)
+
+AC_CONFIG_FILES(tensor/PREFIX)
+AC_CONFIG_FILES(tensor/VERSION)
+
+AC_CONFIG_FILES(hadron/PREFIX)
+AC_CONFIG_FILES(hadron/VERSION)
 
 AC_CONFIG_FILES(colorvec/PREFIX)
 AC_CONFIG_FILES(colorvec/VERSION)
