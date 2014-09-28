@@ -11,6 +11,12 @@ clean_dir ${PREFIX}
 MYCC=gcc
 MYCXX=g++
 
+# Build auto-files
+pushd ${TENSORDIR}/tensor
+./autogen.sh
+popd
+
+# Configure it
 ${TENSORDIR}/tensor/configure --prefix=${PREFIX} \
   --with-arpack \
   F77="gfortran" \
