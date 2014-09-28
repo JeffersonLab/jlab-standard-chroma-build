@@ -9,9 +9,11 @@ echo -n "Starting date: "
 date
 
 /bin/rm -rf ${install_root}/adat/master \
+    ${install_root}/tensor/master \
+    ${install_root}/hadron/master \
     ${install_root}/colorvec/master \
-    ${install_root}/sfpcac/master \
     ${install_root}/redstar/master \
+    ${install_root}/sfpcac/master \
     ${install_root}/bagel/master \
     ${install_root}/bagel_qdp/master \
     ${install_root}/qmp/master \
@@ -26,6 +28,8 @@ date
     --enable-chroma-version=master \
     --enable-bagel-qdp-version=master \
     --enable-adat-version=master \
+    --enable-tensor-version=master \
+    --enable-hadron-version=master \
     --enable-colorvec-version=master \
     --enable-sfpcac-version=master \
     --enable-redstar-version=master \
