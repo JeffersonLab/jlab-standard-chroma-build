@@ -19,8 +19,11 @@ popd
 # Configure it
 ${TENSORDIR}/tensor/configure --prefix=${PREFIX} \
   --with-arpack \
+  --without-fftw  \
   F77="gfortran" \
   CFLAGS="-I /dist/scidac/atlas/include" \
   CXXFLAGS="-I /dist/scidac/atlas/include" \
   LDFLAGS="-L /dist/scidac/atlas/lib"  LIBS="-lptlapack -lptcblas -latlas"
+
+#  --without-libsci 
 
