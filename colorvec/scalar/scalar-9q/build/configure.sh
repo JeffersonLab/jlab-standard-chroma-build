@@ -4,6 +4,7 @@ ARCH=scalar-9q
 COLORVECDIR=../../..
 ROOTDIR=../../../..
 ADATDIR=${ROOTDIR}/adat
+HADRONDIR=${ROOTDIR}/hadron
 
 . ${ROOTDIR}/functions.sh
 PREFIX=`make_prefix ${COLORVECDIR}/PREFIX ${COLORVECDIR}/VERSION ${ARCH}`
@@ -16,6 +17,6 @@ MYCC=gcc
 MYCXX=g++
 
 ${COLORVECDIR}/colorvec/configure --prefix=${PREFIX} \
-   --with-hadron=${HADRON_PREFIX}
+   --with-hadron=${HADRON_PREFIX} \
    --with-adat=${ADAT_PREFIX}
 
