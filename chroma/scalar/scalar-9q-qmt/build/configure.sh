@@ -6,6 +6,10 @@ QDPDIR=${ROOTDIR}/qdpxx
 QMTDIR=${ROOTDIR}/qmt
 
 . ${ROOTDIR}/functions.sh
+PREFIX=`make_prefix ${CHROMADIR}/PREFIX ${CHROMADIR}/VERSION ${ARCH}`
+clean_dir ${PREFIX}
+
+. ${ROOTDIR}/functions.sh
 PREFIX=`make_prefix ${CHROMADIR}/PREFIX ${CHROMADIR}/VERSION scalar-9q-qmt`
 clean_dir ${PREFIX}
 

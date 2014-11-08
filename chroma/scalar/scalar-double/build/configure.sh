@@ -9,6 +9,10 @@ QDPDIR=${ROOTDIR}/qdpxx
 PREFIX=`make_prefix ${CHROMADIR}/PREFIX ${CHROMADIR}/VERSION ${ARCH}`
 clean_dir ${PREFIX}
 
+. ${ROOTDIR}/functions.sh
+PREFIX=`make_prefix ${CHROMADIR}/PREFIX ${CHROMADIR}/VERSION ${ARCH}`
+clean_dir ${PREFIX}
+
 QDP_PREFIX=`make_prefix ${QDPDIR}/PREFIX ${QDPDIR}/VERSION ${ARCH}`
 
 
