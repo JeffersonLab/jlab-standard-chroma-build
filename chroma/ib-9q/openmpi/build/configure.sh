@@ -5,6 +5,12 @@ CHROMADIR=../../..
 ROOTDIR=../../../..
 QDPDIR=${ROOTDIR}/qdpxx
 QMPDIR=${ROOTDIR}/qmp
+
+pushd ${CHROMADIR}/chroma
+autoreconf -f
+popd
+
+
 . ${ROOTDIR}/functions.sh
 PREFIX=`make_prefix ${CHROMADIR}/PREFIX ${CHROMADIR}/VERSION parscalar-${ARCH}`
 clean_dir ${PREFIX}

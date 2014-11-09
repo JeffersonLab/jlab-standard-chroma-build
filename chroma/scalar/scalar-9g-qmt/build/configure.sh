@@ -5,6 +5,11 @@ ROOTDIR=../../../..
 QDPDIR=${ROOTDIR}/qdpxx
 QMTDIR=${ROOTDIR}/qmt
 
+pushd ${CHROMADIR}/chroma
+autoreconf -f
+popd
+
+
 . ${ROOTDIR}/functions.sh
 PREFIX=`make_prefix ${CHROMADIR}/PREFIX ${CHROMADIR}/VERSION scalar-9g-qmt`
 clean_dir ${PREFIX}

@@ -5,6 +5,11 @@ CHROMADIR=../../..
 ROOTDIR=../../../..
 QDPDIR=${ROOTDIR}/qdpxx
 
+pushd ${CHROMADIR}/chroma
+autoreconf -f
+popd
+
+
 CC=/dist/gcc-4.1.1/bin/gcc
 CXX=/dist/gcc-4.1.1/bin/g++
 

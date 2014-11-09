@@ -7,6 +7,11 @@ QDPDIR=${ROOTDIR}/qdpxx
 QMPDIR=${ROOTDIR}/qmp
 QMTDIR=${ROOTDIR}/qmt
 
+pushd ${CHROMADIR}/chroma
+autoreconf -f
+popd
+
+
 CC=gcc
 CXX=g++
 
