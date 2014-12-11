@@ -15,5 +15,6 @@ MYCC=gcc
 MYCXX=g++
 
 ${HADRONDIR}/hadron/configure --prefix=${PREFIX} \
-   --with-tensor=${TENSOR_PREFIX}
+   --with-tensor=${TENSOR_PREFIX} \
+   CXXFLAGS="-std=c++0x -fopenmp"
 
