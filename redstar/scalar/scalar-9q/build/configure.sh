@@ -6,6 +6,10 @@ ROOTDIR=../../../..
 ADATDIR=${ROOTDIR}/adat
 HADRONDIR=${ROOTDIR}/hadron
 
+pushd ${REDSTARDIR}/redstar
+autoreconf -f
+popd
+
 . ${ROOTDIR}/functions.sh
 PREFIX=`make_prefix ${REDSTARDIR}/PREFIX ${REDSTARDIR}/VERSION ${ARCH}`
 clean_dir ${PREFIX}

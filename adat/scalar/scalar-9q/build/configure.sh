@@ -4,6 +4,10 @@ ADATDIR=../../..
 ROOTDIR=../../../..
 . ${ROOTDIR}/functions.sh
 
+pushd ${ADATDIR}/adat
+autoreconf -f
+popd
+
 PREFIX=`make_prefix ${ADATDIR}/PREFIX ${ADATDIR}/VERSION scalar-9q`
 clean_dir ${PREFIX}
 

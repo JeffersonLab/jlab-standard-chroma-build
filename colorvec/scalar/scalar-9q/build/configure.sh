@@ -6,6 +6,10 @@ ROOTDIR=../../../..
 ADATDIR=${ROOTDIR}/adat
 HADRONDIR=${ROOTDIR}/hadron
 
+pushd ${COLORVECDIR}/colorvec
+autoreconf -f
+popd
+
 . ${ROOTDIR}/functions.sh
 PREFIX=`make_prefix ${COLORVECDIR}/PREFIX ${COLORVECDIR}/VERSION ${ARCH}`
 clean_dir ${PREFIX}

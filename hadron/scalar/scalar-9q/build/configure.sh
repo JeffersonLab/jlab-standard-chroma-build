@@ -5,6 +5,10 @@ HADRONDIR=../../..
 ROOTDIR=../../../..
 TENSORDIR=${ROOTDIR}/tensor
 
+pushd ${HADRONDIR}/hadron
+autoreconf -f
+popd
+
 . ${ROOTDIR}/functions.sh
 PREFIX=`make_prefix ${HADRONDIR}/PREFIX ${HADRONDIR}/VERSION ${ARCH}`
 clean_dir ${PREFIX}
