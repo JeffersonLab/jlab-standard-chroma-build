@@ -108,12 +108,12 @@ date
     --enable-mailto="${mailto_list}" \
     --enable-git-root="git@github.com:JeffersonLab"
 
-./build-git.sh \
-    adat/scalar/scalar-9q \
-    tensor/scalar/scalar-9q \
-    hadron/scalar/scalar-9q \
-    colorvec/scalar/scalar-9q \
-    redstar/scalar/scalar-9q
+#./build-git.sh \
+#    adat/scalar/scalar-9q \
+#    tensor/scalar/scalar-9q \
+#    hadron/scalar/scalar-9q \
+#    colorvec/scalar/scalar-9q \
+#    redstar/scalar/scalar-9q
 
 echo ""
 echo -n "Ending date: "
