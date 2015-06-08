@@ -2,6 +2,11 @@
 
 # QDPDIR=../../..
 ROOTDIR=../../../..
+
+pushd ${QDPDIR}/qdpxx
+autoreconf -f
+popd
+
 . ${ROOTDIR}/functions.sh
 
 QMTDIR=${ROOTDIR}/qmt

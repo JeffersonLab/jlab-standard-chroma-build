@@ -3,6 +3,11 @@
 ARCH=single
 QDPDIR=../../..
 ROOTDIR=../../../..
+
+pushd ${QDPDIR}/qdpxx
+autoreconf -f
+popd
+
 QMPDIR=${ROOTDIR}/qmp
 
 . ${ROOTDIR}/functions.sh

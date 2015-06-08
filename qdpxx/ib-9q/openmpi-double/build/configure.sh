@@ -3,6 +3,11 @@
 ARCH=openmpi
 QDPDIR=../../..
 ROOTDIR=../../../..
+
+pushd ${QDPDIR}/qdpxx
+autoreconf -f
+popd
+
 . ${ROOTDIR}/functions.sh
 
 PREFIX=`make_prefix ${QDPDIR}/PREFIX ${QDPDIR}/VERSION parscalar-${ARCH}-double`

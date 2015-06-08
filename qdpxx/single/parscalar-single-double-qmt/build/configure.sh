@@ -5,6 +5,10 @@ ROOTDIR=../../../..
 QMPDIR=${ROOTDIR}/qmp
 QMTDIR=${ROOTDIR}/qmt
 
+pushd ${QDPDIR}/qdpxx
+autoreconf -f
+popd
+
 . ${ROOTDIR}/functions.sh
 PREFIX=`make_prefix ${QDPDIR}/PREFIX ${QDPDIR}/VERSION parscalar-${ARCH}-double-qmt`
 QMT_PREFIX=`make_prefix ${QMTDIR}/PREFIX ${QMTDIR}/VERSION barcelona`
