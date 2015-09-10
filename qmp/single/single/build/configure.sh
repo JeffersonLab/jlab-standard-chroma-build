@@ -4,4 +4,5 @@
 PREFIX=`make_prefix ../../../PREFIX ../../../VERSION single`
 clean_dir ${PREFIX}
 
-../../../qmp/configure --prefix=${PREFIX} --with-qmp-comms-type=SINGLE 
+gcc --version
+../../../qmp/configure --prefix=${PREFIX} --with-qmp-comms-type=SINGLE

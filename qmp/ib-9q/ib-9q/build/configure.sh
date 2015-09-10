@@ -4,8 +4,8 @@
 PREFIX=`make_prefix ../../../PREFIX ../../../VERSION ib-9q`
 clean_dir ${PREFIX}
 
-export PATH=/dist/gcc-4.6.3/bin:$PATH
-export LD_LIBRARY_PATH=/dist/gcc-4.6.3/lib64:/dist/gcc-4.6.3/lib:$LD_LIBRARY_PATH
+export PATH=/dist/gcc-4.8.2/bin:$PATH
+export LD_LIBRARY_PATH=/dist/gcc-4.8.2/lib64:/dist/gcc-4.8.2/lib:$LD_LIBRARY_PATH
 
 MPI="/usr/mpi/gcc/mvapich2-1.8/"
 CC="$MPI/bin/mpicc" 
