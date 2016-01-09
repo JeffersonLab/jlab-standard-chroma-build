@@ -5,7 +5,7 @@ PREFIX=`make_prefix ../../../PREFIX ../../../VERSION openmpi`
 clean_dir ${PREFIX}
 
 
-MPI=/usr/mpi/gcc/openmpi-1.6.3
+MPI=/usr/mpi/gcc/openmpi-1.4.3
 CC=$MPI/bin/mpicc
 export PATH=/dist/gcc-4.8.2/bin:$PATH
 export LD_LIBRARY_PATH=/dist/gcc-4.8.2/lib64:/dist/gcc-4.8.2/lib:$PATH
