@@ -20,8 +20,9 @@ QMP_PREFIX=`make_prefix ${QMPDIR}/PREFIX ${QMPDIR}/VERSION openmpi`
 export PATH=/dist/gcc-4.8.2/bin:$PATH
 export LD_LIBRARY_PATH=/dist/gcc-4.8.2/lib64:/dist/gcc-4.8.2/lib:$LD_LIBRARY_PATH
 
-MPCC=/usr/mpi/gcc/openmpi-1.6.3/bin/mpicc
-MPCXX=/usr/mpi/gcc/openmpi-1.6.3/bin/mpiCC
+MPI=/usr/mpi/gcc/openmpi-1.4.3
+MPCC=${MPI}/bin/mpicc
+MPCXX=${MPI}bin/mpiCC
 
 ${CHROMADIR}/chroma/configure --prefix=${PREFIX} --with-qdp=${QDP_PREFIX} \
    CFLAGS="-O2 -fargument-noalias-global -fopenmp -march=core2 -funroll-loops -fpeel-loops" CXXFLAGS="-fopenmp" \
