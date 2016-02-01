@@ -13,6 +13,9 @@ popd
 CC=gcc
 CXX=g++
 
+export PATH=/dist/gcc-4.8.2/bin:$PATH
+export LD_LIBRARY_PATH=/dist/gcc-4.8.2/lib64:/dist/gcc-4.8.2/lib:$LD_LIBRARY_PATH
+
 . ${ROOTDIR}/functions.sh
 PREFIX=`make_prefix ${CHROMADIR}/PREFIX ${CHROMADIR}/VERSION ${ARCH}`
 clean_dir ${PREFIX}
