@@ -22,6 +22,8 @@ export LD_LIBRARY_PATH=/dist/gcc-4.8.2/lib64:/dist/gcc-4.8.2/lib:$LD_LIBRARY_PAT
 MPI="/usr/mpi/gcc/mvapich2-1.8"
 MPCC="$MPI/bin/mpicc"
 MPCXX="$MPI/bin/mpicxx"
+GMP=/dist/gmp-6.0.0
+
 
 ${CHROMADIR}/chroma/configure --prefix=${PREFIX} --with-qdp=${QDP_PREFIX} \
    CFLAGS="" CXXFLAGS="" \
@@ -32,5 +34,5 @@ ${CHROMADIR}/chroma/configure --prefix=${PREFIX} --with-qdp=${QDP_PREFIX} \
    --enable-sse-scalarsite-bicgstab-kernels
 
 # This stuff is not available on all build nodes
-#   --with-gmp=/usr 
+#   --with-gmp=$GMP 
 #   --enable-lapack=lapack LIBS="-llapack -lblas -lgfortran -lgmp" 

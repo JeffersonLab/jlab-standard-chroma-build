@@ -23,10 +23,12 @@ clean_dir ${PREFIX}
 QDP_PREFIX=`make_prefix ${QDPDIR}/PREFIX ${QDPDIR}/VERSION ${ARCH}`
 QMP_PREFIX=`make_prefix ${QMPDIR}/PREFIX ${QMPDIR}/VERSION single`
 
+GMP=/dist/gmp-6.0.0
+
 ${CHROMADIR}/chroma/configure --prefix=${PREFIX} --with-qdp=${QDP_PREFIX} \
         CFLAGS="-O3 -fargument-noalias-global -funroll-all-loops -fpeel-loops -march=core2" \
         CXXFLAGS="" --enable-testcase-runner=trivial_runner \
-        --enable-sse-wilson-dslash --with-qmp=${QMP_PREFIX} --enable-cg-dwf=sse --with-gmp=/usr \
+        --enable-sse-wilson-dslash --with-qmp=${QMP_PREFIX} --enable-cg-dwf=sse --with-gmp=$GMP \
         CC=$CC CXX=$CXX \
-        --enable-lapack=lapack --enable-opt-eigcg LIBS="-llapack -lblas -lgfortran -lgmp"
+        --enable-lapack=lapack --enable-opt-eigcg LIBS="-llapack -lblas -lgfortran $GMP/lib/libgmp.a"
 
