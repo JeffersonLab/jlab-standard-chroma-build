@@ -45,14 +45,16 @@ date
 ./build-git.sh  \
     qmp/single/single \
     qmp/ib-9q/ib-9q \
-    qmp/ib-9q/openmpi \
     qdpxx/scalar/scalar-9q \
     qdpxx/single/parscalar-single \
     qdpxx/single/parscalar-single-double \
     qdpxx/ib-9q/parscalar-ib-9q \
-    qdpxx/ib-9q/parscalar-ib-9q-double \
-    qdpxx/ib-9q/openmpi \
-    qdpxx/ib-9q/openmpi-double
+    qdpxx/ib-9q/parscalar-ib-9q-double
+
+# OpenMPI has been (re)moved from qcdi1401
+#    qmp/ib-9q/openmpi
+#    qdpxx/ib-9q/openmpi
+#    qdpxx/ib-9q/openmpi-double
 
 # Not a public intel compiler
 #    qmp/single/single-intel
@@ -82,9 +84,11 @@ date
     chroma/single/parscalar-single \
     chroma/single/parscalar-single-double \
     chroma/ib-9q/parscalar-ib-9q \
-    chroma/ib-9q/parscalar-ib-9q-double \
-    chroma/ib-9q/openmpi \
-    chroma/ib-9q/openmpi-double
+    chroma/ib-9q/parscalar-ib-9q-double 
+
+# No openmpi
+#    chroma/ib-9q/openmpi 
+#    chroma/ib-9q/openmpi-double
 
 # Not a public intel compiler
 #    chroma/single/parscalar-single-intel 
